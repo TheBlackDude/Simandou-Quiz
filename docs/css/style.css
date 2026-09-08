@@ -1,4 +1,4 @@
-/* Quiz Simandou — palette MuduPay : bleu, orange, blanc */
+/* Government Quiz — palette MuduPay : bleu, orange, blanc */
 :root{
   --primary:#3375AF; --primary2:#2A6396; --accent:#255988;
   --gold:#E8A858; --gold2:#F0BF7F; --gold-text:#C47D22;
@@ -33,7 +33,7 @@ body{background:var(--bg);color:var(--ink);font-family:Jost,"Century Gothic","Av
 .band h1{font-size:clamp(30px,6vw,44px);margin:10px 0 2px;letter-spacing:.02em;font-weight:700;text-wrap:balance}
 .band .sub{font-size:14px;color:var(--bandsub)}
 .wrap{max-width:720px;margin:0 auto;padding:22px 18px 60px}
-/* progression : le rail Simandou → Morebaya */
+/* progression : la barre avance d'un point de départ vers l'arrivée du module */
 .rail{margin:6px 0 22px}
 .rail .lbl{display:flex;justify-content:space-between;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600}
 .rail .track{position:relative;height:14px;margin:6px 0 4px}
@@ -206,3 +206,26 @@ table.board tr.me td{background:var(--sand)}
 table.board tbody tr:nth-child(1) td.rank{color:var(--gold-text);font-weight:700}
 table.board .pct{color:var(--muted);font-size:13px}
 table.board .medal{display:inline-block;vertical-align:middle;width:16px;height:16px;border-width:1px}
+
+/* ===== Accueil général (Government Quiz) ===== */
+.quizbar[hidden]{display:none}
+.quizbar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:13px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--muted);margin:0 0 14px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+.quizbar #quizName{color:var(--primary)}
+.quizbar .who-is{text-transform:none;letter-spacing:0;font-weight:500}
+.quizbar .link{margin-left:auto;text-transform:none;letter-spacing:0}
+.tagline{display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px;margin:6px 0 18px;padding:18px 12px;background:var(--band);border-radius:6px;color:#fff}
+.tagline span{font-size:clamp(16px,3.4vw,22px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;line-height:1.25;text-wrap:balance}
+.tagline span:nth-child(1){color:var(--gold)}
+.tagline span:nth-child(5){color:var(--gold2)}
+.tagline i{display:block;width:34px;height:2px;background:var(--gold);opacity:.7;margin:4px 0}
+.landing p{max-width:66ch}
+.picks{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin:6px 0 18px}
+.pick{display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:4px;font:inherit;color:var(--ink);background:var(--sand);border:2px solid var(--line);border-radius:6px;padding:18px 18px 16px;cursor:pointer;transition:border-color .15s,transform .15s}
+.pick:hover,.pick:focus-visible{border-color:var(--primary);outline:none;transform:translateY(-1px)}
+.pick .num{font-size:12px;letter-spacing:.18em;font-weight:700;color:var(--gold-text)}
+.pick .pt{font-size:20px;font-weight:700;line-height:1.2;color:var(--primary);text-wrap:balance}
+.pick .ps{font-size:14px;color:var(--muted);line-height:1.4}
+.pick .pm{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:6px}
+.pick .go{margin-top:12px;font-size:14px;font-weight:600;letter-spacing:.04em;padding:9px 16px;border-radius:4px;background:var(--btn-bg);color:var(--btn-fg)}
+.cert .bottom .logo img.drapeau{height:9mm;border:.3mm solid #E4E8ED}
+@media (max-width:520px){.quizbar .link{margin-left:0}}
