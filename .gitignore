@@ -1,0 +1,7 @@
+# Documents internes de travail : ne pas publier sur GitHub
+*.pptx
+build/media/
+build/optionC/
+build/__pycache__/
+.DS_Store
+Screenshot*.png
