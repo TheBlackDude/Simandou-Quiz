@@ -13,9 +13,9 @@ assets = {"armoiries": b64("assets/armoiries.png"), "simandou2040": b64("assets/
 html = open(os.path.join(DOCS, "index.html"), encoding="utf-8").read()
 body = re.search(r"<body>(.*)</body>", html, re.S).group(1)
 body = body.replace('src="assets/armoiries.png"', 'src="' + assets["armoiries"] + '"').replace('src="assets/simandou2040.png"', 'src="' + assets["simandou2040"] + '"')
-body = re.sub(r'<script src="js/questions.js"></script>\s*<script src="js/app.js"></script>', "", body)
+body = re.sub(r'(<script src="js/[a-z]+\.js"></script>\s*)+', "", body)
 css = open(os.path.join(DOCS, "css", "style.css"), encoding="utf-8").read()
-app = open(os.path.join(DOCS, "js", "app.js"), encoding="utf-8").read()
+app = open(os.path.join(DOCS, "js", "config.js"), encoding="utf-8").read() + "\n" + open(os.path.join(DOCS, "js", "app.js"), encoding="utf-8").read()
 single = ('<title>Quiz Simandou</title>\n<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap">\n'
           '<style>\n' + css + '\n</style>\n' + body.strip() + '\n<script>\n' + js + 'window.QUIZ_ASSETS = ' + json.dumps(assets) + ';\n' + app + '\n</script>\n')
 open(os.path.join(ROOT, "quiz-simandou.html"), "w", encoding="utf-8").write(single)

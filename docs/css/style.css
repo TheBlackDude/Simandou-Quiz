@@ -184,3 +184,25 @@ td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
 .steps .step.ok{background:var(--primary);border-color:var(--primary);color:#fff}
 .steps .step.cur{box-shadow:0 0 0 3px var(--gold2)}
 .steps i{flex:1;height:2px;background:var(--line);max-width:60px}
+
+/* nom du participant */
+.who{margin:4px 0 16px}
+.who label{display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:6px}
+.who label small{display:block;text-transform:none;letter-spacing:0;font-weight:400;font-size:12px;margin-top:2px}
+.who input{font:inherit;font-size:17px;width:100%;padding:12px 14px;border:2px solid var(--line);border-radius:5px;background:var(--card);color:var(--ink)}
+.who input:focus-visible{outline:none;border-color:var(--primary)}
+.who .err[hidden]{display:none}
+.who .err{display:block;margin-top:6px;font-size:13px;color:var(--bad);font-weight:600}
+.opt.chosen{border-color:var(--primary);background:var(--card)}
+/* classement */
+.boardcard{margin-top:16px}
+.h2{font-size:24px;margin:0 0 12px;text-wrap:balance}
+.tablewrap{overflow-x:auto}
+table.board{margin:6px 0 4px;font-size:15px;min-width:520px}
+table.board th.num,table.board td.num{text-align:right}
+table.board td{white-space:nowrap}
+table.board td.rank{color:var(--muted);font-variant-numeric:tabular-nums;width:2.2em}
+table.board tr.me td{background:var(--sand)}
+table.board tbody tr:nth-child(1) td.rank{color:var(--gold-text);font-weight:700}
+table.board .pct{color:var(--muted);font-size:13px}
+table.board .medal{display:inline-block;vertical-align:middle;width:16px;height:16px;border-width:1px}

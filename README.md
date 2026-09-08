@@ -58,6 +58,25 @@ pour voir apparaître le bouton « Continuer : section suivante ». La progressi
 (`localStorage`) ; un lien « Réinitialiser le parcours » sur l'accueil la remet à zéro. Le quiz complet reste toujours accessible.
 Le seuil se règle dans `docs/js/app.js` (constante `PASS`).
 
+## Classement (leaderboard)
+
+Chaque quiz complet terminé et chaque parcours par sections terminé est enregistré au classement
+(meilleur résultat par participant, tri par pourcentage). Le nom est demandé sur l'accueil avant de commencer.
+
+- **Par défaut**, le classement est enregistré dans le navigateur de l'appareil (`localStorage`) : idéal pour une borne
+  ou une tablette qui passe de main en main, mais chaque appareil a son propre classement.
+- **Classement partagé entre tous les appareils** (5 minutes de mise en place, gratuit, sans serveur) :
+  1. Créer une feuille Google Sheets vide → *Extensions → Apps Script* → coller le contenu de `leaderboard/Code.gs`.
+  2. *Déployer → Nouveau déploiement → Application web* · Exécuter en tant que : **Moi** · Accès : **Tout le monde**.
+  3. Copier l'URL de l'application web dans `docs/js/config.js` (`leaderboardUrl`), puis pousser sur `main`.
+  Les scores arrivent dans la feuille (une ligne par résultat) ; l'animateur peut y corriger ou supprimer une ligne.
+
+## Corrigé
+
+Les boutons « Voir le corrigé » ont été retirés de l'application : les participants ne voient jamais les réponses.
+L'animateur utilise le PDF « Questionnaire et Corrigé ». L'explication affichée après chaque réponse peut aussi être
+désactivée avec la constante `SHOW_FEEDBACK` dans `docs/js/app.js`.
+
 ## Certificat
 
 Un certificat imprimable (A4 paysage) est proposé à partir de 80 % de bonnes réponses, soit à la fin du **quiz complet**, soit à la fin du **parcours par sections** (les meilleurs scores des quatre sections sont additionnés sur 40) :
