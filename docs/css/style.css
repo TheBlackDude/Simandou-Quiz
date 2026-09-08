@@ -156,13 +156,14 @@ td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
 .cert .id{margin-top:3mm;text-align:center;font-size:7pt;letter-spacing:.16em;color:#9AA3AE;text-transform:uppercase}
 @page{size:A4 landscape;margin:0}
 @media print{
-  body{background:#fff}
-  body.printing > *:not(.cert-overlay){display:none !important}
-  .cert-overlay{position:static;background:none;padding:0;overflow:visible}
+  html,body{background:#fff !important;margin:0;padding:0;height:auto;overflow:visible !important}
+  body.printing > *:not(#certRoot){display:none !important}
+  #certRoot{display:block}
+  .cert-overlay{position:static;background:none;padding:0;overflow:visible;width:297mm;height:210mm}
   .cert-overlay .bar-top{display:none}
-  .cert-stage{width:297mm;height:210mm;overflow:visible}
+  .cert-stage{width:297mm !important;height:210mm !important;overflow:visible;margin:0}
   .cert-stage .cert{transform:none !important}
-  .cert{box-shadow:none;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .cert{box-shadow:none;-webkit-print-color-adjust:exact;print-color-adjust:exact;page-break-after:avoid;page-break-inside:avoid}
 }
 
 /* parcours par sections */

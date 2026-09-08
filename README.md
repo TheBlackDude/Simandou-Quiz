@@ -60,7 +60,7 @@ Le seuil se règle dans `docs/js/app.js` (constante `PASS`).
 
 ## Certificat
 
-À la fin du **quiz complet**, un certificat imprimable (A4 paysage) est proposé à partir de 80 % de bonnes réponses :
+Un certificat imprimable (A4 paysage) est proposé à partir de 80 % de bonnes réponses, soit à la fin du **quiz complet**, soit à la fin du **parcours par sections** (les meilleurs scores des quatre sections sont additionnés sur 40) :
 
 | Niveau | Seuil | Titre |
 |---|---|---|

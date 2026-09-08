@@ -15,6 +15,7 @@
   DATA.forEach((s, si) => s.questions.forEach(q => ALL.push(Object.assign({}, q, { sec: si, n: ALL.length + 1 }))));
   const app = document.getElementById('app'), rail = document.getElementById('rail'), certRoot = document.getElementById('certRoot');
   let queue = [], idx = 0, answers = {}, scope = 'all';
+  let pendingCert = null; // { ok, tot } du certificat à imprimer
 
   const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
   const pad = n => String(n).padStart(2, '0');
@@ -22,6 +23,20 @@
   function loadProgress() { try { const p = JSON.parse(store.get('quizProgress') || '{}'); return { unlocked: p.unlocked || 0, best: p.best || {} }; } catch (e) { return { unlocked: 0, best: {} }; } }
   function saveProgress(p) { store.set('quizProgress', JSON.stringify(p)); }
   function levelFor(ratio) { return LEVELS.find(l => ratio >= l.min - 1e-9) || null; }
+  function certBox(ok, tot, intro) {
+    const ratio = ok / tot, lvl = levelFor(ratio); if (!lvl) return '';
+    pendingCert = { ok: ok, tot: tot };
+    return '<div class="certbox"><span class="medal big ' + lvl.key + '"></span><div>' +
+      '<h3>Certificat ' + lvl.label + ' · ' + lvl.title + '</h3>' +
+      '<p>' + intro + ' Indiquez votre nom tel qu\'il doit figurer sur le certificat.</p>' +
+      '<label for="certName">Nom et prénom(s)</label><input id="certName" type="text" maxlength="60" placeholder="Ex. : Mariama Camara" value="' + esc(store.get('quizName')) + '" autocomplete="name">' +
+      '<button class="btn gold" data-cert>Afficher et imprimer le certificat</button></div></div>';
+  }
+  function parcoursScore(prog) {
+    if (DATA.some((s, i) => prog.best[i] === undefined)) return null;
+    const ok = DATA.reduce((sum, s, i) => sum + Math.round(prog.best[i] * s.questions.length), 0);
+    return { ok: ok, tot: ALL.length };
+  }
   function mention(p) {
     if (p >= .9) return ['Expert Simandou', 'Vous maîtrisez le projet et le programme Simandou 2040.'];
     if (p >= .7) return ['Bâtisseur', 'Une solide connaissance du plus grand projet de la Guinée.'];
@@ -52,6 +67,7 @@
       }).join('') + '</div>' +
       '<div class="row"><button class="btn" data-start="all">Lancer le quiz complet</button><button class="btn ghost" data-key>Voir le corrigé (animateur)</button></div>' +
       '<p class="rules">Une seule bonne réponse par question · 1 point par bonne réponse · Le rail progresse de Simandou vers Morebaya au fil des questions.<br>Parcours par sections : réussissez une section à <b>80 %</b> (8 bonnes réponses sur 10) pour débloquer la suivante.' + (prog.unlocked > 0 || Object.keys(prog.best).length ? ' <button class="link" data-reset>Réinitialiser le parcours</button>' : '') + '</p>' +
+      (function () { const ps = parcoursScore(prog); return ps ? certBox(ps.ok, ps.tot, 'Parcours des quatre sections terminé : ' + ps.ok + ' bonnes réponses sur ' + ps.tot + ' (' + Math.round(ps.ok / ps.tot * 100) + ' %).') : ''; })() +
       '<div class="levels">' + LEVELS.slice().reverse().map(l => '<div class="lv"><span class="medal ' + l.key + '"></span><span><b>Certificat ' + l.label + '</b> · à partir de ' + Math.round(l.min * 100) + ' % de bonnes réponses au quiz complet</span></div>').join('') + '</div>' +
       '</div>';
   }
@@ -91,11 +107,7 @@
     const lvl = scope === 'all' ? levelFor(ratio) : null;
     let certHtml = '';
     if (lvl) {
-      certHtml = '<div class="certbox"><span class="medal big ' + lvl.key + '"></span><div>' +
-        '<h3>Certificat ' + lvl.label + ' · ' + lvl.title + '</h3>' +
-        '<p>Vous avez obtenu ' + Math.round(ratio * 100) + ' % de bonnes réponses. Indiquez votre nom tel qu\'il doit figurer sur le certificat.</p>' +
-        '<label for="certName">Nom et prénom(s)</label><input id="certName" type="text" maxlength="60" placeholder="Ex. : Mariama Camara" value="' + esc(store.get('quizName')) + '" autocomplete="name">' +
-        '<button class="btn gold" data-cert>Afficher et imprimer le certificat</button></div></div>';
+      certHtml = certBox(ok, tot, 'Vous avez obtenu ' + Math.round(ratio * 100) + ' % de bonnes réponses.');
     } else if (scope === 'all') {
       certHtml = '<p class="note">Un certificat (Bronze, Argent ou Or) est délivré à partir de 80 % de bonnes réponses sur le quiz complet. Il vous manque ' + (Math.ceil(tot * 0.8) - ok) + ' bonne(s) réponse(s) : retentez votre chance.</p>';
     } else {
@@ -110,9 +122,11 @@
         (passed
           ? (nextSec
               ? '<h3>Section ' + DATA[si].letter + ' validée</h3><p>Vous avez atteint ' + Math.round(ratio * 100) + ' % : la section ' + nextSec.letter + ' est débloquée.</p><button class="btn gold" data-start="' + (si + 1) + '">Continuer : section ' + nextSec.letter + ' · ' + esc(nextSec.title) + '</button>'
-              : '<h3>Parcours terminé</h3><p>Vous avez validé les quatre sections. Lancez le quiz complet pour obtenir votre certificat.</p><button class="btn gold" data-start="all">Lancer le quiz complet</button>')
+              : '<h3>Parcours terminé</h3><p>Vous avez validé les quatre sections : votre certificat est disponible ci-dessous.</p>')
           : '<h3>Section ' + DATA[si].letter + ' non validée</h3><p>Il faut au moins ' + Math.ceil(tot * PASS) + ' bonnes réponses sur ' + tot + ' (80 %) pour passer à la section suivante. Vous en avez ' + ok + '. Relisez les explications et recommencez.</p>') +
         '</div>';
+      const ps = passed && !nextSec ? parcoursScore(prog) : null;
+      if (ps) certHtml += certBox(ps.ok, ps.tot, 'Total du parcours : ' + ps.ok + ' bonnes réponses sur ' + ps.tot + ' (' + Math.round(ps.ok / ps.tot * 100) + ' %), en cumulant vos meilleurs scores par section.');
     }
     app.innerHTML = '<div class="card">' +
       '<div class="eyebrow">Résultat · ' + (scope === 'all' ? 'Quiz complet' : 'Section ' + DATA[scope].letter) + '</div>' +
@@ -147,7 +161,8 @@
     const name = (input.value || '').trim();
     if (!name) { input.focus(); input.placeholder = 'Veuillez saisir votre nom'; return; }
     store.set('quizName', name);
-    const tot = queue.length, ok = queue.filter(q => answers[q.n]).length, ratio = ok / tot, lvl = levelFor(ratio);
+    if (!pendingCert) return;
+    const tot = pendingCert.tot, ok = pendingCert.ok, ratio = ok / tot, lvl = levelFor(ratio); if (!lvl) return;
     const now = new Date();
     const dateFr = now.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
     const id = certId(name, ok, now.toISOString().slice(0, 10));
@@ -188,9 +203,12 @@
   }
   function printCert() {
     document.body.classList.add('printing');
-    const done = () => document.body.classList.remove('printing');
+    const done = () => { document.body.classList.remove('printing'); fitCert(); };
     window.addEventListener('afterprint', done, { once: true });
-    setTimeout(() => { window.print(); setTimeout(done, 1500); }, 50);
+    setTimeout(() => {
+      try { window.print(); } catch (e) { done(); alert('Impression indisponible dans cette fenêtre. Ouvrez le quiz dans votre navigateur (Chrome, Safari, Edge) puis réessayez.'); }
+      setTimeout(done, 2000);
+    }, 50);
   }
 
   /* ---------- Événements ---------- */
