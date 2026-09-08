@@ -10,6 +10,7 @@
     { key: 'argent', label: 'Argent', min: 0.88, title: 'Bâtisseur de Simandou 2040' },
     { key: 'bronze', label: 'Bronze', min: 0.80, title: 'Ambassadeur de Simandou' },
   ];
+  const PASS = 0.80; // seuil pour débloquer la section suivante
   const ALL = [];
   DATA.forEach((s, si) => s.questions.forEach(q => ALL.push(Object.assign({}, q, { sec: si, n: ALL.length + 1 }))));
   const app = document.getElementById('app'), rail = document.getElementById('rail'), certRoot = document.getElementById('certRoot');
@@ -18,6 +19,8 @@
   const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
   const pad = n => String(n).padStart(2, '0');
   const store = { get(k) { try { return localStorage.getItem(k) || ''; } catch (e) { return ''; } }, set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} } };
+  function loadProgress() { try { const p = JSON.parse(store.get('quizProgress') || '{}'); return { unlocked: p.unlocked || 0, best: p.best || {} }; } catch (e) { return { unlocked: 0, best: {} }; } }
+  function saveProgress(p) { store.set('quizProgress', JSON.stringify(p)); }
   function levelFor(ratio) { return LEVELS.find(l => ratio >= l.min - 1e-9) || null; }
   function mention(p) {
     if (p >= .9) return ['Expert Simandou', 'Vous maîtrisez le projet et le programme Simandou 2040.'];
@@ -35,13 +38,20 @@
 
   function home() {
     rail.hidden = true;
+    const prog = loadProgress();
     app.innerHTML = '<div class="card intro">' +
       '<div class="eyebrow">Questionnaire à choix multiples · ' + ALL.length + ' questions</div>' +
       '<p>Quarante questions pour tester ce que vous savez du gisement, de ses partenaires, du chemin de fer transguinéen, du port de Morebaya et du Programme Simandou 2040 qui doit transformer la Guinée d\'ici quinze ans.</p>' +
       '<p>Choisissez une section, ou lancez le quiz complet. Chaque question donne une explication immédiate.</p>' +
-      '<div class="secs">' + DATA.map((s, i) => '<button class="sec" data-start="' + i + '"><span class="l">' + s.letter + '</span><span class="t">' + esc(s.title) + '</span><span class="n">' + s.questions.length + ' questions</span></button>').join('') + '</div>' +
+      '<div class="secs">' + DATA.map((s, i) => {
+        const best = prog.best[i], locked = i > prog.unlocked;
+        const state = locked ? 'Verrouillée' : best !== undefined ? 'Validée · ' + Math.round(best * s.questions.length) + '/' + s.questions.length : i === prog.unlocked ? 'À vous de jouer' : 'Disponible';
+        return '<button class="sec' + (locked ? ' locked' : '') + (best !== undefined ? ' done' : '') + '" data-start="' + i + '"' + (locked ? ' disabled aria-disabled="true" title="Réussissez la section précédente à 80 % pour débloquer"' : '') + '>' +
+          '<span class="l">' + (locked ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>' : s.letter) + '</span>' +
+          '<span class="t">' + esc(s.title) + '</span><span class="n">' + state + '</span></button>';
+      }).join('') + '</div>' +
       '<div class="row"><button class="btn" data-start="all">Lancer le quiz complet</button><button class="btn ghost" data-key>Voir le corrigé (animateur)</button></div>' +
-      '<p class="rules">Une seule bonne réponse par question · 1 point par bonne réponse · Le rail progresse de Simandou vers Morebaya au fil des questions.</p>' +
+      '<p class="rules">Une seule bonne réponse par question · 1 point par bonne réponse · Le rail progresse de Simandou vers Morebaya au fil des questions.<br>Parcours par sections : réussissez une section à <b>80 %</b> (8 bonnes réponses sur 10) pour débloquer la suivante.' + (prog.unlocked > 0 || Object.keys(prog.best).length ? ' <button class="link" data-reset>Réinitialiser le parcours</button>' : '') + '</p>' +
       '<div class="levels">' + LEVELS.slice().reverse().map(l => '<div class="lv"><span class="medal ' + l.key + '"></span><span><b>Certificat ' + l.label + '</b> · à partir de ' + Math.round(l.min * 100) + ' % de bonnes réponses au quiz complet</span></div>').join('') + '</div>' +
       '</div>';
   }
@@ -89,7 +99,20 @@
     } else if (scope === 'all') {
       certHtml = '<p class="note">Un certificat (Bronze, Argent ou Or) est délivré à partir de 80 % de bonnes réponses sur le quiz complet. Il vous manque ' + (Math.ceil(tot * 0.8) - ok) + ' bonne(s) réponse(s) : retentez votre chance.</p>';
     } else {
-      certHtml = '<p class="note">Le certificat est délivré sur le quiz complet (40 questions), à partir de 80 % de bonnes réponses.</p>';
+      const prog = loadProgress(), si = scope, passed = ratio >= PASS - 1e-9, nextSec = DATA[si + 1];
+      if (passed) {
+        if (prog.best[si] === undefined || ratio > prog.best[si]) prog.best[si] = ratio;
+        if (si + 1 > prog.unlocked) prog.unlocked = si + 1;
+        saveProgress(prog);
+      }
+      const steps = DATA.map((s, i) => '<span class="step' + (prog.best[i] !== undefined ? ' ok' : i <= prog.unlocked ? ' open' : '') + (i === si ? ' cur' : '') + '">' + s.letter + '</span>').join('<i></i>');
+      certHtml = '<div class="progress"><div class="steps">' + steps + '</div>' +
+        (passed
+          ? (nextSec
+              ? '<h3>Section ' + DATA[si].letter + ' validée</h3><p>Vous avez atteint ' + Math.round(ratio * 100) + ' % : la section ' + nextSec.letter + ' est débloquée.</p><button class="btn gold" data-start="' + (si + 1) + '">Continuer : section ' + nextSec.letter + ' · ' + esc(nextSec.title) + '</button>'
+              : '<h3>Parcours terminé</h3><p>Vous avez validé les quatre sections. Lancez le quiz complet pour obtenir votre certificat.</p><button class="btn gold" data-start="all">Lancer le quiz complet</button>')
+          : '<h3>Section ' + DATA[si].letter + ' non validée</h3><p>Il faut au moins ' + Math.ceil(tot * PASS) + ' bonnes réponses sur ' + tot + ' (80 %) pour passer à la section suivante. Vous en avez ' + ok + '. Relisez les explications et recommencez.</p>') +
+        '</div>';
     }
     app.innerHTML = '<div class="card">' +
       '<div class="eyebrow">Résultat · ' + (scope === 'all' ? 'Quiz complet' : 'Section ' + DATA[scope].letter) + '</div>' +
@@ -181,6 +204,7 @@
     else if (t.dataset.cert !== undefined) openCert();
     else if (t.dataset.print !== undefined) printCert();
     else if (t.dataset.close !== undefined) closeCert();
+    else if (t.dataset.reset !== undefined) { saveProgress({ unlocked: 0, best: {} }); home(); }
   });
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape' && certRoot.firstChild) closeCert();

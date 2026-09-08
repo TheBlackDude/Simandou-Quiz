@@ -51,6 +51,13 @@ python3 build_site.py      # site + fichier unique
 python3 make_docx.py       # versions Word (nécessite : pip install python-docx)
 ```
 
+## Parcours par sections
+
+Les sections A → B → C → D se débloquent dans l'ordre : il faut **80 % de bonnes réponses** (8/10) à une section
+pour voir apparaître le bouton « Continuer : section suivante ». La progression est mémorisée dans le navigateur
+(`localStorage`) ; un lien « Réinitialiser le parcours » sur l'accueil la remet à zéro. Le quiz complet reste toujours accessible.
+Le seuil se règle dans `docs/js/app.js` (constante `PASS`).
+
 ## Certificat
 
 À la fin du **quiz complet**, un certificat imprimable (A4 paysage) est proposé à partir de 80 % de bonnes réponses :
