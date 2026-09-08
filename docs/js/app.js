@@ -64,10 +64,12 @@
     },
     rank(list) {
       // meilleur résultat par participant (nom insensible à la casse), puis tri par score décroissant et date croissante
+      // la date peut arriver en ISO (local) ou au format texte de Google Sheets : on compare des horodatages
+      const ts = e => { const n = Date.parse(e.date); return isNaN(n) ? Infinity : n; };
       const best = {};
       list.forEach(e => { if (!e || !e.name || !(e.tot > 0)) return; const k = e.name.trim().toLowerCase(); const pct = e.ok / e.tot;
-        if (!best[k] || pct > best[k].ok / best[k].tot || (pct === best[k].ok / best[k].tot && e.date < best[k].date)) best[k] = e; });
-      return Object.values(best).sort((a, b) => (b.ok / b.tot) - (a.ok / a.tot) || (a.date < b.date ? -1 : 1));
+        if (!best[k] || pct > best[k].ok / best[k].tot || (pct === best[k].ok / best[k].tot && ts(e) < ts(best[k]))) best[k] = e; });
+      return Object.values(best).sort((a, b) => (b.ok / b.tot) - (a.ok / a.tot) || ts(a) - ts(b));
     }
   };
   function record(mode, ok, tot) {

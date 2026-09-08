@@ -15,10 +15,12 @@ function sheet_() {
   return sh;
 }
 
+function iso_(v) { try { const d = new Date(v); return isNaN(d) ? String(v) : d.toISOString(); } catch (e) { return String(v); } }
+
 function doGet() {
   const rows = sheet_().getDataRange().getValues().slice(1)
     .filter(r => r[1] && r[3] > 0)
-    .map(r => ({ date: r[0] instanceof Date ? r[0].toISOString() : String(r[0]), name: String(r[1]).slice(0, 60), ok: Number(r[2]), tot: Number(r[3]), mode: String(r[4]) }));
+    .map(r => ({ date: iso_(r[0]), name: String(r[1]).slice(0, 60), ok: Number(r[2]), tot: Number(r[3]), mode: String(r[4]) }));
   return ContentService.createTextOutput(JSON.stringify(rows)).setMimeType(ContentService.MimeType.JSON);
 }
 
