@@ -187,11 +187,14 @@ def to_pdf(docx_path):
     """Export PDF via Pages (macOS). Ignoré silencieusement si Pages est absent."""
     pdf = docx_path[:-5] + ".pdf"
     script = f'''tell application "Pages"
+  launch
+  delay 2
   set d to open POSIX file "{docx_path}"
   export d to POSIX file "{pdf}" as PDF
   close d saving no
 end tell'''
     try:
+        subprocess.run(["open", "-a", "Pages"], check=False); subprocess.run(["osascript", "-e", 'tell application "Pages" to activate'], check=False, capture_output=True)
         subprocess.run(["osascript", "-e", script], check=True, capture_output=True, timeout=180)
         return pdf
     except Exception as e:
