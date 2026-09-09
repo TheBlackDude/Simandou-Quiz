@@ -23,7 +23,7 @@ for k, v in assets.items(): body = body.replace('src="assets/' + k + '.png"', 's
 body = re.sub(r'(<script src="js/[a-z]+\.js"></script>\s*)+', "", body)
 css = open(os.path.join(DOCS, "css", "style.css"), encoding="utf-8").read()
 app = open(os.path.join(DOCS, "js", "config.js"), encoding="utf-8").read() + "\n" + open(os.path.join(DOCS, "js", "app.js"), encoding="utf-8").read()
-single = ('<title>Government Quiz</title>\n<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap">\n'
+single = ('<title>Gouvernement QCM</title>\n<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap">\n'
           '<style>\n' + css + '\n</style>\n' + body.strip() + '\n<script>\n' + js + 'window.QUIZ_ASSETS = ' + json.dumps(assets) + ';\n' + app + '\n</script>\n')
 open(os.path.join(ROOT, "government-quiz.html"), "w", encoding="utf-8").write(single)
 print("docs/js/questions.js et government-quiz.html générés —", ", ".join(q["id"] + " : " + str(sum(len(s["questions"]) for s in q["sections"])) + " questions" for q in data))

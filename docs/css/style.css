@@ -1,4 +1,4 @@
-/* Government Quiz — palette MuduPay : bleu, orange, blanc */
+/* Gouvernement QCM — palette MuduPay : bleu, orange, blanc */
 :root{
   --primary:#3375AF; --primary2:#2A6396; --accent:#255988;
   --gold:#E8A858; --gold2:#F0BF7F; --gold-text:#C47D22;
@@ -207,7 +207,7 @@ table.board tbody tr:nth-child(1) td.rank{color:var(--gold-text);font-weight:700
 table.board .pct{color:var(--muted);font-size:13px}
 table.board .medal{display:inline-block;vertical-align:middle;width:16px;height:16px;border-width:1px}
 
-/* ===== Accueil général (Government Quiz) ===== */
+/* ===== Accueil général (Gouvernement QCM) ===== */
 .quizbar[hidden]{display:none}
 .quizbar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:13px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--muted);margin:0 0 14px;padding-bottom:10px;border-bottom:1px solid var(--line)}
 .quizbar #quizName{color:var(--primary)}

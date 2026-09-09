@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Génère, pour chaque module du Government Quiz, deux documents Word : questionnaire participants et
+"""Génère, pour chaque module du Gouvernement QCM, deux documents Word : questionnaire participants et
 questionnaire + corrigé (animateur). Puis export PDF via Pages (macOS) si disponible."""
 import os, subprocess, sys
 from docx import Document
@@ -86,7 +86,7 @@ def build(path, quiz, with_key=True):
     # ---------- Couverture ----------
     para(doc, "RÉPUBLIQUE DE GUINÉE", 9, True, BLUE, WD_ALIGN_PARAGRAPH.CENTER, after=0)
     para(doc, "Travail · Justice · Solidarité", 8.5, False, ORANGE, WD_ALIGN_PARAGRAPH.CENTER, after=10, italic=True)
-    band(doc, [("GOVERNMENT QUIZ · SEMAINE DE L'INDÉPENDANCE · AN 68", 9, True, GOLD),
+    band(doc, [("GOUVERNEMENT QCM · SEMAINE DE L'INDÉPENDANCE · AN 68", 9, True, GOLD),
                (D["band"], 26 if len(D["band"]) < 16 else 22, True, WHITE),
                (f"Questionnaire à choix multiples — {total} questions", 11, False, RGBColor(0xE3,0xED,0xF3)),
                (D["sub"], 9, False, RGBColor(0xD6,0xE6,0xF2))])

@@ -1,5 +1,5 @@
 /**
- * Classement partagé du Government Quiz (tous les modules) — Google Apps Script.
+ * Classement partagé du Gouvernement QCM (tous les modules) — Google Apps Script.
  * 1. Créer une feuille Google Sheets vide, puis Extensions → Apps Script, coller ce code.
  * 2. Déployer → Nouveau déploiement → Type : Application web
  *    Exécuter en tant que : Moi · Accès : Tout le monde (anonyme)

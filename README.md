@@ -1,4 +1,4 @@
-# Government Quiz — Semaine de l'Indépendance, An 68
+# Gouvernement QCM — Semaine de l'Indépendance, An 68
 
 *L'Indépendance en héritage · La jeunesse en marche · Simandou 2040 en ligne de mire*
 

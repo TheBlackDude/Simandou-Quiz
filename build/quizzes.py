@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Registre des modules du Government Quiz. Chaque module : ses questions + ses textes (accueil, rail, certificat)."""
+"""Registre des modules du Gouvernement QCM. Chaque module : ses questions + ses textes (accueil, rail, certificat)."""
 from questions import SECTIONS as SIMANDOU
 from questions_histoire import SECTIONS as HISTOIRE
 from questions_armee import SECTIONS as ARMEE

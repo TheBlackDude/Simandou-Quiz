@@ -1,4 +1,4 @@
-/* Government Quiz — logique de l'application (aucune dépendance).
+/* Gouvernement QCM — logique de l'application (aucune dépendance).
    Plusieurs modules (window.QUIZZES) : accueil commun (nom + choix du quiz), puis, pour chaque quiz,
    parcours par sections, quiz complet, classement et certificat. */
 (function () {
@@ -288,7 +288,7 @@
       '<div class="sig"><div class="ln"></div>Signature de l\'organisateur</div>' +
       '<div class="logo"><img class="' + esc(c.logo) + '" src="' + (ASSETS[c.logo] || ASSETS.simandou2040) + '" alt=""><small>' + esc(c.logoText) + '</small></div>' +
       '</div>' +
-      '<div class="id">Certificat n° ' + id + ' · Government Quiz · Guinée 68 · Semaine de l\'Indépendance · 25 sept – 2 oct 2026</div>' +
+      '<div class="id">Certificat n° ' + id + ' · Gouvernement QCM · Guinée 68 · Semaine de l\'Indépendance · 25 sept – 2 oct 2026</div>' +
       '</div></div></div></div>';
     fitCert(); window.addEventListener('resize', fitCert);
     document.body.style.overflow = 'hidden';
