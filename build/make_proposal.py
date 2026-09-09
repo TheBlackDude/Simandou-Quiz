@@ -15,17 +15,19 @@ OUT_DIR = os.path.join(ROOT, "proposition"); os.makedirs(OUT_DIR, exist_ok=True)
 BASENAME = "Proposition Government Quiz Guinee - Plateforme nationale de quiz educatifs"
 
 BUDGET = [
- ("1", "Conception et développement de la plateforme", "Portail des institutions (téléversement, prévisualisation, validation), générateur de quiz, comptes participants avec vérification par SMS, classements, certificats avec QR code, tableau de bord, module « Mérite »", 150_000_000),
- ("2", "Hébergement et infrastructure (12 mois)", "Diffusion de contenu (CDN), base de données, stockage, envois SMS de vérification, sauvegardes ; dimensionné jusqu'à 1 million d'utilisateurs par mois", 60_000_000),
+ ("1", "Conception et développement de la plateforme", "Portail des institutions (téléversement, prévisualisation, validation), générateur de quiz, comptes participants avec vérification par SMS, classements, certificats avec QR code, tableau de bord, module « Mérite »", 165_000_000),
+ ("2", "Hébergement et infrastructure (12 mois)", "Diffusion de contenu (CDN), base de données, stockage, envois SMS de vérification, sauvegardes ; dimensionné jusqu'à 1 million d'utilisateurs par mois", 65_000_000),
  ("3", "Sécurité, conformité et audit", "Tests d'intrusion, protection des données personnelles (Loi L/2016/037/AN), audit indépendant avant lancement", 25_000_000),
- ("4", "Exploitation, maintenance et support (12 mois)", "Équipe d'exploitation, corrections et évolutions, assistance aux institutions et aux participants, rapports mensuels", 80_000_000),
+ ("4", "Exploitation, maintenance et support (12 mois)", "Équipe d'exploitation, corrections et évolutions, assistance aux institutions et aux participants, rapports mensuels", 85_000_000),
  ("5", "Formation des points focaux et accompagnement éditorial", "Ateliers pour les institutions, guide et modèles de questions, appui à la rédaction des premières campagnes", 20_000_000),
- ("6", "Communication digitale et lancement", "Identité visuelle, contenus pour les réseaux sociaux, vidéos courtes, matériel de lancement des campagnes", 20_000_000),
+ ("6", "Communication digitale et lancement", "Identité visuelle, contenus pour les réseaux sociaux, vidéos courtes, matériel de lancement des campagnes", 25_000_000),
  ("7", "Provision pour imprévus (environ 4 %)", "Aléas techniques, coûts SMS supplémentaires en cas de forte affluence", 15_000_000),
 ]
-TOTAL = sum(b[3] for b in BUDGET); assert TOTAL == 370_000_000, TOTAL
+TOTAL = sum(b[3] for b in BUDGET); assert TOTAL == 400_000_000, TOTAL
 USD = 8_780
 fmt = lambda n: f"{n:,}".replace(",", " ")
+PER_MONTH = round(TOTAL / 12_000_000)        # GNF par participant et par mois à pleine capacité
+PER_YOUTH = round(TOTAL / 500_000)           # GNF par participant unique (cible année 1)
 
 CONTENT = [
  # ---------------- Fiche synthétique ----------------
@@ -38,7 +40,8 @@ CONTENT = [
   ("Principe", "Chaque institution publie ses propres quiz en téléversant simplement un fichier de questions ; la plateforme construit le quiz, gère les participants, les classements et les certificats ; les meilleurs sont récompensés par des bourses, des formations, des stages et des emplois"),
   ("Budget demandé", f"{fmt(TOTAL)} GNF (environ {fmt(round(TOTAL / USD / 100) * 100)} USD) pour la construction et 12 mois d'exploitation"),
   ("Capacité", "Jusqu'à 1 000 000 d'utilisateurs par mois ; disponibilité visée 99,9 %"),
-  ("Calendrier", "Décision : octobre 2026 · Construction : novembre 2026 – janvier 2027 · Lancement national : février 2027 · Cérémonie nationale du Mérite : octobre 2027 (An 69)"),
+  ("Délai de réalisation", "Un mois : la plateforme complète est construite, testée et déployée dans les trente jours qui suivent la fin de la Semaine de l'Indépendance"),
+  ("Calendrier", "Décision : avant le 2 octobre 2026 · Construction et déploiement : du 3 octobre au 2 novembre 2026, soit un mois après la Semaine de l'Indépendance · Lancement national : novembre 2026 · Cérémonie nationale du Mérite : octobre 2027 (An 69)"),
   ("Décision demandée", "Approbation du projet et du budget ; désignation du SGG comme maître d'ouvrage ; désignation d'un point focal par institution ; création du Fonds du Mérite"),
  ]),
 
@@ -46,15 +49,16 @@ CONTENT = [
  ("h1", "1. Résumé exécutif"),
  ("p", "Pour la Semaine de l'Indépendance An 68, le Secrétariat Général du Gouvernement a mis en ligne « Government Quiz », une application de quiz en français, accessible depuis n'importe quel téléphone, qui propose deux questionnaires de 40 questions : le Quiz Simandou et le Quiz Histoire de la Guinée. Les participants progressent par sections, obtiennent un certificat de réussite (Bronze, Argent, Or) et figurent à un classement national partagé. Conçue et mise en ligne en une semaine, sans infrastructure coûteuse, cette application a été testée et approuvée par Monsieur le Ministre Secrétaire Général du Gouvernement."),
  ("p", "La présente note propose d'en faire un outil national : une plateforme où chaque ministère, chaque agence et chaque société d'État peut publier ses propres quiz en téléversant simplement un fichier de questions avec les bonnes réponses. La plateforme construit le quiz, accueille les participants, tient les classements, délivre les certificats et fournit un tableau de bord. Surtout, elle relie l'effort d'apprendre à des opportunités réelles : les meilleurs participants de chaque campagne reçoivent des bourses d'études complètes, des formations professionnelles et techniques, des stages et des emplois, offerts par les institutions et leurs partenaires."),
+ ("p", "Parce qu'elle s'appuie sur le socle déjà en service, la plateforme complète peut être construite, testée et déployée en un mois, dès la fin de la Semaine de l'Indépendance : décision avant le 2 octobre 2026, mise en service le 2 novembre 2026, premières campagnes des ministères en novembre."),
  ("kpis", [
+  ("1 mois", "pour construire et déployer la plateforme"),
   ("1 000 000", "utilisateurs par mois (capacité)"),
   ("15+", "institutions publiant leurs quiz en année 1"),
-  ("1 000+", "jeunes récompensés en année 1"),
-  ("370 millions", "de GNF : construction et 12 mois d'exploitation"),
+  ("400 millions", "de GNF : construction et 12 mois d'exploitation"),
  ]),
- ("p", f"Le coût demandé, {fmt(TOTAL)} GNF pour la construction et douze mois d'exploitation, représente 31 GNF par participant et par mois à pleine capacité, soit moins que le prix d'un SMS. Les récompenses elles-mêmes sont des contributions en nature des institutions et des partenaires (bourses, places de formation, stages, emplois), réunies dans un Fonds du Mérite."),
+ ("p", f"Le coût demandé, {fmt(TOTAL)} GNF pour la construction et douze mois d'exploitation, représente {PER_MONTH} GNF par participant et par mois à pleine capacité, soit moins que le prix d'un SMS. Les récompenses elles-mêmes sont des contributions en nature des institutions et des partenaires (bourses, places de formation, stages, emplois), réunies dans un Fonds du Mérite."),
  ("callout", "Ce que la plateforme change : pour la première fois en Guinée, un jeune de Kérouané, de Labé ou de Nzérékoré peut, depuis son téléphone, apprendre ce que l'État veut lui transmettre, se mesurer à toute la jeunesse du pays et ouvrir, par son mérite, la porte d'une bourse, d'une formation ou d'un emploi."),
- ("p", "Le Gouvernement est invité à approuver le projet et son budget, à confier au SGG la maîtrise d'ouvrage, à instruire chaque institution de désigner un point focal et de publier au moins un quiz au cours de la première année, et à créer le Fonds du Mérite dont la remise annuelle des récompenses serait présidée par le Chef de l'État."),
+ ("p", "Le Gouvernement est invité à approuver le projet et son budget, à confier au SGG la maîtrise d'ouvrage, à instruire chaque institution de désigner un point focal sous quinze jours et de publier au moins un quiz au cours de la première année, et à créer le Fonds du Mérite dont la remise annuelle des récompenses serait présidée par le Chef de l'État."),
 
  # ---------------- 2. Contexte ----------------
  ("h1", "2. Contexte : une jeunesse nombreuse, connectée, en attente d'opportunités"),
@@ -158,7 +162,7 @@ CONTENT = [
   "Pour l'État : un outil de cohésion nationale et de civisme, une image de modernité et de transparence, des données pour ajuster les politiques publiques, et une réduction du coût de détection des talents.",
   "Pour l'économie : un capital humain mieux aligné sur les besoins de Simandou 2040 et du contenu local, des jeunes orientés vers les métiers d'avenir, des entreprises partenaires qui recrutent sur des critères objectifs.",
  ]),
- ("p", f"Efficience : {fmt(TOTAL)} GNF pour 500 000 participants représentent 740 GNF par jeune touché sur l'année, certificat et données compris ; à pleine capacité, 31 GNF par participant et par mois."),
+ ("p", f"Efficience : {fmt(TOTAL)} GNF pour 500 000 participants représentent {PER_YOUTH} GNF par jeune touché sur l'année, certificat et données compris ; à pleine capacité, {PER_MONTH} GNF par participant et par mois."),
 
  # ---------------- 9. Gouvernance ----------------
  ("h1", "9. Gouvernance"),
@@ -182,14 +186,14 @@ CONTENT = [
  ]),
 
  # ---------------- 11. Feuille de route ----------------
- ("h1", "11. Feuille de route sur douze mois"),
- ("p", "Le calendrier part du pilote de la Semaine de l'Indépendance An 68 et aboutit, un an plus tard, à la première Cérémonie nationale du Mérite lors de la Semaine de l'Indépendance An 69."),
+ ("h1", "11. Feuille de route : un mois pour déployer, douze mois pour installer"),
+ ("p", "Le calendrier part du pilote de la Semaine de l'Indépendance An 68. La plateforme complète est construite et déployée dans le mois qui suit, du 3 octobre au 2 novembre 2026, ce que permettent le socle existant, une architecture sans serveur et une équipe déjà en place. Les onze mois suivants servent à installer l'usage dans les institutions, jusqu'à la première Cérémonie nationale du Mérite lors de la Semaine de l'Indépendance An 69."),
  ("table", ["Phase", "Période", "Contenu", "Livrable"], [
   ["0 · Pilote An 68", "25 sept. – 2 oct. 2026", "Government Quiz (Simandou, Histoire de la Guinée) pendant la Semaine de l'Indépendance", "Rapport du pilote avec indicateurs"],
-  ["1 · Décision et cadrage", "Octobre 2026", "Approbation, désignation du SGG, nomination des points focaux, cahier des charges, sélection du prestataire", "Arrêté de création du comité de pilotage ; cahier des charges"],
-  ["2 · Construction", "Nov. 2026 – janv. 2027", "Portail des institutions, comptes, tableau de bord, module Mérite, audit de sécurité ; trois ministères pilotes préparent leurs quiz", "Plateforme recettée ; trois campagnes prêtes"],
-  ["3 · Lancement national", "Février 2027", "Lancement avec cinq à huit institutions ; première campagne nationale « Guinée, mon pays » ; premières récompenses", "Plateforme en service ; premiers lauréats"],
-  ["4 · Montée en charge", "Mars – sept. 2027", "Quinze institutions et plus, campagnes mensuelles, finales régionales, langues nationales, préparation du canal SMS", "Rapports mensuels ; 1 000 lauréats"],
+  ["1 · Décision", "Avant le 2 oct. 2026", "Approbation du projet et du budget, désignation du SGG, nomination des points focaux", "Décision du Gouvernement ; arrêté de création du comité de pilotage"],
+  ["2 · Construction et déploiement", "3 oct. – 2 nov. 2026 (un mois)", "Semaine 1 : portail des institutions et générateur de quiz · Semaine 2 : comptes participants, classements, certificats · Semaine 3 : tableau de bord, module Mérite, audit de sécurité · Semaine 4 : recette, formation des points focaux, mise en service ; trois ministères pilotes préparent leurs quiz en parallèle", "Plateforme en service le 2 novembre 2026 ; trois campagnes prêtes"],
+  ["3 · Lancement national", "Novembre 2026", "Lancement avec cinq à huit institutions ; première campagne nationale « Guinée, mon pays » ; premières récompenses avant la fin de l'année", "Premiers lauréats"],
+  ["4 · Montée en charge", "Déc. 2026 – sept. 2027", "Quinze institutions et plus, campagnes mensuelles, finales régionales, langues nationales, canal SMS", "Rapports mensuels ; 1 000 lauréats"],
   ["5 · Cérémonie du Mérite", "Octobre 2027 (An 69)", "Finale nationale et remise des récompenses présidée par le Chef de l'État lors de la Semaine de l'Indépendance", "Bilan de l'année 1 ; plan de l'année 2"],
  ], [3.2, 3.0, 6.6, 4.2]),
 
@@ -216,8 +220,8 @@ CONTENT = [
  ("numbered", [
   "Approuver le projet « Government Quiz Guinée » comme plateforme nationale de quiz éducatifs et d'opportunités pour la jeunesse, dans le cadre du pilier capital humain du Programme Simandou 2040.",
   "Désigner le Secrétariat Général du Gouvernement maître d'ouvrage du projet et président du comité de pilotage.",
-  f"Autoriser un budget de {fmt(TOTAL)} GNF pour la construction de la plateforme et douze mois d'exploitation, jusqu'à un million d'utilisateurs par mois.",
-  "Instruire chaque ministère, agence et société d'État de désigner un point focal dans les trente jours et de publier au moins un quiz au cours de la première année.",
+  f"Autoriser un budget de {fmt(TOTAL)} GNF pour la construction de la plateforme et douze mois d'exploitation, jusqu'à un million d'utilisateurs par mois, avec une mise en service dans le mois qui suit la Semaine de l'Indépendance.",
+  "Instruire chaque ministère, agence et société d'État de désigner un point focal dans les quinze jours et de publier au moins un quiz au cours de la première année.",
   "Créer le Fonds du Mérite, alimenté par les institutions et les partenaires (bourses, formations, stages, emplois), et instituer une cérémonie annuelle de remise des récompenses présidée par le Chef de l'État lors de la Semaine de l'Indépendance.",
  ]),
  ("h1", "Conclusion"),

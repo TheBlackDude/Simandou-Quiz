@@ -97,9 +97,9 @@ ol.sources a{{color:var(--blue-ink);word-break:break-all}}
   <p class="sub">Plateforme nationale de quiz éducatifs et d'opportunités pour la jeunesse</p>
   <div class="claim">Apprendre · Se mesurer · Être récompensé</div>
   <div class="facts">
-    <div class="fact"><small>Budget demandé</small><b>370 000 000 GNF</b></div>
+    <div class="fact"><small>Budget demandé</small><b>400 000 000 GNF</b></div>
     <div class="fact"><small>Capacité</small><b>1 000 000 utilisateurs / mois</b></div>
-    <div class="fact"><small>Durée</small><b>Construction + 12 mois</b></div>
+    <div class="fact"><small>Délai</small><b>Déployée en 1 mois</b></div>
   </div>
   <div class="tag">« L'Indépendance en héritage · La jeunesse en marche · Simandou 2040 en ligne de mire » — Conakry, septembre 2026</div>
 </header>
