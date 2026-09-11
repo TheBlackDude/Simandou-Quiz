@@ -2052,5 +2052,518 @@ window.QUIZZES = [
     ]
    }
   ]
+ },
+ {
+  "id": "sgg",
+  "title": "Quiz Secrétariat général du Gouvernement",
+  "short": "Missions, grandes figures, réformes et grands rendez-vous du SGG, colonne vertébrale de l'action gouvernementale.",
+  "desc": "Quarante questions sur le Secrétariat général du Gouvernement : ses missions et son organisation, les femmes et les hommes qui l'ont dirigé, ses réformes et innovations depuis 2021, le Forum international des SGG et la Semaine nationale des archives de la Guinée.",
+  "rail": {
+   "from": "Conseil des ministres",
+   "to": "Journal officiel",
+   "total": 20,
+   "unit": "missions du SGG accomplies"
+  },
+  "levels": {
+   "or": "Gardien de la continuité de l'État",
+   "argent": "Haut cadre du travail gouvernemental",
+   "bronze": "Ambassadeur du SGG"
+  },
+  "mentions": [
+   [
+    0.9,
+    "Gardien de la continuité",
+    "Vous maîtrisez le rôle, l'histoire et les réformes du Secrétariat général du Gouvernement."
+   ],
+   [
+    0.7,
+    "Haut cadre",
+    "Une solide connaissance du travail gouvernemental et de son coordonnateur."
+   ],
+   [
+    0.5,
+    "Citoyen éclairé",
+    "Les grandes lignes sont acquises ; quelques dates et noms à revoir."
+   ],
+   [
+    0.0,
+    "À approfondir",
+    "Relisez les explications : le SGG n'aura plus de secret pour vous."
+   ]
+  ],
+  "cert": {
+   "subtitle": "Quiz Secrétariat général du Gouvernement · Semaine de l'Indépendance · An 68",
+   "about": "du Quiz Secrétariat général du Gouvernement, portant sur les missions et l'organisation du SGG, ses dirigeants successifs, ses réformes et innovations, le Forum international des SGG et la Semaine nationale des archives",
+   "prefix": "SGG68",
+   "logo": "armoiries",
+   "logoText": "Secrétariat général du Gouvernement"
+  },
+  "tag": "SGG",
+  "sections": [
+   {
+    "letter": "A",
+    "title": "Le SGG : missions, organisation et place dans l'État",
+    "questions": [
+     {
+      "q": "Selon sa mission officielle, qui le Secrétaire général du Gouvernement assiste-t-il dans « l'impulsion, la coordination et le contrôle de l'action gouvernementale » ?",
+      "opts": [
+       "Le président de l'Assemblée nationale",
+       "Le Premier ministre, chef du Gouvernement",
+       "Le gouverneur de Conakry",
+       "Le président de la Cour suprême"
+      ],
+      "a": 1,
+      "e": "Rattaché à la Primature, le SGG se définit comme « l'acteur central de la coordination du travail gouvernemental », au service de la politique de la Nation déterminée par le Président de la République."
+     },
+     {
+      "q": "Quelle instance le SGG prépare-t-il, avec les cabinets du Premier ministre et du Président, et dont il assure le secrétariat et le suivi des décisions ?",
+      "opts": [
+       "Le Conseil des ministres",
+       "Le Conseil constitutionnel",
+       "Le Conseil économique et social",
+       "Le Conseil supérieur de la magistrature"
+      ],
+      "a": 0,
+      "e": "Le SGG prépare aussi les conseils interministériels, assure le secrétariat des commissions interministérielles, suit l'exécution des décisions par les ministères et publie les comptes rendus du Conseil des ministres."
+     },
+     {
+      "q": "Pourquoi la publication d'une loi ou d'un décret au Journal officiel de la République de Guinée est-elle indispensable ?",
+      "opts": [
+       "Pour en informer uniquement les ministres",
+       "Parce que la loi publiée est réputée connue de tous et devient exécutoire sur tout le territoire",
+       "Pour permettre sa traduction",
+       "Pour fixer son prix de vente"
+      ],
+      "a": 1,
+      "e": "« Nul n'est censé ignorer la loi » : selon le Code civil, la loi régulièrement publiée est réputée connue de tous et devient exécutoire au lendemain de sa publication. C'est le SGG qui assure cette diffusion gratuite pour conférer aux textes leur caractère officiel et opposable."
+     },
+     {
+      "q": "Que signifie le suffixe « SGG » dans la référence d'un décret présidentiel, par exemple D/2026/224/PRG/SGG ?",
+      "opts": [
+       "Le texte a été rédigé par le Sénat",
+       "Le texte a été enregistré et publié par le Secrétariat général du Gouvernement",
+       "Le texte est soumis à la signature du gouverneur",
+       "Le texte est secret"
+      ],
+      "a": 1,
+      "e": "Le SGG assure l'enregistrement unique des actes du Gouvernement. Pendant la transition, les décrets portaient le suffixe PRG/CNRD/SGG ; depuis le décret D/2026/005 du 26 janvier 2026, le sigle CNRD a disparu."
+     },
+     {
+      "q": "Quelle est la différence entre le Ministre Secrétaire général du Gouvernement et le Ministre Secrétaire général de la Présidence de la République ?",
+      "opts": [
+       "Il n'y en a aucune, c'est la même personne",
+       "Le premier coordonne le travail gouvernemental auprès du Premier ministre ; le second organise les services de la Présidence auprès du chef de l'État",
+       "Le premier est militaire, le second civil",
+       "Le premier siège à Kindia, le second à Conakry"
+      ],
+      "a": 1,
+      "e": "Depuis 2024, Tamba Benoît Kamano est Ministre Secrétaire général du Gouvernement, tandis que le général Amara Camara est Ministre Secrétaire général de la Présidence depuis le 6 octobre 2021. Les deux sont chargés, chacun en ce qui le concerne, de l'exécution des décrets."
+     },
+     {
+      "q": "Dans quelle commune de Conakry se trouve le siège du Secrétariat général du Gouvernement ?",
+      "opts": [
+       "Ratoma",
+       "Matam",
+       "Kaloum",
+       "Dixinn"
+      ],
+      "a": 2,
+      "e": "Le SGG et la Direction nationale du Journal officiel sont installés dans le quartier de Boulbinet, à Kaloum, au cœur administratif de la capitale."
+     },
+     {
+      "q": "Laquelle de ces structures n'est PAS une direction nationale du Secrétariat général du Gouvernement ?",
+      "opts": [
+       "La Direction nationale du Journal officiel",
+       "La Direction nationale de l'Activité normative et de la Conformité",
+       "La Direction nationale des Impôts",
+       "La Direction nationale de la Gestion des hauts cadres de l'État"
+      ],
+      "a": 2,
+      "e": "Les directions nationales du SGG sont : Travail gouvernemental, Courrier et Intendance ; Activité normative et Conformité ; Journal officiel ; Gestion des hauts cadres de l'État ; Modernisation du travail gouvernemental. Les impôts relèvent du ministère de l'Économie et des Finances."
+     },
+     {
+      "q": "Quels deux organismes publics autonomes sont placés sous la tutelle du SGG ?",
+      "opts": [
+       "La BCRG et l'INS",
+       "Le Centre de documentation administrative et l'Imprimerie du Gouvernement",
+       "L'Agence de presse et la RTG",
+       "La Cour des comptes et l'Inspection générale d'État"
+      ],
+      "a": 1,
+      "e": "Le Centre de documentation administrative (CDA) conserve la mémoire administrative de l'État. L'achèvement de l'Imprimerie du Gouvernement figure parmi les priorités 2026 annoncées par le ministre."
+     },
+     {
+      "q": "À quelle date le Président de la République a-t-il redéfini par décret les attributions et l'organisation du SGG, en modifiant le décret de février 2022 ?",
+      "opts": [
+       "Le 5 septembre 2021",
+       "Le 13 mars 2024",
+       "Le 12 juillet 2025",
+       "Le 17 janvier 2026"
+      ],
+      "a": 2,
+      "e": "Ce décret confirme la mission d'assistance au Premier ministre dans la coordination, le suivi et le contrôle des politiques publiques, organise le cabinet, les cinq directions nationales, onze services d'appui et le Bureau de stratégie et de développement."
+     },
+     {
+      "q": "Lorsqu'un nouveau ministre prend ses fonctions, quelle institution organise et préside la cérémonie de passation de service ?",
+      "opts": [
+       "Le Secrétariat général du Gouvernement",
+       "La Cour suprême",
+       "La Police nationale",
+       "L'Assemblée nationale"
+      ],
+      "a": 0,
+      "e": "Le SGG assure les passations de service et l'installation des hauts cadres de l'État : le 6 février 2026, il clôturait l'installation du premier gouvernement de la Cinquième République ; le 29 juillet 2026, il installait dix ministres sur onze après le remaniement."
+     }
+    ]
+   },
+   {
+    "letter": "B",
+    "title": "Les femmes et les hommes du SGG",
+    "questions": [
+     {
+      "q": "Lors de la réorganisation du cabinet de la Première République, le 1er juin 1979, qui occupait le poste de Secrétaire général du Gouvernement ?",
+      "opts": [
+       "Sékou Kaba",
+       "Mamadou Salifou Touré",
+       "Lansana Béavogui",
+       "Ismaël Touré"
+      ],
+      "a": 1,
+      "e": "Mamadou Salifou Touré est le plus ancien titulaire identifié de la fonction, tandis que Sékou Kaba était Secrétaire général de la Présidence, sous le gouvernement de Louis Lansana Béavogui."
+     },
+     {
+      "q": "Qui était Secrétaire général du Gouvernement en juillet 1996, dans le gouvernement du tout premier Premier ministre de la Guinée, Sidya Touré ?",
+      "opts": [
+       "Elhadj Almamy Fodé Sylla",
+       "Oury Bailo Bah",
+       "Sékou Kissi Camara",
+       "Lansana Komara"
+      ],
+      "a": 0,
+      "e": "La création du poste de Premier ministre, le 9 juillet 1996, a donné au SGG son rôle moderne de coordination du travail gouvernemental. Oury Bailo Bah occupera la fonction dans le gouvernement Kouyaté en 2007."
+     },
+     {
+      "q": "Quel Secrétaire général du Gouvernement a exercé la fonction de 2010 à 2018, sous les Premiers ministres Jean-Marie Doré, Mohamed Saïd Fofana et Mamady Youla ?",
+      "opts": [
+       "Sékou Kourouma",
+       "Sékou Kissi Camara",
+       "Kiridi Bangoura",
+       "Amadou Oury Diallo"
+      ],
+      "a": 1,
+      "e": "Nommé le 15 février 2010, Sékou Kissi Camara a traversé trois gouvernements avant de céder la place en juin 2018."
+     },
+     {
+      "q": "Quel Ministre Secrétaire général du Gouvernement, installé le 19 juin 2018, est décédé en fonction le 18 avril 2020 ?",
+      "opts": [
+       "Lansana Komara",
+       "Sékou Kourouma",
+       "Abdourahmane Sikhé Camara",
+       "Tamba Benoît Kamano"
+      ],
+      "a": 1,
+      "e": "Ancien haut-commissaire à la réforme de l'État, Sékou Kourouma cumulait le SGG et la Fonction publique depuis janvier 2019. Emporté par la Covid-19, il a été remplacé par Lansana Komara le 19 juin 2020."
+     },
+     {
+      "q": "Qui a été le premier Secrétaire général du Gouvernement de la transition, nommé « avec rang de ministre » par décret du 21 octobre 2021 ?",
+      "opts": [
+       "Mohamed Béavogui",
+       "Bernard Goumou",
+       "Abdourahmane Sikhé Camara",
+       "Amara Camara"
+      ],
+      "a": 2,
+      "e": "Ancien conseiller principal du SGG, Abdourahmane Sikhé Camara a servi sous les Premiers ministres Béavogui et Goumou jusqu'en février 2024, avant d'être nommé ambassadeur en Algérie. Il a lancé le site sgg.gov.gn le 7 juin 2023."
+     },
+     {
+      "q": "À quelle date Tamba Benoît Kamano a-t-il été nommé Ministre Secrétaire général du Gouvernement ?",
+      "opts": [
+       "Le 1er décembre 2021",
+       "Le 13 mars 2024",
+       "Le 21 septembre 2025",
+       "Le 2 février 2026"
+      ],
+      "a": 1,
+      "e": "Secrétaire général adjoint du Gouvernement depuis le 1er décembre 2021, il est nommé ministre le 13 mars 2024 dans le premier gouvernement Bah Oury et installé le lendemain. Il est reconduit le 2 février 2026 puis le 27 juillet 2026."
+     },
+     {
+      "q": "Quel est le parcours professionnel du ministre Tamba Benoît Kamano avant son entrée au Gouvernement ?",
+      "opts": [
+       "Officier de l'armée de l'air",
+       "Juriste de formation, ancien cadre de la banque-assurance en France, revenu en Guinée en 2017",
+       "Médecin hospitalier",
+       "Ingénieur des mines"
+      ],
+      "a": 1,
+      "e": "Né à Yomou en 1978, diplômé en droit de l'Université Gamal Abdel Nasser et de l'Université Paris 8, il a travaillé chez AXA, Allianz et Swiss Life avant de rentrer au pays et de fonder en 2020 le premier Point d'accès au droit."
+     },
+     {
+      "q": "Selon le ministre Kamano, lors de sa reprise de fonctions le 4 février 2026, quel doit être le rôle du Secrétaire général du Gouvernement ?",
+      "opts": [
+       "Le porte-parole du Gouvernement",
+       "Le point d'équilibre entre la vision politique et l'exécution administrative",
+       "Le gestionnaire du budget de l'État",
+       "L'arbitre des conflits entre ministres"
+      ],
+      "a": 1,
+      "e": "« Le pays a besoin d'un gouvernement qui décide et d'une administration qui exécute vite, bien et proprement », a-t-il déclaré, ajoutant : « nous n'avons plus de brouillons à faire »."
+     },
+     {
+      "q": "Qui occupe, depuis le décret du 12 février 2026, le poste de Secrétaire générale adjointe du Gouvernement ?",
+      "opts": [
+       "Mme Sérègbè Keïta",
+       "Mme Diaka Sidibé",
+       "Mme Aminata Kaba",
+       "Mme M'Mahawa Sylla"
+      ],
+      "a": 0,
+      "e": "Elle a succédé à Fayimba Mara, nommé en avril 2024. Le Secrétaire général adjoint est nommé dans les mêmes conditions que le ministre et le seconde dans l'ensemble de ses attributions."
+     },
+     {
+      "q": "Comment le conseiller principal du ministre a-t-il défini le SGG lors de la présentation des vœux du 13 janvier 2026 ?",
+      "opts": [
+       "Le bras financier de l'État",
+       "La colonne vertébrale de l'action gouvernementale, garant de la cohérence, de la légalité et de la continuité de l'action de l'État",
+       "Le service de presse du Gouvernement",
+       "Le gardien des frontières"
+      ],
+      "a": 1,
+      "e": "À cette occasion, le ministre a fixé les priorités 2026 : numérisation des archives de l'État, amélioration des conditions de travail, achèvement de l'Imprimerie du Gouvernement et primes de motivation."
+     }
+    ]
+   },
+   {
+    "letter": "C",
+    "title": "Réformes, modernisation et initiatives (2021-2026)",
+    "questions": [
+     {
+      "q": "Qu'a lancé le Secrétariat général du Gouvernement le 7 juin 2023 pour informer sur le travail gouvernemental ?",
+      "opts": [
+       "Une chaîne de télévision",
+       "Le site Internet sgg.gov.gn",
+       "Une radio",
+       "Un journal papier"
+      ],
+      "a": 1,
+      "e": "Le site publie l'agenda du Premier ministre, l'organigramme, les lois, décrets et arrêtés, les comptes rendus du Conseil des ministres et les projets de textes soumis aux commentaires du public."
+     },
+     {
+      "q": "Quelle innovation majeure le SGG a-t-il inaugurée le 27 juin 2025 ?",
+      "opts": [
+       "Le Journal officiel numérique, accessible gratuitement en ligne",
+       "Un nouveau format papier du Journal officiel",
+       "La fin de la publication des décrets",
+       "Un abonnement payant obligatoire"
+      ],
+      "a": 0,
+      "e": "Plus de 1 100 numéros du Journal officiel et 6 000 textes ont été numérisés, avec l'objectif de 30 000 textes. « Le droit non publié n'existe pas », a résumé le ministre Kamano : le droit guinéen devient « accessible, vivant, transparent et universel »."
+     },
+     {
+      "q": "Quelle certification internationale de management de la qualité le SGG a-t-il obtenue le 31 juillet 2025, une première pour une institution publique guinéenne ?",
+      "opts": [
+       "ISO 14001",
+       "ISO 27001",
+       "ISO 9001 version 2015",
+       "HACCP"
+      ],
+      "a": 2,
+      "e": "Le processus a été soutenu par l'Union européenne à travers le Projet d'appui au renforcement de la démocratie. « Cette certification n'est pas une fin en soi, mais le début d'un processus exigeant de modernisation continue », a déclaré le ministre."
+     },
+     {
+      "q": "Quelle plateforme numérique le SGG a-t-il lancée le 9 août 2025 pour rendre le projet de nouvelle Constitution accessible à tous ?",
+      "opts": [
+       "constitution.gov.gn",
+       "maconstitution.info",
+       "referendum2025.gn",
+       "loi-fondamentale.org"
+      ],
+      "a": 1,
+      "e": "Développée avec la Cité des sciences et de l'innovation, elle a été complétée le 15 septembre 2025 par une version audio à intelligence artificielle répondant aux questions dans les langues nationales, et par la campagne quotidienne « Un jour, un article »."
+     },
+     {
+      "q": "Quelle structure nouvelle, présentée comme « une première institutionnelle », le SGG a-t-il créée en 2025 pour piloter sa performance ?",
+      "opts": [
+       "Une direction des sports",
+       "Le Bureau de stratégie et de développement",
+       "Une brigade de contrôle",
+       "Une école du SGG"
+      ],
+      "a": 1,
+      "e": "Le Bureau de stratégie et de développement accompagne les contrats annuels de performance signés au SGG depuis août 2025 et le comité d'auto-évaluation de la performance créé par arrêté du 27 juillet 2026."
+     },
+     {
+      "q": "Quelles trois lois organiques le ministre Kamano a-t-il défendues devant le CNT le 21 novembre 2025, pour mettre en place les institutions de la nouvelle Constitution ?",
+      "opts": [
+       "Sur la Cour suprême, la Cour constitutionnelle et les partis politiques",
+       "Sur la police, l'armée et la douane",
+       "Sur le budget, les impôts et les mines",
+       "Sur l'école, la santé et l'agriculture"
+      ],
+      "a": 0,
+      "e": "« Ce n'est pas un simple exercice législatif, mais un engagement historique », a-t-il plaidé. Le 27 novembre 2025, il a défendu les règlements intérieurs de l'Assemblée nationale et du Sénat."
+     },
+     {
+      "q": "Du 28 au 30 avril 2026, le SGG a réuni plus de soixante juristes des ministères. Qu'en est-il ressorti ?",
+      "opts": [
+       "Un réseau permanent des juristes de l'État et un mécanisme partagé de veille juridique",
+       "Une grève des juristes",
+       "La création d'un nouveau ministère",
+       "Un nouveau code pénal"
+      ],
+      "a": 0,
+      "e": "« Il n'y a pas d'administration efficace sans sécurité juridique », a rappelé le ministre. L'atelier avait pour thème le renforcement des capacités juridiques pour une administration publique efficace."
+     },
+     {
+      "q": "Quel rôle le SGG joue-t-il dans la mise en œuvre du Programme Simandou 2040 ?",
+      "opts": [
+       "Il finance les projets",
+       "Il sécurise juridiquement les projets en préparant les cadres juridiques nécessaires",
+       "Il construit les routes",
+       "Il recrute les ouvriers"
+      ],
+      "a": 1,
+      "e": "Lors de l'atelier du 19 août 2026, le SGG a recensé 179 projets de la première vague nécessitant une sécurisation juridique et 163 cadres juridiques à rendre opérationnels en 2026. Le Conseil des ministres du 3 septembre 2026 lui a en outre confié la réception des tableaux de bord mensuels des ministères."
+     },
+     {
+      "q": "Que désigne la plateforme GEDA, présentée par le SGG en août 2026 ?",
+      "opts": [
+       "Un guichet électronique des douanes",
+       "La Gestion électronique des actes administratifs",
+       "Un programme d'aide agricole",
+       "Un registre des entreprises"
+      ],
+      "a": 1,
+      "e": "GEDA s'inscrit dans le passage « de la digitalisation à la transparence ». Le SGG a également formé ses cadres à l'usage de l'intelligence artificielle au service de la performance publique en juin 2026."
+     },
+     {
+      "q": "Du 2 au 4 juillet 2026, le SGG a réuni en séminaire les secrétaires généraux de tous les ministères, avec une clôture à Forécariah. Quel cap le ministre leur a-t-il fixé ?",
+      "opts": [
+       "« Moins de routine, plus de méthode ; moins de cloisonnement, plus de coordination ; moins d'intentions, plus de résultats mesurables »",
+       "« Plus de réunions, moins de décisions »",
+       "« Chacun pour soi »",
+       "« Attendre les instructions »"
+      ],
+      "a": 0,
+      "e": "Les secrétaires généraux des ministères assurent la continuité gouvernementale, garantissent la cohérence des politiques et sécurisent les actes administratifs. Les nouveaux secrétaires généraux ont été installés par le SGG le 21 août 2026."
+     }
+    ]
+   },
+   {
+    "letter": "D",
+    "title": "Les grands rendez-vous : Forum des SGG et Semaine nationale des archives",
+    "questions": [
+     {
+      "q": "Quel événement international inédit le SGG a-t-il accueilli à Conakry du 9 au 11 avril 2025 ?",
+      "opts": [
+       "Le premier Forum international des Secrétaires généraux des Gouvernements",
+       "Un sommet de la CEDEAO",
+       "Les Jeux de la Francophonie",
+       "Le Salon du livre"
+      ],
+      "a": 0,
+      "e": "Ouvert par le ministre des Affaires étrangères au nom du Premier ministre et clôturé par le Premier ministre Amadou Oury Bah, le forum a réuni les SGG d'une dizaine de pays d'Afrique et d'Europe autour de quatre conférences et huit ateliers."
+     },
+     {
+      "q": "Quel était le thème du premier Forum international des Secrétaires généraux des Gouvernements ?",
+      "opts": [
+       "Le rôle des SGG dans la continuité de l'action de l'État",
+       "Les archives coloniales",
+       "La fiscalité minière",
+       "La sécurité routière"
+      ],
+      "a": 0,
+      "e": "« Nous sommes tous un maillon d'une longue chaîne qui ne doit pas s'arrêter », a résumé le Premier ministre à la clôture, le 11 avril 2025."
+     },
+     {
+      "q": "Quel résultat durable est sorti du Forum international des SGG d'avril 2025 ?",
+      "opts": [
+       "La création d'une monnaie commune",
+       "La création d'un Réseau des SGG présidé par la Guinée pour deux ans, avec un secrétariat permanent à Conakry",
+       "La suppression des journaux officiels",
+       "Un traité de défense"
+      ],
+      "a": 1,
+      "e": "Le Tchad et le Maroc assurent les vice-présidences du réseau, qui prévoit un forum annuel. L'Union européenne a financé l'organisation à travers le Projet d'appui au renforcement de la démocratie."
+     },
+     {
+      "q": "Que signifie le sigle SeNAG, événement organisé pour la première fois en 2026 à l'initiative du SGG ?",
+      "opts": [
+       "Salon national de l'administration guinéenne",
+       "Semaine nationale des archives de la Guinée",
+       "Séminaire national des agents du Gouvernement",
+       "Service national des actes gouvernementaux"
+      ],
+      "a": 1,
+      "e": "La SeNAG est « un événement institutionnel annuel de réflexion, de sensibilisation et d'exposition patrimoniale » dédié à la préservation, à la valorisation et à l'accès au patrimoine archivistique et audiovisuel de la République."
+     },
+     {
+      "q": "Où et quand s'est tenue la première édition de la Semaine nationale des archives de la Guinée ?",
+      "opts": [
+       "Au Palais du Peuple, en janvier 2026",
+       "À la Plage Camayenne, à Conakry, du 25 au 30 juin 2026",
+       "À Kindia, en septembre 2025",
+       "À Kankan, en mars 2026"
+      ],
+      "a": 1,
+      "e": "Six jours de forum, plus de vingt experts et intervenants, des ateliers pratiques, des expositions, un brunch littéraire et un « Quiz Familles », en entrée libre sur inscription, avec un certificat remis à chaque participant."
+     },
+     {
+      "q": "Quel était le thème de la SeNAG 2026 ?",
+      "opts": [
+       "« Archives de l'État et gouvernance publique : préserver la mémoire nationale »",
+       "« Le numérique pour tous »",
+       "« Simandou, fer de lance »",
+       "« L'école de demain »"
+      ],
+      "a": 0,
+      "e": "Ses quatre axes stratégiques : modernisation de l'administration, valorisation du patrimoine documentaire, numérisation et conservation, renforcement de la gouvernance."
+     },
+     {
+      "q": "Sous le haut parrainage de qui la SeNAG 2026 a-t-elle été placée ?",
+      "opts": [
+       "Du président de l'Assemblée nationale",
+       "Du Président de la République, le général Mamadi Doumbouya",
+       "Du gouverneur de Conakry",
+       "De l'UNESCO"
+      ],
+      "a": 1,
+      "e": "Initiative du SGG, la SeNAG est co-organisée avec le Centre de documentation administrative, la Direction des Archives nationales, l'Institut national de l'audiovisuel et L'Harmattan Guinée, dans la perspective de la vision Simandou 2040."
+     },
+     {
+      "q": "Quel pays africain, invité à l'ouverture de la SeNAG le 25 juin 2026, a présenté la modernisation de ses archives comme « un impératif économique, pas seulement un projet culturel » ?",
+      "opts": [
+       "Le Sénégal",
+       "Le Rwanda",
+       "Le Ghana",
+       "Le Maroc"
+      ],
+      "a": 1,
+      "e": "Des délégations du Sénégal, du Gabon, du Tchad, du Bénin et de la Côte d'Ivoire étaient également attendues. Le SGG avait resserré sa coopération administrative avec Kigali dès mai 2026."
+     },
+     {
+      "q": "Quel message le ministre Kamano a-t-il adressé à l'ouverture de la SeNAG sur l'importance des archives pour un État ?",
+      "opts": [
+       "« Les archives coûtent trop cher »",
+       "« Quand un État perd ses archives, il perd plus que des papiers : il perd des preuves, des repères et une partie de sa capacité à rendre compte »",
+       "« Les archives doivent rester secrètes »",
+       "« Le papier est dépassé »"
+      ],
+      "a": 1,
+      "e": "Le ministre a rappelé le vandalisme subi par les locaux de la RTG à Boulbinet en 2021 et annoncé des démarches pour récupérer des archives guinéennes conservées à l'étranger."
+     },
+     {
+      "q": "Quelle priorité de l'année 2026, fixée par le SGG dès janvier, la Semaine nationale des archives vient-elle concrétiser ?",
+      "opts": [
+       "La numérisation des archives de l'État",
+       "L'augmentation du prix du Journal officiel",
+       "La fermeture du Centre de documentation administrative",
+       "Le recrutement de journalistes"
+      ],
+      "a": 0,
+      "e": "Après la campagne de traitement des archives administratives lancée en mai 2026, la SeNAG a mis en avant les solutions de numérisation, d'intelligence artificielle et de cybersécurité, dont le projet Dokuma, pour protéger la mémoire nationale."
+     }
+    ]
+   }
+  ]
  }
 ];

@@ -2,7 +2,7 @@
 
 *L'Indépendance en héritage · La jeunesse en marche · Simandou 2040 en ligne de mire*
 
-Application de quiz à choix multiples en quatre modules de 40 questions chacun :
+Application de quiz à choix multiples en cinq modules de 40 questions chacun :
 
 | Module | Contenu |
 |---|---|
@@ -10,6 +10,7 @@ Application de quiz à choix multiples en quatre modules de 40 questions chacun 
 | **Quiz Histoire de la Guinée** | Le « Non » de 1958 et l'indépendance ; les bâtisseurs et grandes figures (1950-2000) ; la Première République (1958-1984) ; l'armée, la Deuxième République et la Guinée d'aujourd'hui. |
 | **Quiz Armée et Gendarmerie** | Des résistants (1882-1898) à la naissance de l'armée nationale (1958) ; les grandes figures et la Gendarmerie nationale ; les unités, écoles et spécialités ; les missions extérieures et l'Armée-Nation. |
 | **Quiz Bilan du CNRD 2021-2026** | La refondation de l'État et le retour à l'ordre constitutionnel ; économie, finances et souveraineté minière ; infrastructures, énergie et numérique ; capital humain, protection sociale et bonne gouvernance. |
+| **Quiz Secrétariat général du Gouvernement** | Missions et organisation du SGG ; ses dirigeants successifs ; réformes et innovations 2021-2026 ; le Forum international des SGG et la Semaine nationale des archives de la Guinée. |
 
 À l'ouverture, le participant voit le titre, la devise de l'édition, saisit son nom et choisit son quiz.
 Chaque module offre les mêmes fonctions : parcours par sections (déblocage à 80 %), quiz complet, classement partagé et certificat imprimable.
@@ -24,11 +25,12 @@ Identité visuelle : palette MuduPay (bleu, orange, blanc).
 | `build/questions_histoire.py` | Questions du **Quiz Histoire de la Guinée**. |
 | `build/questions_armee.py` | Questions du **Quiz Armée et Gendarmerie**. |
 | `build/questions_cnrd.py` | Questions du **Quiz Bilan du CNRD 2021-2026**. |
+| `build/questions_sgg.py` | Questions du **Quiz Secrétariat général du Gouvernement**. |
 | `build/quizzes.py` | Registre des modules : titres, textes d'accueil, barre de progression, niveaux, certificat, documents. |
 | `build/build_site.py` | Génère `docs/js/questions.js` et le fichier unique `government-quiz.html`. |
 | `build/make_docx.py` | Génère les versions Word (participants / animateur avec corrigé) de chaque module, puis les PDF via Pages. |
 | `government-quiz.html` | Version autonome en un seul fichier (à envoyer par e-mail ou WhatsApp, s'ouvre sans serveur). |
-| `Quiz Simandou An 68 - *` / `Quiz Histoire de la Guinee An 68 - *` / `Quiz Armee et Gendarmerie An 68 - *` / `Quiz Bilan du CNRD 2021-2026 An 68 - *` | Versions imprimables (.docx et .pdf). |
+| `Quiz Simandou An 68 - *` / `Quiz Histoire de la Guinee An 68 - *` / `Quiz Armee et Gendarmerie An 68 - *` / `Quiz Bilan du CNRD 2021-2026 An 68 - *` / `Quiz SGG An 68 - *` | Versions imprimables (.docx et .pdf). |
 | `leaderboard/Code.gs` | Script Google Apps Script du classement partagé. |
 
 ## Lancer en local
@@ -50,7 +52,7 @@ Le workflow `.github/workflows/pages.yml` publie automatiquement le dossier `doc
 
 ## Modifier les questions ou ajouter un module
 
-1. Éditer `build/questions.py`, `build/questions_histoire.py` ou `build/questions_armee.py` (index de la bonne réponse : A = 0, B = 1, C = 2, D = 3).
+1. Éditer `build/questions.py`, `build/questions_histoire.py`, `build/questions_armee.py`, `build/questions_cnrd.py` ou `build/questions_sgg.py` (index de la bonne réponse : A = 0, B = 1, C = 2, D = 3).
    Chaque module compte 4 sections de 10 questions.
 2. Pour un nouveau module : créer `build/questions_<nom>.py` et l'ajouter à la liste `QUIZZES` de `build/quizzes.py`
    (identifiant, titres, barre de progression, titres des certificats, textes des documents).

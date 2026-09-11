@@ -4,7 +4,7 @@
  * 2. Déployer → Nouveau déploiement → Type : Application web
  *    Exécuter en tant que : Moi · Accès : Tout le monde (anonyme)
  * 3. Copier l'URL de l'application web dans docs/js/config.js (leaderboardUrl).
- * La feuille reçoit une ligne par résultat : date, nom, score, total, mode, quiz (simandou / histoire / armee / cnrd).
+ * La feuille reçoit une ligne par résultat : date, nom, score, total, mode, quiz (simandou / histoire / armee / cnrd / sgg).
  * Après une modification de ce code : Déployer → Gérer les déploiements → Modifier → Version : Nouvelle version → Déployer.
  */
 const SHEET = 'Scores';

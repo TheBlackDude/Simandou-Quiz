@@ -4,6 +4,7 @@ from questions import SECTIONS as SIMANDOU
 from questions_histoire import SECTIONS as HISTOIRE
 from questions_armee import SECTIONS as ARMEE
 from questions_cnrd import SECTIONS as CNRD
+from questions_sgg import SECTIONS as SGG
 
 TAGLINE = ["L'Indépendance en héritage", "La jeunesse en marche", "Simandou 2040 en ligne de mire"]
 
@@ -99,6 +100,29 @@ QUIZZES = [
           "footer": "Semaine de l'Indépendance · An 68 · République de Guinée · Quiz Bilan du CNRD 2021-2026",
           "sources": "Sources : Présidence de la République ; Primature ; CNT ; ministères (Économie et Finances, Budget, Plan, Mines, Énergie, Infrastructures, Fonction publique, Santé, Éducation) ; INS (RGPH-4) ; BCRG ; FMI ; Banque mondiale ; S&P Global ; Rio Tinto ; Guineenews ; Guinée360 ; Le Djely ; Africaguinee ; Jeune Afrique ; Financial Afrik ; Agence Ecofin ; Wikipédia."},
   "sections": CNRD,
+ },
+ {
+  "id": "sgg",
+  "title": "Quiz Secrétariat général du Gouvernement",
+  "short": "Missions, grandes figures, réformes et grands rendez-vous du SGG, colonne vertébrale de l'action gouvernementale.",
+  "desc": "Quarante questions sur le Secrétariat général du Gouvernement : ses missions et son organisation, les femmes et les hommes qui l'ont dirigé, ses réformes et innovations depuis 2021, le Forum international des SGG et la Semaine nationale des archives de la Guinée.",
+  "rail": {"from": "Conseil des ministres", "to": "Journal officiel", "total": 20, "unit": "missions du SGG accomplies"},
+  "levels": {"or": "Gardien de la continuité de l'État", "argent": "Haut cadre du travail gouvernemental", "bronze": "Ambassadeur du SGG"},
+  "mentions": [
+   [0.9, "Gardien de la continuité", "Vous maîtrisez le rôle, l'histoire et les réformes du Secrétariat général du Gouvernement."],
+   [0.7, "Haut cadre", "Une solide connaissance du travail gouvernemental et de son coordonnateur."],
+   [0.5, "Citoyen éclairé", "Les grandes lignes sont acquises ; quelques dates et noms à revoir."],
+   [0.0, "À approfondir", "Relisez les explications : le SGG n'aura plus de secret pour vous."]],
+  "cert": {"subtitle": "Quiz Secrétariat général du Gouvernement · Semaine de l'Indépendance · An 68",
+           "about": "du Quiz Secrétariat général du Gouvernement, portant sur les missions et l'organisation du SGG, ses dirigeants successifs, ses réformes et innovations, le Forum international des SGG et la Semaine nationale des archives",
+           "prefix": "SGG68", "logo": "armoiries", "logoText": "Secrétariat général du Gouvernement"},
+  "tag": "SGG",
+  "doc": {"file": "Quiz SGG An 68", "band": "QUIZ SECRÉTARIAT GÉNÉRAL DU GOUVERNEMENT",
+          "sub": "Missions, grandes figures, réformes et grands rendez-vous du SGG",
+          "quote": "« " + " · ".join(TAGLINE) + " »",
+          "footer": "Semaine de l'Indépendance · An 68 · République de Guinée · Quiz Secrétariat général du Gouvernement",
+          "sources": "Sources : sgg.gov.gn ; journal-officiel.sgg.gov.gn (Journal officiel n° 2022-02, 2022-05 et 2026-15) ; senag.gov.gn ; gouvernement.gov.gn ; primature.gov.gn ; GuinéeLex ; Guineenews ; Guinée360 ; Le Djely ; Mosaiqueguinee ; Wikipédia."},
+  "sections": SGG,
  },
 ]
 
