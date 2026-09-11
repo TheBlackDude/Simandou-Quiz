@@ -2,13 +2,14 @@
 
 *L'Indépendance en héritage · La jeunesse en marche · Simandou 2040 en ligne de mire*
 
-Application de quiz à choix multiples en trois modules de 40 questions chacun :
+Application de quiz à choix multiples en quatre modules de 40 questions chacun :
 
 | Module | Contenu |
 |---|---|
 | **Quiz Simandou** | Le gisement, ses partenaires, le chemin de fer transguinéen, le port de Morebaya, le Programme Simandou 2040. |
 | **Quiz Histoire de la Guinée** | Le « Non » de 1958 et l'indépendance ; les bâtisseurs et grandes figures (1950-2000) ; la Première République (1958-1984) ; l'armée, la Deuxième République et la Guinée d'aujourd'hui. |
 | **Quiz Armée et Gendarmerie** | Des résistants (1882-1898) à la naissance de l'armée nationale (1958) ; les grandes figures et la Gendarmerie nationale ; les unités, écoles et spécialités ; les missions extérieures et l'Armée-Nation. |
+| **Quiz Bilan du CNRD 2021-2026** | La refondation de l'État et le retour à l'ordre constitutionnel ; économie, finances et souveraineté minière ; infrastructures, énergie et numérique ; capital humain, protection sociale et bonne gouvernance. |
 
 À l'ouverture, le participant voit le titre, la devise de l'édition, saisit son nom et choisit son quiz.
 Chaque module offre les mêmes fonctions : parcours par sections (déblocage à 80 %), quiz complet, classement partagé et certificat imprimable.
@@ -22,11 +23,12 @@ Identité visuelle : palette MuduPay (bleu, orange, blanc).
 | `build/questions.py` | Questions du **Quiz Simandou** (texte, options, bonne réponse, explication). |
 | `build/questions_histoire.py` | Questions du **Quiz Histoire de la Guinée**. |
 | `build/questions_armee.py` | Questions du **Quiz Armée et Gendarmerie**. |
+| `build/questions_cnrd.py` | Questions du **Quiz Bilan du CNRD 2021-2026**. |
 | `build/quizzes.py` | Registre des modules : titres, textes d'accueil, barre de progression, niveaux, certificat, documents. |
 | `build/build_site.py` | Génère `docs/js/questions.js` et le fichier unique `government-quiz.html`. |
 | `build/make_docx.py` | Génère les versions Word (participants / animateur avec corrigé) de chaque module, puis les PDF via Pages. |
 | `government-quiz.html` | Version autonome en un seul fichier (à envoyer par e-mail ou WhatsApp, s'ouvre sans serveur). |
-| `Quiz Simandou An 68 - *` / `Quiz Histoire de la Guinee An 68 - *` / `Quiz Armee et Gendarmerie An 68 - *` | Versions imprimables (.docx et .pdf). |
+| `Quiz Simandou An 68 - *` / `Quiz Histoire de la Guinee An 68 - *` / `Quiz Armee et Gendarmerie An 68 - *` / `Quiz Bilan du CNRD 2021-2026 An 68 - *` | Versions imprimables (.docx et .pdf). |
 | `leaderboard/Code.gs` | Script Google Apps Script du classement partagé. |
 
 ## Lancer en local

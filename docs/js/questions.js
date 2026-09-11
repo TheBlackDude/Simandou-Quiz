@@ -1539,5 +1539,518 @@ window.QUIZZES = [
     ]
    }
   ]
+ },
+ {
+  "id": "cnrd",
+  "title": "Quiz Bilan du CNRD 2021-2026",
+  "short": "Cinq ans de refondation : institutions, économie, grands chantiers, capital humain et gouvernance depuis le 5 septembre 2021.",
+  "desc": "Quarante questions sur ce que la Guinée a accompli depuis le 5 septembre 2021 : le retour à l'ordre constitutionnel et les nouvelles institutions, la croissance, les finances publiques et la souveraineté minière, les routes, ponts, barrages et infrastructures numériques, les progrès sociaux et la réforme de l'État.",
+  "rail": {
+   "from": "5 septembre 2021",
+   "to": "Guinée 2026",
+   "total": 60,
+   "unit": "mois de refondation parcourus"
+  },
+  "levels": {
+   "or": "Bâtisseur de la refondation",
+   "argent": "Acteur de la refondation",
+   "bronze": "Ambassadeur de la refondation"
+  },
+  "mentions": [
+   [
+    0.9,
+    "Bâtisseur de la refondation",
+    "Vous maîtrisez le bilan de la Guinée depuis 2021, chiffres et dates à l'appui."
+   ],
+   [
+    0.7,
+    "Acteur de la refondation",
+    "Une solide connaissance des réalisations de ces cinq années."
+   ],
+   [
+    0.5,
+    "Citoyen éclairé",
+    "Les grandes réalisations sont acquises ; quelques chiffres à revoir."
+   ],
+   [
+    0.0,
+    "À approfondir",
+    "Relisez les explications : le bilan 2021-2026 n'aura plus de secret pour vous."
+   ]
+  ],
+  "cert": {
+   "subtitle": "Quiz Bilan du CNRD 2021-2026 · Semaine de l'Indépendance · An 68",
+   "about": "du Quiz Bilan du CNRD 2021-2026, portant sur la refondation de l'État, le retour à l'ordre constitutionnel, l'économie et les finances publiques, les grands chantiers d'infrastructures, le capital humain et la bonne gouvernance",
+   "prefix": "CNRD68",
+   "logo": "armoiries",
+   "logoText": "République de Guinée · 2021 – 2026"
+  },
+  "tag": "CNRD",
+  "sections": [
+   {
+    "letter": "A",
+    "title": "La refondation de l'État et le retour à l'ordre constitutionnel",
+    "questions": [
+     {
+      "q": "Que signifie le sigle CNRD, nom du comité qui a pris la direction du pays le 5 septembre 2021 ?",
+      "opts": [
+       "Conseil national de la réconciliation et de la démocratie",
+       "Comité national du rassemblement pour le développement",
+       "Commission nationale de refondation et de développement",
+       "Comité national de la révolution démocratique"
+      ],
+      "a": 1,
+      "e": "Le CNRD, dirigé par le colonel Mamadi Doumbouya, a conduit la transition jusqu'à l'investiture du président élu le 17 janvier 2026, date à laquelle il a été dissous."
+     },
+     {
+      "q": "Quel texte, proclamé le 27 septembre 2021 à l'issue de concertations nationales au Palais du Peuple, a fixé les organes et les règles de la transition ?",
+      "opts": [
+       "La Loi fondamentale de 1990",
+       "La Charte de la transition",
+       "L'ordonnance de refondation",
+       "Le Pacte national"
+      ],
+      "a": 1,
+      "e": "La Charte de la transition organise quatre organes : le CNRD, le Président de la transition, le Gouvernement et le Conseil national de la transition. Le colonel Doumbouya prête serment le 1er octobre 2021 au Palais Mohammed V."
+     },
+     {
+      "q": "Combien de membres comptait le Conseil national de la transition (CNT), l'organe législatif de la transition présidé par le Dr Dansa Kourouma ?",
+      "opts": [
+       "51",
+       "81",
+       "114",
+       "147"
+      ],
+      "a": 1,
+      "e": "Nommés le 22 janvier 2022, les 81 conseillers nationaux ont adopté plus de 150 lois en quatre ans, dont le projet de nouvelle Constitution, le code électoral et la Loi-Plan Simandou 2040, avant de céder la place à l'Assemblée nationale le 17 juillet 2026."
+     },
+     {
+      "q": "Le 21 septembre 2023, à la tribune de la 78e Assemblée générale des Nations unies, le président Mamadi Doumbouya a marqué les esprits par quelle formule ?",
+      "opts": [
+       "« La Guinée est de retour »",
+       "« Le Non de 1958 est éternel »",
+       "« L'Afrique de papa, c'est terminé »",
+       "« Simandou pour tous »"
+      ],
+      "a": 2,
+      "e": "Dans ce discours remarqué, le chef de l'État affirme que les Africains ne sont « ni pro- ni anti-américains, ni pro- ni anti-russes, simplement pro-africains » et appelle à un partenariat d'égal à égal."
+     },
+     {
+      "q": "Le procès du massacre du 28 septembre 2009, attendu depuis treize ans, s'est ouvert le 28 septembre 2022 à Conakry. À quelle date le verdict a-t-il été rendu ?",
+      "opts": [
+       "Le 28 septembre 2023",
+       "Le 31 juillet 2024",
+       "Le 21 septembre 2025",
+       "Le 17 janvier 2026"
+      ],
+      "a": 1,
+      "e": "Au terme de vingt-deux mois d'audiences, la cour criminelle de Dixinn prononce la première condamnation pour crimes contre l'humanité de l'histoire judiciaire guinéenne. Un décret du 26 mars 2025 organise l'indemnisation des victimes sur le budget national."
+     },
+     {
+      "q": "À quelle date les Guinéens ont-ils adopté par référendum la nouvelle Constitution ?",
+      "opts": [
+       "Le 5 septembre 2024",
+       "Le 2 octobre 2024",
+       "Le 21 septembre 2025",
+       "Le 28 décembre 2025"
+      ],
+      "a": 2,
+      "e": "Le « oui » l'emporte avec 89,38 % des suffrages et une participation supérieure à 86 %. La Constitution est promulguée le 26 septembre 2025 et ouvre la Cinquième République."
+     },
+     {
+      "q": "Quelle institution la Constitution de 2025 crée-t-elle pour la première fois dans l'histoire de la Guinée ?",
+      "opts": [
+       "Une Cour suprême",
+       "Un Sénat, deuxième chambre du Parlement",
+       "Un Conseil économique et social",
+       "Une Cour constitutionnelle"
+      ],
+      "a": 1,
+      "e": "Le Parlement devient bicaméral : Assemblée nationale et Sénat. La Constitution fixe aussi un mandat présidentiel de sept ans renouvelable une fois, crée une Cour spéciale de justice de la République et inscrit la couverture sanitaire universelle parmi les droits garantis."
+     },
+     {
+      "q": "Élu le 28 décembre 2025 avec 86,72 % des voix, où le président Mamadi Doumbouya a-t-il prêté serment le 17 janvier 2026 comme premier président de la Cinquième République ?",
+      "opts": [
+       "Au Palais du Peuple",
+       "Au Palais Mohammed V",
+       "Au stade Général Lansana Conté de Nongo",
+       "À la Place des Martyrs"
+      ],
+      "a": 2,
+      "e": "Plus de 50 000 personnes et huit chefs d'État, dont Paul Kagame, Brice Oligui Nguema, Adama Barrow et Mohamed Ould Ghazouani, assistent à la cérémonie. La participation au scrutin a atteint 82,86 %."
+     },
+     {
+      "q": "Combien de députés siègent à l'Assemblée nationale élue le 31 mai 2026 et installée au Palais du Peuple le 17 juillet 2026 ?",
+      "opts": [
+       "81",
+       "114",
+       "147",
+       "200"
+      ],
+      "a": 2,
+      "e": "Les 147 députés, 98 élus au scrutin majoritaire et 49 à la proportionnelle, ont porté le Dr Dansa Kourouma à la présidence de l'Assemblée. Les élections communales, couplées aux législatives, ont permis d'installer les conseils des 342 communes le 2 juillet 2026."
+     },
+     {
+      "q": "En janvier 2026, quelles organisations ont levé la suspension qui frappait la Guinée depuis 2021, consacrant son retour à l'ordre constitutionnel ?",
+      "opts": [
+       "L'ONU et l'OMS",
+       "L'Union africaine et la CEDEAO",
+       "L'OMVS et l'OMVG",
+       "La Banque mondiale et le FMI"
+      ],
+      "a": 1,
+      "e": "Le Conseil de paix et de sécurité de l'Union africaine lève la suspension le 22 janvier 2026 ; la CEDEAO lève ses dernières sanctions et réintègre pleinement la Guinée le 28 janvier 2026."
+     }
+    ]
+   },
+   {
+    "letter": "B",
+    "title": "Économie, finances et souveraineté minière",
+    "questions": [
+     {
+      "q": "Selon le FMI, quel taux de croissance l'économie guinéenne a-t-elle enregistré en 2025, avant une croissance à deux chiffres attendue dès 2026 grâce au fer de Simandou ?",
+      "opts": [
+       "Environ 2 %",
+       "Environ 4 %",
+       "Environ 7 %",
+       "Environ 15 %"
+      ],
+      "a": 2,
+      "e": "Après 4,7 % en 2022, la croissance s'établit autour de 7 % en 2025 (7,1 % selon le FMI) ; la Banque mondiale projette plus de 10 % par an en 2026-2028. Depuis le 1er juillet 2023, la Guinée est classée pays à revenu intermédiaire de la tranche inférieure."
+     },
+     {
+      "q": "Le 19 septembre 2025, la Guinée a obtenu pour la première fois de son histoire une notation souveraine. Quelle note l'agence Standard & Poor's lui a-t-elle attribuée ?",
+      "opts": [
+       "AAA",
+       "BBB",
+       "B+",
+       "CCC"
+      ],
+      "a": 2,
+      "e": "La note B+, assortie d'une perspective stable puis relevée à « positive » le 14 mars 2026, figure parmi les meilleures d'Afrique de l'Ouest. Elle ouvre la voie à une première émission d'eurobond, annoncée en septembre 2026."
+     },
+     {
+      "q": "Quel accord, signé le 25 mars 2022 entre l'État, Rio Tinto Simfer et Winning Consortium Simandou, a permis de relancer le projet Simandou après vingt-cinq ans de blocages ?",
+      "opts": [
+       "La convention de base de 2004",
+       "L'accord-cadre de Simandou",
+       "Le protocole de Morebaya",
+       "Le pacte minier de Beyla"
+      ],
+      "a": 1,
+      "e": "L'accord-cadre conduit à la création, le 27 juillet 2022, de la Compagnie du Transguinéen, dans laquelle l'État détient 15 % à titre gratuit. Le premier train de minerai arrive à Morebaya le 11 novembre 2025 et le premier navire appareille le 2 décembre 2025."
+     },
+     {
+      "q": "Quel rang la Guinée occupe-t-elle parmi les exportateurs mondiaux de bauxite depuis 2023 ?",
+      "opts": [
+       "Le premier",
+       "Le deuxième, derrière l'Australie",
+       "Le cinquième",
+       "Le dixième"
+      ],
+      "a": 0,
+      "e": "Les exportations passent d'environ 102 millions de tonnes en 2022 à 126 millions en 2023, année où la Guinée dépasse l'Australie, puis à 146 millions en 2024 et près de 183 millions de tonnes en 2025."
+     },
+     {
+      "q": "Depuis mars 2025, combien de raffineries d'alumine, les premières depuis l'indépendance, ont vu leurs travaux lancés en Guinée ?",
+      "opts": [
+       "Une",
+       "Deux",
+       "Trois",
+       "Six"
+      ],
+      "a": 2,
+      "e": "SPIC à Boffa (première pierre le 26 mars 2025), Winning à Dobali dans la préfecture de Boké (12 décembre 2025) et Chalco à Lisso, Boffa (13 juin 2026) : trois usines de 1,2 million de tonnes d'alumine par an chacune, fruit de l'exigence de transformation locale de la bauxite."
+     },
+     {
+      "q": "Quelle société minière, détenue à 100 % par l'État guinéen, a démarré ses opérations le 4 novembre 2025 sur l'ancienne concession de bauxite de GAC ?",
+      "opts": [
+       "La Société minière de Boké",
+       "Nimba Mining Company",
+       "La Compagnie des bauxites de Guinée",
+       "Guinée Alumina Corporation"
+      ],
+      "a": 1,
+      "e": "Nimba Mining Company incarne la volonté de l'État de reprendre en main les gisements dont les conventions n'étaient pas respectées. Un règlement amiable avec l'ancien concessionnaire a été annoncé le 6 mai 2026."
+     },
+     {
+      "q": "À combien s'élèvent les dépenses de la loi de finances 2026, adoptée à l'unanimité par le CNT, contre environ 30 000 milliards GNF en 2022 ?",
+      "opts": [
+       "Environ 35 000 milliards GNF",
+       "Environ 45 000 milliards GNF",
+       "Environ 64 000 milliards GNF",
+       "Environ 100 000 milliards GNF"
+      ],
+      "a": 2,
+      "e": "Le budget de l'État a plus que doublé en quatre ans : 64 181 milliards GNF de dépenses et 55 858 milliards de recettes en 2026. Les recettes douanières ont bondi de 72 % en 2025 grâce à la digitalisation et à la lutte contre la fraude."
+     },
+     {
+      "q": "Qu'a lancé la Banque centrale de la République de Guinée le 15 janvier 2025 pour connecter banques, microfinance, mobile money et fintechs ?",
+      "opts": [
+       "Une nouvelle monnaie",
+       "Le Switch national monétique et digital",
+       "Une bourse des valeurs",
+       "Un fonds de garantie"
+      ],
+      "a": 1,
+      "e": "Ce système d'interopérabilité permet les paiements entre tous les acteurs financiers. La BCRG, qui a inauguré son nouveau siège le 25 mars 2026, a par ailleurs ramené l'inflation d'environ 12 % en 2022 à moins de 5 % en 2025, sous le seuil de convergence de la CEDEAO."
+     },
+     {
+      "q": "Quel instrument de financement public a mobilisé 37 milliards GNF en 2025 pour 42 projets agropastoraux, dont 60 % portés par des jeunes et des femmes ?",
+      "opts": [
+       "Le FONIJ",
+       "L'ANIES",
+       "Le Fonds de développement agricole (FODA)",
+       "La BCRG"
+      ],
+      "a": 2,
+      "e": "Aux côtés du FODA, la campagne agricole 2025-2026, dotée de 115 milliards GNF, a fourni plus de 30 000 tonnes d'engrais, 232 tracteurs et 151 moissonneuses-batteuses. Le pilier agricole de Simandou 2040 a été lancé en mai 2026."
+     },
+     {
+      "q": "Remis au chef de l'État le 28 octobre 2025, le Programme Simandou 2040 a été traduit en lois par le CNT le 5 mars 2026. Quelle est la durée de la Loi-Plan qui l'encadre ?",
+      "opts": [
+       "Cinq ans (2026-2030)",
+       "Dix ans (2026-2035)",
+       "Quinze ans (2026-2040)",
+       "Vingt-cinq ans (2026-2050)"
+      ],
+      "a": 2,
+      "e": "La Loi-Plan 2026-2040 et la Loi-Programme 2026-2030 organisent 122 projets et 36 réformes. Une Unité d'exécution placée sous l'autorité du Président a été créée le 10 décembre 2025, et un Fonds souverain, doté de 4 milliards USD entre 2029 et 2035, est en préparation."
+     }
+    ]
+   },
+   {
+    "letter": "C",
+    "title": "Infrastructures, énergie et numérique",
+    "questions": [
+     {
+      "q": "Inauguré le 18 avril 2023, le premier échangeur achevé sous le CNRD, à l'entrée de Conakry, porte le nom d'un chef d'État étranger. Lequel ?",
+      "opts": [
+       "Paul Kagame",
+       "Nana Akufo-Addo",
+       "Macky Sall",
+       "Alassane Ouattara"
+      ],
+      "a": 0,
+      "e": "L'échangeur de Kagbelen a été inauguré par le président Doumbouya et son homologue rwandais lors de la visite officielle de ce dernier. La voie principale de l'échangeur du Kilomètre 36 a suivi le 3 juin 2023."
+     },
+     {
+      "q": "Quel échangeur à trois niveaux, financé par le Fonds koweïtien pour 339,6 milliards GNF, le président Doumbouya a-t-il inauguré le 15 novembre 2025 ?",
+      "opts": [
+       "L'échangeur de Hamdallaye",
+       "L'échangeur de Bambéto",
+       "L'échangeur d'Enco 5",
+       "L'échangeur de Cosa"
+      ],
+      "a": 1,
+      "e": "Lancé le 12 avril 2022, l'ouvrage comprend un passage supérieur de 261 m, un passage souterrain de 253 m et un giratoire, avec la reconstruction de la Transversale T2 sur 5 km. Son nom rend hommage aux victimes de « l'Axe »."
+     },
+     {
+      "q": "Inauguré le 27 avril 2025 sur la route nationale 3, quel pont sur le fleuve Konkouré est le premier ouvrage du pays doté d'un poste de péage-pesage ?",
+      "opts": [
+       "Le pont de Kakimbo",
+       "Le pont de Mandiana",
+       "Le pont de Tanènè",
+       "Le pont de la Soumba"
+      ],
+      "a": 2,
+      "e": "Long de 126 m et prolongé de sept kilomètres de voies d'accès, il remplace quatre ponts métalliques datant de 1957 et a été financé par le Fonds d'entretien routier."
+     },
+     {
+      "q": "Le 29 avril 2026, le Premier ministre a inauguré cinq ponts du Grand Conakry (Kakimbo, Demoudoula, Kiroty, Kissosso et Kassonyah). Quel pays partenaire a financé ce projet ?",
+      "opts": [
+       "La Chine",
+       "Le Royaume des Pays-Bas",
+       "La Turquie",
+       "Le Japon"
+      ],
+      "a": 1,
+      "e": "Lancés en juin 2022, ces ouvrages de 96 à 192 m et leurs voies d'accès désenclavent Ratoma, Kipé, Lambanyi, Nongo, Entag et l'accès à Coyah, au bénéfice de plus d'un million d'habitants."
+     },
+     {
+      "q": "Lancée le 20 juillet 2024, la route Boké–Québo (107 km, dont 86 en Guinée) doit compléter quel grand corridor transafricain ?",
+      "opts": [
+       "Le corridor Dakar–Lagos",
+       "Le corridor Le Caire–Le Cap",
+       "Le corridor Alger–Lagos",
+       "Le corridor Abidjan–Ouagadougou"
+      ],
+      "a": 0,
+      "e": "Cofinancée par la BAD et l'Union européenne, elle rejoint la Guinée-Bissau. Dans le même élan : Labé–Mali (107 km, BID), Kankan–Kérouané–Beyla (260 km, lancée le 14 septembre 2025) et plus de 2 000 km de routes réalisés depuis 2021 selon le Gouvernement."
+     },
+     {
+      "q": "Déclaré projet d'intérêt national en avril 2026, quel barrage hydroélectrique de 300 MW est en construction à Dubréka, sur le Konkouré, avec une première turbine attendue en 2027 ?",
+      "opts": [
+       "Le barrage de Kaléta",
+       "Le barrage de Souapiti",
+       "Le barrage d'Amaria",
+       "Le barrage de Koukoutamba"
+      ],
+      "a": 2,
+      "e": "Le chantier d'Amaria, mené par TBEA, dépassait 60 % d'avancement en juillet 2026. Il complétera Kaléta (240 MW) et Souapiti (450 MW), qui alimentent déjà le réseau national et les pays voisins."
+     },
+     {
+      "q": "Où le Premier ministre a-t-il lancé, le 18 avril 2026, les travaux de la première centrale solaire du pays, d'une puissance de 50 MW ?",
+      "opts": [
+       "À Kankan",
+       "À Linsan, dans la préfecture de Kindia",
+       "À Labé",
+       "À N'Zérékoré"
+      ],
+      "a": 1,
+      "e": "Financée à hauteur de 192,5 millions d'euros, la centrale de Kamissaya-Linsan s'accompagne d'une ligne de 225 kV de 173 km vers Dabola. Le Plan national d'électrification rurale, lancé le 26 novembre 2025, vise 15 000 localités d'ici 2040."
+     },
+     {
+      "q": "Qu'a inauguré la Guinée le 4 septembre 2025 à Koloma, à Conakry, pour héberger ses données sur son propre sol ?",
+      "opts": [
+       "Un câble sous-marin",
+       "Son premier centre de données national de niveau Tier III",
+       "Une usine de téléphones",
+       "Un satellite"
+      ],
+      "a": 1,
+      "e": "Le même jour, le pays a rapatrié la gestion de son domaine Internet « .gn ». En 2025, la capacité du réseau national de fibre a été multipliée par quatre et Conakry a accueilli le Transform Africa Summit. Un deuxième câble sous-marin, Medusa, a été signé le 6 mai 2026."
+     },
+     {
+      "q": "Quelle capacité annuelle l'aéroport international Ahmed Sékou Touré doit-il atteindre à l'issue du projet présidentiel d'extension confié au groupe Albayrak ?",
+      "opts": [
+       "500 000 passagers",
+       "1 million de passagers",
+       "3 millions de passagers",
+       "10 millions de passagers"
+      ],
+      "a": 2,
+      "e": "Le nouveau terminal de 32 000 m², le terminal cargo et la nouvelle tour de contrôle portent la capacité de 500 000 à 3 millions de passagers par an. Le trafic a progressé de 22 % au premier semestre 2026, et les aérodromes de Kankan et Labé sont en achèvement."
+     },
+     {
+      "q": "Combien de centres hospitaliers régionaux modernes, sur un modèle identique, sont en construction depuis 2024 à Kindia, Labé, Kankan et N'Zérékoré ?",
+      "opts": [
+       "Un",
+       "Deux",
+       "Quatre",
+       "Huit"
+      ],
+      "a": 2,
+      "e": "Réalisés avec Eiffage et l'expertise de l'AP-HP grâce à un financement français, ces hôpitaux de 200 lits sont attendus à partir de 2027. Ils s'ajoutent au CHU de Donka rénové et à l'Hôpital militaire de Conakry, inauguré le 30 octobre 2023."
+     }
+    ]
+   },
+   {
+    "letter": "D",
+    "title": "Capital humain, protection sociale et bonne gouvernance",
+    "questions": [
+     {
+      "q": "Le 22 mars 2022, le chef de l'État a lancé les Assises nationales, ou « Journées de vérité et de pardon ». Qui coprésidait le comité chargé de les conduire ?",
+      "opts": [
+       "Le Premier ministre et le président du CNT",
+       "Le Grand Imam de Conakry et l'Archevêque de Conakry",
+       "Le ministre de la Justice et le Médiateur",
+       "Les gouverneurs des huit régions"
+      ],
+      "a": 1,
+      "e": "El Hadj Mamadou Saliou Camara et Mgr Vincent Coulibaly ont dirigé des consultations sur tout le territoire jusqu'au 29 avril 2022 : plus de 86 000 personnes rencontrées et 45 recommandations remises au Président le 24 août 2022."
+     },
+     {
+      "q": "Fermé depuis 2017, le Centre hospitalo-universitaire de Donka a été inauguré après rénovation le 17 août 2022. Quelle est sa capacité d'accueil ?",
+      "opts": [
+       "Environ 150 lits",
+       "Environ 300 lits",
+       "Environ 630 lits",
+       "Environ 1 500 lits"
+      ],
+      "a": 2,
+      "e": "Avec ses 26 services, dont l'oncologie, la gériatrie et une salle de cathétérisme, le CHU Donka emploie 1 300 agents. Un troisième centre public d'hémodialyse a ouvert à Kipé le 6 novembre 2024."
+     },
+     {
+      "q": "Saluée par Gavi en mai 2025, la couverture vaccinale des enfants guinéens est passée en un an de 47 % à quel niveau ?",
+      "opts": [
+       "50 %",
+       "63 %",
+       "80 %",
+       "95 %"
+      ],
+      "a": 1,
+      "e": "Ce bond, obtenu en mettant fin aux ruptures de stocks de vaccins, est l'un des progrès sanitaires les plus rapides du continent. La Guinée avait déjà éteint en quarante-deux jours, le 16 septembre 2021, la première épidémie de Marburg d'Afrique de l'Ouest."
+     },
+     {
+      "q": "Par décret du 1er juin 2022, à quel montant le salaire minimum interprofessionnel garanti (SMIG) a-t-il été porté, contre 440 000 GNF auparavant ?",
+      "opts": [
+       "500 000 GNF",
+       "550 000 GNF",
+       "750 000 GNF",
+       "1 000 000 GNF"
+      ],
+      "a": 1,
+      "e": "Dans le même mouvement, les pensions de la CNSS ont été revalorisées en moyenne de 70 % fin 2022 et payées désormais chaque mois, la valeur du point indiciaire des fonctionnaires a progressé de 35 % en 2023-2024, et le prix du carburant est maintenu à 12 000 GNF le litre grâce à la subvention de l'État."
+     },
+     {
+      "q": "Quelle innovation a marqué le concours de recrutement à la fonction publique de 2024, qui a réuni près de 140 000 candidats pour 10 000 postes ?",
+      "opts": [
+       "Les épreuves se sont déroulées sur tablettes numériques",
+       "Le concours s'est tenu à l'étranger",
+       "Il était réservé aux femmes",
+       "Les candidats ont été tirés au sort"
+      ],
+      "a": 0,
+      "e": "Ce premier concours entièrement numérique a été suivi de l'intégration de 10 000 enseignants contractuels communaux (septembre 2024) et, le 16 juillet 2026, de l'autorisation de recruter 20 000 nouveaux fonctionnaires dans l'éducation, la santé et l'assainissement."
+     },
+     {
+      "q": "Qu'est-ce que le FUGAS, lancé officiellement le 27 novembre 2025 après l'enrôlement biométrique des agents de l'État ?",
+      "opts": [
+       "Un fonds de garantie agricole",
+       "Le Fichier unique de gestion administrative et de la solde",
+       "Une fédération sportive",
+       "Un programme de logements"
+      ],
+      "a": 1,
+      "e": "Sur le principe « un agent, un matricule, un salaire », le fichier a ramené les effectifs payés d'environ 277 000 à 130 000 agents réellement identifiés, permettant une économie estimée à 233 milliards GNF par an."
+     },
+     {
+      "q": "Quelle juridiction spéciale, créée en décembre 2021 et installée le 21 janvier 2022, juge les détournements de fonds publics d'au moins un milliard GNF ?",
+      "opts": [
+       "La Cour suprême",
+       "La Haute Cour de justice",
+       "La CRIEF, Cour de répression des infractions économiques et financières",
+       "Le Tribunal de commerce"
+      ],
+      "a": 2,
+      "e": "Aux côtés de la CRIEF, l'Agence judiciaire de l'État a recouvré plus de 160 milliards GNF en deux ans (2023-2024), et la récupération des domaines de l'État a permis de rendre à la République des dizaines de bâtiments et de sites, dont 125 hectares à Sonfonia."
+     },
+     {
+      "q": "Quelle population la Guinée compte-t-elle selon les résultats préliminaires du 4e Recensement général de la population, réalisé en juillet 2025 avec des tablettes numériques ?",
+      "opts": [
+       "Environ 10 millions d'habitants",
+       "Environ 12,5 millions d'habitants",
+       "Environ 17,5 millions d'habitants",
+       "Environ 25 millions d'habitants"
+      ],
+      "a": 2,
+      "e": "L'INS a publié le 25 février 2026 le chiffre de 17 521 167 habitants, dont 51,8 % de femmes ; l'âge moyen est de 22,2 ans. Le premier recensement, en 1983, comptait 4,66 millions de Guinéens."
+     },
+     {
+      "q": "Depuis le décret du 2 février 2025, quel document d'identité est délivré gratuitement à tout citoyen qui en fait la première demande ?",
+      "opts": [
+       "Le passeport",
+       "La carte nationale d'identité biométrique",
+       "Le permis de conduire",
+       "La carte d'électeur"
+      ],
+      "a": 1,
+      "e": "La gratuité s'étend à l'extrait de naissance numérisé. Le recensement administratif à vocation d'état civil (PN-RAVEC), lancé le 15 avril 2025, a doté chaque Guinéen d'un identifiant unique et permis d'inscrire 6,77 millions d'électeurs."
+     },
+     {
+      "q": "Inaugurées le 5 juillet 2025 dans le cadre de Simandou Academy, où se trouvent les premières classes préparatoires aux grandes écoles de Guinée ?",
+      "opts": [
+       "À Kindia",
+       "À Dalaba",
+       "À Kankan",
+       "À Labé"
+      ],
+      "a": 1,
+      "e": "Les CPGE de Dalaba préparent aux concours des grandes écoles d'ingénieurs ; 28 lauréats sont partis en août 2026 se former en Chine avec un engagement de retour. L'École nationale d'administration a été créée le 9 juin 2026 et l'Université numérique de Guinée le 30 juillet 2026."
+     }
+    ]
+   }
+  ]
  }
 ];

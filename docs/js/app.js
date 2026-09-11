@@ -110,7 +110,7 @@
     app.innerHTML = '<div class="card landing">' +
       '<div class="eyebrow">Semaine de l\'Indépendance · An 68 · République de Guinée</div>' +
       '<div class="tagline">' + TAGLINE.map((t, i) => (i ? '<i></i>' : '') + '<span>' + esc(t) + '</span>').join('') + '</div>' +
-      '<p>Trois questionnaires de 40 questions pour célébrer l\'An 68 de l\'Indépendance : indiquez votre nom, puis choisissez votre quiz. Chaque quiz se joue par sections ou en une seule fois, avec un classement et un certificat à partir de 80 % de bonnes réponses.</p>' +
+      '<p>Quatre questionnaires de 40 questions pour célébrer l\'An 68 de l\'Indépendance : indiquez votre nom, puis choisissez votre quiz. Chaque quiz se joue par sections ou en une seule fois, avec un classement et un certificat à partir de 80 % de bonnes réponses.</p>' +
       '<div class="who"><label for="playerName">Votre nom et prénom(s) <small>affichés au classement et sur le certificat</small></label>' +
       '<input id="playerName" type="text" maxlength="60" placeholder="Ex. : Mariama Camara" value="' + esc(player) + '" autocomplete="name"><span class="err" id="nameErr" hidden>Indiquez votre nom pour choisir un quiz.</span></div>' +
       '<div class="picks">' + QUIZZES.map((q, i) => {

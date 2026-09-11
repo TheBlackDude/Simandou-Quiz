@@ -3,6 +3,7 @@
 from questions import SECTIONS as SIMANDOU
 from questions_histoire import SECTIONS as HISTOIRE
 from questions_armee import SECTIONS as ARMEE
+from questions_cnrd import SECTIONS as CNRD
 
 TAGLINE = ["L'Indépendance en héritage", "La jeunesse en marche", "Simandou 2040 en ligne de mire"]
 
@@ -75,6 +76,29 @@ QUIZZES = [
           "footer": "Semaine de l'Indépendance · An 68 · République de Guinée · Quiz Armée et Gendarmerie",
           "sources": "Sources : DIRPA / Guineenews (« L'armée guinéenne : sa création, ses mutations, ses campagnes », 2018) ; Guinée360 ; Le Djely ; Présidence de la République ; Nations unies (MINUSMA, MINUSCA) ; France 24 ; Jeune Afrique ; Wikipédia (Forces armées de la Guinée, Gendarmerie nationale guinéenne)."},
   "sections": ARMEE,
+ },
+ {
+  "id": "cnrd",
+  "title": "Quiz Bilan du CNRD 2021-2026",
+  "short": "Cinq ans de refondation : institutions, économie, grands chantiers, capital humain et gouvernance depuis le 5 septembre 2021.",
+  "desc": "Quarante questions sur ce que la Guinée a accompli depuis le 5 septembre 2021 : le retour à l'ordre constitutionnel et les nouvelles institutions, la croissance, les finances publiques et la souveraineté minière, les routes, ponts, barrages et infrastructures numériques, les progrès sociaux et la réforme de l'État.",
+  "rail": {"from": "5 septembre 2021", "to": "Guinée 2026", "total": 60, "unit": "mois de refondation parcourus"},
+  "levels": {"or": "Bâtisseur de la refondation", "argent": "Acteur de la refondation", "bronze": "Ambassadeur de la refondation"},
+  "mentions": [
+   [0.9, "Bâtisseur de la refondation", "Vous maîtrisez le bilan de la Guinée depuis 2021, chiffres et dates à l'appui."],
+   [0.7, "Acteur de la refondation", "Une solide connaissance des réalisations de ces cinq années."],
+   [0.5, "Citoyen éclairé", "Les grandes réalisations sont acquises ; quelques chiffres à revoir."],
+   [0.0, "À approfondir", "Relisez les explications : le bilan 2021-2026 n'aura plus de secret pour vous."]],
+  "cert": {"subtitle": "Quiz Bilan du CNRD 2021-2026 · Semaine de l'Indépendance · An 68",
+           "about": "du Quiz Bilan du CNRD 2021-2026, portant sur la refondation de l'État, le retour à l'ordre constitutionnel, l'économie et les finances publiques, les grands chantiers d'infrastructures, le capital humain et la bonne gouvernance",
+           "prefix": "CNRD68", "logo": "armoiries", "logoText": "République de Guinée · 2021 – 2026"},
+  "tag": "CNRD",
+  "doc": {"file": "Quiz Bilan du CNRD 2021-2026 An 68", "band": "QUIZ BILAN DU CNRD 2021-2026",
+          "sub": "Du 5 septembre 2021 à la Cinquième République : cinq ans de refondation",
+          "quote": "« " + " · ".join(TAGLINE) + " »",
+          "footer": "Semaine de l'Indépendance · An 68 · République de Guinée · Quiz Bilan du CNRD 2021-2026",
+          "sources": "Sources : Présidence de la République ; Primature ; CNT ; ministères (Économie et Finances, Budget, Plan, Mines, Énergie, Infrastructures, Fonction publique, Santé, Éducation) ; INS (RGPH-4) ; BCRG ; FMI ; Banque mondiale ; S&P Global ; Rio Tinto ; Guineenews ; Guinée360 ; Le Djely ; Africaguinee ; Jeune Afrique ; Financial Afrik ; Agence Ecofin ; Wikipédia."},
+  "sections": CNRD,
  },
 ]
 
