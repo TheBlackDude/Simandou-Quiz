@@ -31,7 +31,7 @@ body = re.search(r"<body>(.*)</body>", html, re.S).group(1)
 for k, v in assets.items(): body = body.replace('src="assets/' + k + '.png"', 'src="' + v + '"')
 body = re.sub(r'(<script (type="module" )?src="js/[a-z]+\.js"></script>\s*)+', "", body)
 css = open(os.path.join(DOCS, "css", "style.css"), encoding="utf-8").read()
-app = open(os.path.join(DOCS, "js", "config.js"), encoding="utf-8").read() + "\n" + open(os.path.join(DOCS, "js", "app.js"), encoding="utf-8").read()
+app = "\n".join(open(os.path.join(DOCS, "js", f), encoding="utf-8").read() for f in ("config.js", "app.js", "admin.js"))
 single = ('<title>Gouvernement QCM</title>\n<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap">\n'
           '<style>\n' + css + '\n</style>\n' + body.strip() + '\n<script>\n' + js + 'window.QUIZ_ASSETS = ' + json.dumps(assets) + ';\n' + app + '\n</script>\n'
           '<script type="module">\n' + open(os.path.join(DOCS, "js", "backend.js"), encoding="utf-8").read() + '\n</script>\n')

@@ -134,3 +134,55 @@ exports.reset = onCall(callOpts, async req => {
   await db.doc('progress/' + auth.uid + '_' + quiz).delete();
   return { ok: true };
 });
+
+/* ---------- Tableau de bord administrateur ---------- */
+const { AggregateField, FieldPath, Timestamp } = require('firebase-admin/firestore');
+const LEVEL_OK = { or: 38, argent: 35, bronze: 32 }; // sur 40 : 95 %, 87,5 %, 80 %
+async function requireAdmin(req) { const auth = requireAuth(req); if (!(await isAdmin(auth))) throw new HttpsError('permission-denied', 'Réservé aux administrateurs.'); return auth; }
+function dayKey(d) { return d.toISOString().slice(0, 10); }
+
+exports.adminStats = onCall(Object.assign({ timeoutSeconds: 60, memory: '512MiB' }, callOpts), async req => {
+  await requireAdmin(req);
+  const col = db.collection('attempts'), quizzes = Object.keys(BANK.quizzes);
+  const DAYS = 14, today = new Date(); today.setUTCHours(0, 0, 0, 0);
+  const dayRanges = []; for (let i = DAYS - 1; i >= 0; i--) { const a = new Date(today.getTime() - i * 864e5), b = new Date(a.getTime() + 864e5); dayRanges.push([dayKey(a), Timestamp.fromDate(a), Timestamp.fromDate(b)]); }
+  const legacy = (await db.doc('meta/legacy').get()).data() || {};
+  const cnt = async q => (await q.count().get()).data().count;
+  const perQuiz = await Promise.all(quizzes.map(async id => {
+    const base = col.where('quiz', '==', id).where('admin', '==', false);
+    const [agg, full, parcours, or, argent, bronze, perfect, devices, days] = await Promise.all([
+      base.aggregate({ n: AggregateField.count(), sumOk: AggregateField.sum('ok'), sumTot: AggregateField.sum('tot') }).get(),
+      cnt(base.where('mode', '==', 'Quiz complet')), cnt(base.where('mode', '==', 'Parcours par sections')),
+      cnt(base.where('ok', '>=', LEVEL_OK.or)), cnt(base.where('ok', '>=', LEVEL_OK.argent).where('ok', '<', LEVEL_OK.or)), cnt(base.where('ok', '>=', LEVEL_OK.bronze).where('ok', '<', LEVEL_OK.argent)),
+      cnt(base.where('ok', '==', 40)), cnt(db.collection('users').where('attempts.' + id, '>', 0)),
+      Promise.all(dayRanges.map(([k, a, b]) => cnt(base.where('createdAt', '>=', a).where('createdAt', '<', b)).then(n => [k, n])))
+    ]);
+    const a = agg.data();
+    const top = ((await db.doc('leaderboard/' + id).get()).data() || {}).top || [];
+    return { id, title: BANK.quizzes[id].title, attempts: a.n, avgPct: a.sumTot ? Math.round(a.sumOk / a.sumTot * 1000) / 10 : null, full, parcours,
+      levels: { or, argent, bronze, none: a.n - or - argent - bronze }, perfect, participants: devices + ((legacy.participants || {})[id] || 0), legacyParticipants: (legacy.participants || {})[id] || 0, days: Object.fromEntries(days), top };
+  }));
+  const [devicesTotal, recentSnap] = await Promise.all([cnt(db.collection('users')), col.orderBy('createdAt', 'desc').limit(25).get()]);
+  const recent = recentSnap.docs.map(d => { const e = d.data(); return { quiz: e.quiz, name: e.name, ok: e.ok, tot: e.tot, mode: e.mode, date: e.date, admin: !!e.admin, legacy: !!e.legacy }; });
+  // meilleurs participants toutes épreuves : cumul des meilleurs scores par quiz (à partir des tops)
+  const byName = {};
+  perQuiz.forEach(q => q.top.forEach(e => { const k = rank.key(e.name); const r = byName[k] || (byName[k] = { name: e.name, quizzes: 0, ok: 0, tot: 0, perfect: 0, detail: {} }); r.quizzes++; r.ok += e.ok; r.tot += e.tot; if (e.ok === e.tot) r.perfect++; r.detail[q.id] = e.ok; }));
+  const performers = Object.values(byName).sort((a, b) => b.ok - a.ok || b.perfect - a.perfect || (b.ok / b.tot) - (a.ok / a.tot)).slice(0, 25);
+  const totals = { attempts: perQuiz.reduce((s, q) => s + q.attempts, 0), devices: devicesTotal, legacyParticipants: Object.values(legacy.participants || {}).reduce((s, n) => s + n, 0), perfect: perQuiz.reduce((s, q) => s + q.perfect, 0) };
+  const sumOk = perQuiz.reduce((s, q) => s + (q.avgPct === null ? 0 : q.avgPct * q.attempts), 0); totals.avgPct = totals.attempts ? Math.round(sumOk / totals.attempts * 10) / 10 : null;
+  const days = {}; dayRanges.forEach(([k]) => { days[k] = perQuiz.reduce((s, q) => s + (q.days[k] || 0), 0); });
+  return { generatedAt: new Date().toISOString(), version: BANK.version, totals, days, quizzes: perQuiz.map(q => Object.assign({}, q, { top: q.top.slice(0, 10) })), performers, recent };
+});
+
+/** Export paginé des tentatives (le navigateur assemble le CSV). */
+exports.adminExport = onCall(Object.assign({ timeoutSeconds: 60, memory: '512MiB' }, callOpts), async req => {
+  await requireAdmin(req);
+  const d = req.data || {}, limit = Math.min(Math.max(Number(d.limit) || 2000, 100), 5000);
+  let q = db.collection('attempts'); if (d.quiz) { quizOf(String(d.quiz)); q = q.where('quiz', '==', String(d.quiz)); }
+  q = q.orderBy('createdAt', 'asc').orderBy(FieldPath.documentId(), 'asc');
+  if (d.cursor && d.cursor.t && d.cursor.id) q = q.startAfter(Timestamp.fromMillis(Number(d.cursor.t)), String(d.cursor.id));
+  const snap = await q.limit(limit).get();
+  const rows = snap.docs.map(s => { const e = s.data(); return [e.quiz, e.date, e.name, e.ok, e.tot, e.mode, e.uid, e.admin ? 1 : 0, e.legacy ? 1 : 0]; });
+  const last = snap.docs[snap.docs.length - 1];
+  return { rows, cursor: snap.size === limit && last ? { t: last.get('createdAt').toMillis(), id: last.id } : null };
+});

@@ -19,6 +19,9 @@ async function rebuildLeaderboards() {
     const top = rank.build(list);
     await db.doc('leaderboard/' + quiz).set({ top, count: list.length, updatedAt: FieldValue.serverTimestamp() });
     console.log(quiz + ' : ' + list.length + ' résultats, top de ' + top.length + ' lignes');
+    legacyParticipants[quiz] = new Set(snap.docs.map(d => d.data()).filter(e => e.legacy).map(e => rank.key(e.name))).size;
   }
+  await db.doc('meta/legacy').set({ participants: legacyParticipants, updatedAt: FieldValue.serverTimestamp() });
 }
+const legacyParticipants = {};
 module.exports = { db, rank, FieldValue, Timestamp, QUIZ_IDS, rebuildLeaderboards };

@@ -1,7 +1,87 @@
 {
-  "indexes": [
-    { "collectionGroup": "attempts", "queryScope": "COLLECTION", "fields": [ { "fieldPath": "quiz", "order": "ASCENDING" }, { "fieldPath": "createdAt", "order": "DESCENDING" } ] },
-    { "collectionGroup": "attempts", "queryScope": "COLLECTION", "fields": [ { "fieldPath": "quiz", "order": "ASCENDING" }, { "fieldPath": "ok", "order": "DESCENDING" } ] }
-  ],
-  "fieldOverrides": []
+ "indexes": [
+  {
+   "collectionGroup": "attempts",
+   "queryScope": "COLLECTION",
+   "fields": [
+    {
+     "fieldPath": "quiz",
+     "order": "ASCENDING"
+    },
+    {
+     "fieldPath": "createdAt",
+     "order": "DESCENDING"
+    }
+   ]
+  },
+  {
+   "collectionGroup": "attempts",
+   "queryScope": "COLLECTION",
+   "fields": [
+    {
+     "fieldPath": "quiz",
+     "order": "ASCENDING"
+    },
+    {
+     "fieldPath": "ok",
+     "order": "DESCENDING"
+    }
+   ]
+  },
+  {
+   "collectionGroup": "attempts",
+   "queryScope": "COLLECTION",
+   "fields": [
+    {
+     "fieldPath": "quiz",
+     "order": "ASCENDING"
+    },
+    {
+     "fieldPath": "admin",
+     "order": "ASCENDING"
+    },
+    {
+     "fieldPath": "ok",
+     "order": "ASCENDING"
+    }
+   ]
+  },
+  {
+   "collectionGroup": "attempts",
+   "queryScope": "COLLECTION",
+   "fields": [
+    {
+     "fieldPath": "quiz",
+     "order": "ASCENDING"
+    },
+    {
+     "fieldPath": "admin",
+     "order": "ASCENDING"
+    },
+    {
+     "fieldPath": "createdAt",
+     "order": "ASCENDING"
+    }
+   ]
+  },
+  {
+   "collectionGroup": "attempts",
+   "queryScope": "COLLECTION",
+   "fields": [
+    {
+     "fieldPath": "quiz",
+     "order": "ASCENDING"
+    },
+    {
+     "fieldPath": "createdAt",
+     "order": "ASCENDING"
+    },
+    {
+     "fieldPath": "__name__",
+     "order": "ASCENDING"
+    }
+   ]
+  }
+ ],
+ "fieldOverrides": []
 }

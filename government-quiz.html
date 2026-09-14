@@ -237,6 +237,16 @@ table.board .medal{display:inline-block;vertical-align:middle;width:16px;height:
 .sync{margin:8px 0 0}.sync.warn{color:#B45309}.sync[hidden]{display:none}
 .adminline{text-align:center;font-size:12px;color:var(--muted);margin:14px 0 0}
 .admincard{margin-bottom:18px;border-color:var(--primary)}
+/* tableau de bord administrateur */
+.dash{margin-top:18px}.dash h3{font-size:15px;letter-spacing:.06em;text-transform:uppercase;color:var(--primary);margin:22px 0 10px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}
+.kpi{border:1px solid var(--line);border-radius:6px;padding:12px 14px;background:var(--sand)}.kpi b{display:block;font-size:26px;line-height:1.1;color:var(--ink)}.kpi span{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.days{display:flex;gap:4px;align-items:flex-end;height:110px;border-bottom:1px solid var(--line);padding-bottom:4px}
+.days div{flex:1;background:var(--primary);border-radius:3px 3px 0 0;position:relative;min-height:2px}.days div i{position:absolute;bottom:100%;left:0;right:0;text-align:center;font-size:10px;font-style:normal;color:var(--muted)}
+.dayslbl{display:flex;gap:4px;font-size:10px;color:var(--muted)}.dayslbl span{flex:1;text-align:center}
+.dash .board td.num{white-space:nowrap}.dash .row{margin-top:14px;flex-wrap:wrap;gap:8px}
+.dash .btn.small{padding:6px 12px;font-size:13px}.dash .ok{color:#1B7F4C}.dash .muted{color:var(--muted)}
+.kpi b.txt{font-size:16px;line-height:1.25;margin-bottom:4px}
 
 </style>
 <header class="band">
@@ -3044,7 +3054,7 @@ window.QUIZ_CONFIG = {
   }
 
   /* ---------- Accueil général : nom + choix du quiz ---------- */
-  function landing() {
+  let landing = function () {
     rail.hidden = true; quizbar.hidden = true; Q = null;
     app.innerHTML = (ADMIN_PAGE && SERVER ? adminPanel() : '') + '<div class="card landing">' +
       '<div class="eyebrow">Semaine de la Fête Nationale · An 68 · République de Guinée</div>' +
@@ -3061,12 +3071,13 @@ window.QUIZ_CONFIG = {
       '</div>';
     window.scrollTo({ top: 0 });
     const input = document.getElementById('playerName'); if (input && !player) input.focus();
-  }
+  };
   function adminPanel() {
     const b = window.QCM, connected = b && b.enabled && !b.isAnonymous();
     return '<div class="card admincard"><div class="eyebrow">Administration · Gouvernement QCM</div>' +
       (connected
-        ? '<h2 class="h2">Connecté : ' + esc(b.email()) + '</h2><p>Si ce compte figure dans la liste des administrateurs, vous disposez de tentatives illimitées sur tous les quiz et vos résultats sont conservés hors du classement public. Choisissez un quiz ci-dessous : la mention « administrateur » apparaît dans la barre du quiz.</p><div class="row"><button class="btn ghost" data-signout>Déconnexion</button></div>'
+        ? '<h2 class="h2">Connecté : ' + esc(b.email()) + '</h2><p>Si ce compte figure dans la liste des administrateurs, le tableau de bord s\'affiche ci-dessous ; vous disposez aussi de tentatives illimitées sur tous les quiz, avec des résultats conservés hors du classement public.</p><div class="row"><button class="btn ghost" data-signout>Déconnexion</button></div>' +
+          '<div id="dash"><p class="note">Chargement du tableau de bord…</p></div>'
         : '<h2 class="h2">Connexion administrateur</h2><p>Réservé aux comptes autorisés (connexion Google). Les participants n\'ont pas besoin de se connecter.</p><div class="row"><button class="btn" data-admin>Se connecter avec Google</button></div>') +
       '</div>';
   }
@@ -3294,8 +3305,83 @@ window.QUIZ_CONFIG = {
     if (e.key === 'Enter' && e.target.id === 'playerName') { const p = document.querySelector('.pick'); if (p) { document.getElementById('nameErr').hidden = !!e.target.value.trim(); if (e.target.value.trim()) p.focus(); } }
   });
   document.addEventListener('input', e => { if (e.target.id === 'playerName') { const err = document.getElementById('nameErr'); if (err) err.hidden = true; } });
-  landing();
+  function mountDash() { const el = document.getElementById('dash'); if (el && window.QCM_ADMIN) window.QCM_ADMIN.mount(el, window.QCM, QUIZZES); }
+  const _landing = landing; landing = function () { _landing(); mountDash(); };
+  _landing(); 
   if (ADMIN_PAGE && SERVER) Backend.get().then(() => { if (!Q) landing(); }); // rafraîchit le panneau une fois l'état de connexion connu
+})();
+
+/* Gouvernement QCM — tableau de bord administrateur (page /admin, après connexion Google d'un compte autorisé).
+   Statistiques calculées par la Cloud Function adminStats ; export CSV paginé par adminExport. */
+(function () {
+  'use strict';
+  const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  const n = x => (x === null || x === undefined) ? '—' : Number(x).toLocaleString('fr-FR');
+  const pct = x => (x === null || x === undefined) ? '—' : Number(x).toLocaleString('fr-FR', { maximumFractionDigits: 1 }) + ' %';
+  const fmtDate = d => { try { return new Date(d).toLocaleString('fr-FR', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' }); } catch (e) { return ''; } };
+  let root = null, backend = null, quizzes = [], data = null;
+  const titleOf = id => (quizzes.find(q => q.id === id) || {}).title || id;
+
+  function render() {
+    if (!data) return;
+    const t = data.totals, best = data.quizzes.slice().sort((a, b) => b.attempts - a.attempts)[0];
+    const bestAvg = data.quizzes.filter(q => q.avgPct !== null).sort((a, b) => b.avgPct - a.avgPct)[0];
+    const dayKeys = Object.keys(data.days), maxDay = Math.max(1, ...dayKeys.map(k => data.days[k]));
+    root.innerHTML = '<div class="dash">' +
+      '<div class="row" style="margin-top:0"><span class="muted">Mis à jour ' + fmtDate(data.generatedAt) + ' · contenu ' + esc(data.version) + '</span><span style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn small ghost" data-dash-refresh>Actualiser</button><button class="btn small" data-dash-export="">Exporter toutes les tentatives (CSV)</button><button class="btn small ghost" data-dash-export-top>Exporter les classements (CSV)</button></span></div>' +
+      '<p class="note" id="dashMsg" hidden></p>' +
+      '<h3>Vue d\'ensemble</h3><div class="kpis">' +
+      kpi(n(t.attempts), 'Résultats enregistrés') + kpi(n(t.devices + t.legacyParticipants), 'Participants (appareils)') + kpi(pct(t.avgPct), 'Score moyen') + kpi(n(t.perfect), 'Scores parfaits 40/40') +
+      kpi(best ? esc(best.title.replace(/^Quiz /, '')) : '—', 'Quiz le plus joué', true) + kpi(bestAvg ? esc(bestAvg.title.replace(/^Quiz /, '')) : '—', 'Meilleur score moyen', true) + '</div>' +
+      '<h3>Résultats par jour (14 derniers jours)</h3><div class="days">' + dayKeys.map(k => '<div style="height:' + Math.round(data.days[k] / maxDay * 100) + '%" title="' + k + ' : ' + data.days[k] + '"><i>' + (data.days[k] || '') + '</i></div>').join('') + '</div>' +
+      '<div class="dayslbl">' + dayKeys.map(k => '<span>' + k.slice(8) + '/' + k.slice(5, 7) + '</span>').join('') + '</div>' +
+      '<h3>Par quiz</h3><div class="tablewrap"><table class="board"><thead><tr><th>Quiz</th><th class="num">Résultats</th><th class="num">Participants</th><th class="num">Quiz complet</th><th class="num">Parcours</th><th class="num">Score moyen</th><th class="num">Or</th><th class="num">Argent</th><th class="num">Bronze</th><th class="num">40/40</th><th></th></tr></thead><tbody>' +
+      data.quizzes.map(q => '<tr><td>' + esc(q.title) + '</td><td class="num"><b>' + n(q.attempts) + '</b></td><td class="num">' + n(q.participants) + '</td><td class="num">' + n(q.full) + '</td><td class="num">' + n(q.parcours) + '</td><td class="num">' + pct(q.avgPct) + '</td><td class="num">' + n(q.levels.or) + '</td><td class="num">' + n(q.levels.argent) + '</td><td class="num">' + n(q.levels.bronze) + '</td><td class="num">' + n(q.perfect) + '</td><td><button class="btn small ghost" data-dash-export="' + esc(q.id) + '">CSV</button></td></tr>').join('') +
+      '</tbody></table></div><p class="note">Participants = appareils distincts ayant enregistré un résultat, plus les noms distincts de l\'ancien classement importé. Les résultats des administrateurs sont exclus des statistiques.</p>' +
+      '<h3>Meilleurs participants toutes épreuves</h3><div class="tablewrap"><table class="board"><thead><tr><th>#</th><th>Participant</th><th class="num">Quiz</th><th class="num">Total</th><th class="num">40/40</th>' + data.quizzes.map(q => '<th class="num">' + esc(q.title.replace(/^Quiz /, '').split(' ')[0]) + '</th>').join('') + '</tr></thead><tbody>' +
+      data.performers.map((p, i) => '<tr><td class="rank">' + (i + 1) + '</td><td>' + esc(p.name) + '</td><td class="num">' + p.quizzes + '</td><td class="num"><b>' + p.ok + '</b> / ' + p.tot + '</td><td class="num">' + p.perfect + '</td>' + data.quizzes.map(q => '<td class="num">' + (p.detail[q.id] === undefined ? '<span class="muted">—</span>' : p.detail[q.id]) + '</td>').join('') + '</tr>').join('') +
+      '</tbody></table></div><p class="note">Cumul du meilleur résultat par quiz (participants présents dans les tops 100).</p>' +
+      '<h3>Top 10 par quiz</h3>' + data.quizzes.map(q => '<details><summary>' + esc(q.title) + ' · ' + q.top.length + ' meilleurs</summary><div class="tablewrap"><table class="board"><tbody>' + q.top.map((e, i) => '<tr><td class="rank">' + (i + 1) + '</td><td>' + esc(e.name) + '</td><td class="num"><b>' + e.ok + '</b> / ' + e.tot + '</td><td>' + esc(e.mode) + '</td><td>' + fmtDate(e.date) + '</td></tr>').join('') + '</tbody></table></div></details>').join('') +
+      '<h3>Derniers résultats</h3><div class="tablewrap"><table class="board"><thead><tr><th>Date</th><th>Participant</th><th>Quiz</th><th class="num">Score</th><th>Mode</th></tr></thead><tbody>' +
+      data.recent.map(e => '<tr><td>' + fmtDate(e.date) + '</td><td>' + esc(e.name) + (e.admin ? ' <span class="muted">(admin)</span>' : '') + (e.legacy ? ' <span class="muted">(import)</span>' : '') + '</td><td>' + esc(titleOf(e.quiz).replace(/^Quiz /, '')) + '</td><td class="num"><b>' + e.ok + '</b> / ' + e.tot + '</td><td>' + esc(e.mode) + '</td></tr>').join('') +
+      '</tbody></table></div></div>';
+  }
+  function kpi(v, label, text) { return '<div class="kpi"><b' + (text ? ' class="txt"' : '') + '>' + v + '</b><span>' + label + '</span></div>'; }
+  function msg(text, warn) { const el = document.getElementById('dashMsg'); if (!el) return; el.textContent = text || ''; el.hidden = !text; el.style.color = warn ? '#B45309' : ''; }
+
+  async function load() {
+    try { data = await backend.stats(); render(); }
+    catch (e) { const c = String(e.code || ''); root.innerHTML = '<p class="note">' + (c.indexOf('permission-denied') > -1 ? 'Ce compte n\'est pas administrateur : le tableau de bord est réservé aux comptes autorisés.' : 'Tableau de bord indisponible : ' + esc(e.message || e)) + '</p>'; }
+  }
+  const csvCell = v => { const s = String(v === undefined || v === null ? '' : v); return /[";\n\r]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s; };
+  function download(name, lines) {
+    const blob = new Blob(['﻿' + lines.map(r => r.map(csvCell).join(';')).join('\r\n') + '\r\n'], { type: 'text/csv;charset=utf-8' });
+    const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = name; document.body.appendChild(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 1000);
+  }
+  async function exportAttempts(quiz) {
+    const lines = [['quiz', 'date', 'nom', 'score', 'total', 'mode', 'appareil', 'admin', 'import']]; let cursor = null, pages = 0;
+    try {
+      do { const r = await backend.export({ quiz: quiz || null, cursor: cursor, limit: 5000 }); r.rows.forEach(row => lines.push(row)); cursor = r.cursor; pages++; msg('Export en cours… ' + (lines.length - 1).toLocaleString('fr-FR') + ' lignes'); } while (cursor && pages < 400);
+      download('gouvernement-qcm-' + (quiz || 'tous-les-quiz') + '-' + new Date().toISOString().slice(0, 10) + '.csv', lines);
+      msg((lines.length - 1).toLocaleString('fr-FR') + ' lignes exportées.');
+    } catch (e) { msg('Export interrompu : ' + (e.message || e), true); }
+  }
+  async function exportTops() {
+    const lines = [['quiz', 'rang', 'nom', 'score', 'total', 'mode', 'date']];
+    try {
+      for (const q of data.quizzes) { const top = await backend.top(q.id); top.forEach((e, i) => lines.push([q.id, i + 1, e.name, e.ok, e.tot, e.mode, e.date])); }
+      download('gouvernement-qcm-classements-' + new Date().toISOString().slice(0, 10) + '.csv', lines); msg((lines.length - 1) + ' lignes de classement exportées.');
+    } catch (e) { msg('Export interrompu : ' + (e.message || e), true); }
+  }
+  document.addEventListener('click', e => {
+    const t = e.target.closest('button'); if (!t || !root) return;
+    if (t.dataset.dashRefresh !== undefined) { root.innerHTML = '<p class="note">Actualisation…</p>'; load(); }
+    else if (t.dataset.dashExport !== undefined) exportAttempts(t.dataset.dashExport);
+    else if (t.dataset.dashExportTop !== undefined) exportTops();
+  });
+  window.QCM_ADMIN = {
+    mount(el, b, qz) { root = el; backend = b; quizzes = qz || []; if (!b || !b.enabled) { root.innerHTML = '<p class="note">Serveur indisponible.</p>'; return; } load(); }
+  };
 })();
 
 </script>
@@ -3327,7 +3413,7 @@ QCM.ready = (async () => {
       auth.connectAuthEmulator(a, 'http://127.0.0.1:9099', { disableWarnings: true }); connectFirestoreEmulator(db, '127.0.0.1', 8080); connectFunctionsEmulator(fns, '127.0.0.1', 5001);
     }
     const call = name => { const f = httpsCallable(fns, name); return async data => (await f(data || {})).data; };
-    const submit = call('submit'), state = call('state'), reset = call('reset');
+    const submit = call('submit'), state = call('state'), reset = call('reset'), adminStats = call('adminStats'), adminExport = call('adminExport');
 
     // Session : on attend l'état persistant ; sans utilisateur, connexion anonyme (un identifiant par appareil / navigateur).
     const first = await new Promise(res => { const off = auth.onAuthStateChanged(a, u => { off(); res(u); }); });
@@ -3340,6 +3426,8 @@ QCM.ready = (async () => {
     QCM.state = quiz => state({ quiz });
     QCM.submit = payload => submit(payload);
     QCM.reset = quiz => reset({ quiz });
+    QCM.stats = () => adminStats({});
+    QCM.export = params => adminExport(params || {});
     QCM.top = async quiz => { const s = await getDoc(doc(db, 'leaderboard', quiz)); return (s.exists() && s.data().top) || []; };
     QCM.adminSignIn = async () => { const p = new auth.GoogleAuthProvider(); p.setCustomParameters({ prompt: 'select_account' }); const r = await auth.signInWithPopup(a, p); QCM.user = r.user; return r.user; };
     QCM.signOut = async () => { await auth.signOut(a); QCM.user = (await auth.signInAnonymously(a)).user; };

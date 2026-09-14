@@ -25,7 +25,7 @@ QCM.ready = (async () => {
       auth.connectAuthEmulator(a, 'http://127.0.0.1:9099', { disableWarnings: true }); connectFirestoreEmulator(db, '127.0.0.1', 8080); connectFunctionsEmulator(fns, '127.0.0.1', 5001);
     }
     const call = name => { const f = httpsCallable(fns, name); return async data => (await f(data || {})).data; };
-    const submit = call('submit'), state = call('state'), reset = call('reset');
+    const submit = call('submit'), state = call('state'), reset = call('reset'), adminStats = call('adminStats'), adminExport = call('adminExport');
 
     // Session : on attend l'état persistant ; sans utilisateur, connexion anonyme (un identifiant par appareil / navigateur).
     const first = await new Promise(res => { const off = auth.onAuthStateChanged(a, u => { off(); res(u); }); });
@@ -38,6 +38,8 @@ QCM.ready = (async () => {
     QCM.state = quiz => state({ quiz });
     QCM.submit = payload => submit(payload);
     QCM.reset = quiz => reset({ quiz });
+    QCM.stats = () => adminStats({});
+    QCM.export = params => adminExport(params || {});
     QCM.top = async quiz => { const s = await getDoc(doc(db, 'leaderboard', quiz)); return (s.exists() && s.data().top) || []; };
     QCM.adminSignIn = async () => { const p = new auth.GoogleAuthProvider(); p.setCustomParameters({ prompt: 'select_account' }); const r = await auth.signInWithPopup(a, p); QCM.user = r.user; return r.user; };
     QCM.signOut = async () => { await auth.signOut(a); QCM.user = (await auth.signInAnonymously(a)).user; };

@@ -234,3 +234,13 @@ table.board .medal{display:inline-block;vertical-align:middle;width:16px;height:
 .sync{margin:8px 0 0}.sync.warn{color:#B45309}.sync[hidden]{display:none}
 .adminline{text-align:center;font-size:12px;color:var(--muted);margin:14px 0 0}
 .admincard{margin-bottom:18px;border-color:var(--primary)}
+/* tableau de bord administrateur */
+.dash{margin-top:18px}.dash h3{font-size:15px;letter-spacing:.06em;text-transform:uppercase;color:var(--primary);margin:22px 0 10px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}
+.kpi{border:1px solid var(--line);border-radius:6px;padding:12px 14px;background:var(--sand)}.kpi b{display:block;font-size:26px;line-height:1.1;color:var(--ink)}.kpi span{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.days{display:flex;gap:4px;align-items:flex-end;height:110px;border-bottom:1px solid var(--line);padding-bottom:4px}
+.days div{flex:1;background:var(--primary);border-radius:3px 3px 0 0;position:relative;min-height:2px}.days div i{position:absolute;bottom:100%;left:0;right:0;text-align:center;font-size:10px;font-style:normal;color:var(--muted)}
+.dayslbl{display:flex;gap:4px;font-size:10px;color:var(--muted)}.dayslbl span{flex:1;text-align:center}
+.dash .board td.num{white-space:nowrap}.dash .row{margin-top:14px;flex-wrap:wrap;gap:8px}
+.dash .btn.small{padding:6px 12px;font-size:13px}.dash .ok{color:#1B7F4C}.dash .muted{color:var(--muted)}
+.kpi b.txt{font-size:16px;line-height:1.25;margin-bottom:4px}
