@@ -198,7 +198,7 @@
   function landing() {
     rail.hidden = true; quizbar.hidden = true; Q = null;
     app.innerHTML = '<div class="card landing">' +
-      '<div class="eyebrow">Semaine de l\'Indépendance · An 68 · République de Guinée</div>' +
+      '<div class="eyebrow">Semaine de la Fête Nationale · An 68 · République de Guinée</div>' +
       '<div class="tagline">' + TAGLINE.map((t, i) => (i ? '<i></i>' : '') + '<span>' + esc(t) + '</span>').join('') + '</div>' +
       '<p>Cinq questionnaires de 40 questions pour célébrer l\'An 68 de l\'Indépendance : indiquez votre nom, puis choisissez votre quiz. Chaque quiz se joue par sections ou en une seule fois, avec un classement et un certificat à partir de 80 % de bonnes réponses.</p>' +
       '<div class="who"><label for="playerName">Votre nom et prénom(s) <small>affichés au classement et sur le certificat</small></label>' +
@@ -386,7 +386,7 @@
       '<div class="sig"><div class="ln"></div>Signature de l\'organisateur</div>' +
       '<div class="logo"><img class="' + esc(c.logo) + '" src="' + (ASSETS[c.logo] || ASSETS.simandou2040) + '" alt=""><small>' + esc(c.logoText) + '</small></div>' +
       '</div>' +
-      '<div class="id">Certificat n° ' + id + ' · Gouvernement QCM · Guinée 68 · Semaine de l\'Indépendance · 25 sept – 2 oct 2026</div>' +
+      '<div class="id">Certificat n° ' + id + ' · Gouvernement QCM · Guinée 68 · Semaine de la Fête Nationale · 25 sept – 2 oct 2026</div>' +
       '</div></div></div></div>';
     fitCert(); window.addEventListener('resize', fitCert);
     document.body.style.overflow = 'hidden';

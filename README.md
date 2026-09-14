@@ -1,4 +1,4 @@
-# Gouvernement QCM — Semaine de l'Indépendance, An 68
+# Gouvernement QCM — Semaine de la Fête Nationale, An 68
 
 *L'Indépendance en héritage · La jeunesse en marche · Simandou 2040 en ligne de mire*
 
@@ -115,4 +115,4 @@ Le bouton « Imprimer / Enregistrer en PDF » utilise l'impression du navigateur
 
 ## Documents sources
 
-Les présentations `.pptx` de la Semaine de l'Indépendance sont exclues du dépôt par `.gitignore` (documents internes).
+Les présentations `.pptx` de la Semaine de la Fête Nationale sont exclues du dépôt par `.gitignore` (documents internes).

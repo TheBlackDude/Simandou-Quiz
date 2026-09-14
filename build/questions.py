@@ -125,7 +125,7 @@ SECTIONS = [
  ("Sous quelle autorité est placée l'unité d'exécution du Programme Simandou 2040 ?",
   ["La Banque mondiale","Les collectivités locales","Les sociétés minières","Le Chef de l'État"],3,
   "L'unité d'exécution est placée sous l'autorité directe du Président de la République pour garantir suivi et redevabilité."),
- ("Pendant la Semaine de l'Indépendance An 68, à quelle occasion Simandou 2040 est-il présenté aux jeunes ?",
+ ("Pendant la Semaine de la Fête Nationale An 68, à quelle occasion Simandou 2040 est-il présenté aux jeunes ?",
   ["Au défilé militaire du 2 octobre","Au lancement du 25 septembre","À la Marche de l'Unité","Au Forum Jeunesse & Avenir du 30 septembre"],3,
   "Le 30 septembre, journée « Emploi & opportunités », le Forum Jeunesse & Avenir présente Simandou 2040 et ses opportunités aux jeunes."),
 ]),

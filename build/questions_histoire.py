@@ -127,6 +127,6 @@ SECTIONS = [
   "Le CNRD engage la transition, dote le pays d'une nouvelle Constitution adoptée par référendum le 21 septembre 2025 et lance le Programme Simandou 2040."),
  ("Le 2 octobre 2026, la Guinée célèbre quel anniversaire de son indépendance ?",
   ["Le 58e","Le 66e","Le 68e","Le 70e"],2,
-  "Semaine de l'Indépendance An 68 : l'indépendance en héritage, la jeunesse en marche, Simandou 2040 en ligne de mire."),
+  "Semaine de la Fête Nationale An 68 : l'indépendance en héritage, la jeunesse en marche, Simandou 2040 en ligne de mire."),
 ]),
 ]

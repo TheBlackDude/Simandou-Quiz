@@ -1,5 +1,5 @@
 /* Généré par build/build_site.py — modifier build/questions*.py ou build/quizzes.py puis relancer. */
-window.QUIZ_VERSION = "6b09c41a106b";
+window.QUIZ_VERSION = "ba8fafacbe2f";
 window.QUIZ_TAGLINE = ["L'Indépendance en héritage", "La jeunesse en marche", "Simandou 2040 en ligne de mire"];
 window.QUIZZES = [
  {
@@ -41,7 +41,7 @@ window.QUIZZES = [
    ]
   ],
   "cert": {
-   "subtitle": "Quiz Simandou · Semaine de l'Indépendance · An 68",
+   "subtitle": "Quiz Simandou · Semaine de la Fête Nationale · An 68",
    "about": "du Quiz Simandou, portant sur le gisement, ses partenaires, le chemin de fer transguinéen, le port de Morebaya et le Programme Simandou 2040",
    "prefix": "SIM68",
    "logo": "simandou2040",
@@ -501,7 +501,7 @@ window.QUIZZES = [
       "e": "L'unité d'exécution est placée sous l'autorité directe du Président de la République pour garantir suivi et redevabilité."
      },
      {
-      "q": "Pendant la Semaine de l'Indépendance An 68, à quelle occasion Simandou 2040 est-il présenté aux jeunes ?",
+      "q": "Pendant la Semaine de la Fête Nationale An 68, à quelle occasion Simandou 2040 est-il présenté aux jeunes ?",
       "opts": [
        "Au défilé militaire du 2 octobre",
        "Au lancement du 25 septembre",
@@ -554,7 +554,7 @@ window.QUIZZES = [
    ]
   ],
   "cert": {
-   "subtitle": "Quiz Histoire de la Guinée · Semaine de l'Indépendance · An 68",
+   "subtitle": "Quiz Histoire de la Guinée · Semaine de la Fête Nationale · An 68",
    "about": "du Quiz Histoire de la Guinée, portant sur l'indépendance de 1958, ses acteurs, les grandes figures nationales, les réalisations des gouvernements successifs et le rôle de l'armée",
    "prefix": "HIS68",
    "logo": "drapeau",
@@ -1022,7 +1022,7 @@ window.QUIZZES = [
        "Le 70e"
       ],
       "a": 2,
-      "e": "Semaine de l'Indépendance An 68 : l'indépendance en héritage, la jeunesse en marche, Simandou 2040 en ligne de mire."
+      "e": "Semaine de la Fête Nationale An 68 : l'indépendance en héritage, la jeunesse en marche, Simandou 2040 en ligne de mire."
      }
     ]
    }
@@ -1067,7 +1067,7 @@ window.QUIZZES = [
    ]
   ],
   "cert": {
-   "subtitle": "Quiz Armée et Gendarmerie · Semaine de l'Indépendance · An 68",
+   "subtitle": "Quiz Armée et Gendarmerie · Semaine de la Fête Nationale · An 68",
    "about": "du Quiz Armée et Gendarmerie nationale, portant sur les résistants, la naissance de l'armée nationale, ses grandes figures, la Gendarmerie nationale, les unités et spécialités, les missions extérieures et le rôle de l'armée dans le développement",
    "prefix": "ARM68",
    "logo": "armoiries",
@@ -1580,7 +1580,7 @@ window.QUIZZES = [
    ]
   ],
   "cert": {
-   "subtitle": "Quiz Bilan du CNRD 2021-2026 · Semaine de l'Indépendance · An 68",
+   "subtitle": "Quiz Bilan du CNRD 2021-2026 · Semaine de la Fête Nationale · An 68",
    "about": "du Quiz Bilan du CNRD 2021-2026, portant sur la refondation de l'État, le retour à l'ordre constitutionnel, l'économie et les finances publiques, les grands chantiers d'infrastructures, le capital humain et la bonne gouvernance",
    "prefix": "CNRD68",
    "logo": "armoiries",
@@ -2093,7 +2093,7 @@ window.QUIZZES = [
    ]
   ],
   "cert": {
-   "subtitle": "Quiz Secrétariat général du Gouvernement · Semaine de l'Indépendance · An 68",
+   "subtitle": "Quiz Secrétariat général du Gouvernement · Semaine de la Fête Nationale · An 68",
    "about": "du Quiz Secrétariat général du Gouvernement, portant sur les missions et l'organisation du SGG, ses dirigeants successifs, ses réformes et innovations, le Forum international des SGG et la Semaine nationale des archives",
    "prefix": "SGG68",
    "logo": "armoiries",
