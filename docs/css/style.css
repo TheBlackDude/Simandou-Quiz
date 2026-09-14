@@ -233,3 +233,4 @@ table.board .medal{display:inline-block;vertical-align:middle;width:16px;height:
 /* liaison serveur */
 .sync{margin:8px 0 0}.sync.warn{color:#B45309}.sync[hidden]{display:none}
 .adminline{text-align:center;font-size:12px;color:var(--muted);margin:14px 0 0}
+.admincard{margin-bottom:18px;border-color:var(--primary)}

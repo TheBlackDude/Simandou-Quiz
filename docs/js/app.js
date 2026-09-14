@@ -8,6 +8,7 @@
   const CFG = window.QUIZ_CONFIG || {};
   const VERSION = window.QUIZ_VERSION || '';
   const SERVER = !!(CFG.firebase && CFG.firebase.apiKey); // liaison Firebase configurée (js/backend.js crée window.QCM)
+  const ADMIN_PAGE = /\/admin\/?$/.test(location.pathname); // https://quiz.guineen68.com/admin : accueil avec panneau de connexion administrateur
   const ASSETS = window.QUIZ_ASSETS || { armoiries: 'assets/armoiries.png', simandou2040: 'assets/simandou2040.png', drapeau: 'assets/drapeau.png' };
   const PASS = 0.80;            // seuil pour débloquer la section suivante
   const SHOW_FEEDBACK = true;   // false : ne pas révéler la bonne réponse après chaque question
@@ -197,7 +198,7 @@
   /* ---------- Accueil général : nom + choix du quiz ---------- */
   function landing() {
     rail.hidden = true; quizbar.hidden = true; Q = null;
-    app.innerHTML = '<div class="card landing">' +
+    app.innerHTML = (ADMIN_PAGE && SERVER ? adminPanel() : '') + '<div class="card landing">' +
       '<div class="eyebrow">Semaine de la Fête Nationale · An 68 · République de Guinée</div>' +
       '<div class="tagline">' + TAGLINE.map((t, i) => (i ? '<i></i>' : '') + '<span>' + esc(t) + '</span>').join('') + '</div>' +
       '<p>Cinq questionnaires de 40 questions pour célébrer l\'An 68 de l\'Indépendance : indiquez votre nom, puis choisissez votre quiz. Chaque quiz se joue par sections ou en une seule fois, avec un classement et un certificat à partir de 80 % de bonnes réponses.</p>' +
@@ -212,6 +213,14 @@
       '</div>';
     window.scrollTo({ top: 0 });
     const input = document.getElementById('playerName'); if (input && !player) input.focus();
+  }
+  function adminPanel() {
+    const b = window.QCM, connected = b && b.enabled && !b.isAnonymous();
+    return '<div class="card admincard"><div class="eyebrow">Administration · Gouvernement QCM</div>' +
+      (connected
+        ? '<h2 class="h2">Connecté : ' + esc(b.email()) + '</h2><p>Si ce compte figure dans la liste des administrateurs, vous disposez de tentatives illimitées sur tous les quiz et vos résultats sont conservés hors du classement public. Choisissez un quiz ci-dessous : la mention « administrateur » apparaît dans la barre du quiz.</p><div class="row"><button class="btn ghost" data-signout>Déconnexion</button></div>'
+        : '<h2 class="h2">Connexion administrateur</h2><p>Réservé aux comptes autorisés (connexion Google). Les participants n\'ont pas besoin de se connecter.</p><div class="row"><button class="btn" data-admin>Se connecter avec Google</button></div>') +
+      '</div>';
   }
   function pick(id) {
     const input = document.getElementById('playerName');
@@ -438,4 +447,5 @@
   });
   document.addEventListener('input', e => { if (e.target.id === 'playerName') { const err = document.getElementById('nameErr'); if (err) err.hidden = true; } });
   landing();
+  if (ADMIN_PAGE && SERVER) Backend.get().then(() => { if (!Q) landing(); }); // rafraîchit le panneau une fois l'état de connexion connu
 })();

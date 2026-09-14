@@ -3,6 +3,7 @@
     "public": "docs",
     "ignore": ["**/.*", "**/node_modules/**"],
     "cleanUrls": true,
+    "rewrites": [ { "source": "/admin", "destination": "/index.html" } ],
     "headers": [
       { "source": "**/*.@(js|css)", "headers": [ { "key": "Cache-Control", "value": "public, max-age=300" } ] },
       { "source": "assets/**", "headers": [ { "key": "Cache-Control", "value": "public, max-age=86400" } ] },
