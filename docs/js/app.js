@@ -198,7 +198,8 @@
   /* ---------- Accueil général : nom + choix du quiz ---------- */
   let landing = function () {
     rail.hidden = true; quizbar.hidden = true; Q = null;
-    app.innerHTML = (ADMIN_PAGE && SERVER ? adminPanel() : '') + '<div class="card landing">' +
+    if (ADMIN_PAGE && SERVER) { app.innerHTML = adminPanel(); window.scrollTo({ top: 0 }); return; } // /admin : tableau de bord seulement
+    app.innerHTML = '<div class="card landing">' +
       '<div class="eyebrow">Semaine de la Fête Nationale · An 68 · République de Guinée</div>' +
       '<div class="tagline">' + TAGLINE.map((t, i) => (i ? '<i></i>' : '') + '<span>' + esc(t) + '</span>').join('') + '</div>' +
       '<p>Cinq questionnaires de 40 questions pour célébrer l\'An 68 de l\'Indépendance : indiquez votre nom, puis choisissez votre quiz. Chaque quiz se joue par sections ou en une seule fois, avec un classement et un certificat à partir de 80 % de bonnes réponses.</p>' +
@@ -218,9 +219,9 @@
     const b = window.QCM, connected = b && b.enabled && !b.isAnonymous();
     return '<div class="card admincard"><div class="eyebrow">Administration · Gouvernement QCM</div>' +
       (connected
-        ? '<h2 class="h2">Connecté : ' + esc(b.email()) + '</h2><p>Si ce compte figure dans la liste des administrateurs, le tableau de bord s\'affiche ci-dessous ; vous disposez aussi de tentatives illimitées sur tous les quiz, avec des résultats conservés hors du classement public.</p><div class="row"><button class="btn ghost" data-signout>Déconnexion</button></div>' +
+        ? '<h2 class="h2">Connecté : ' + esc(b.email()) + '</h2><p>Si ce compte figure dans la liste des administrateurs, le tableau de bord s\'affiche ci-dessous ; vous disposez aussi de tentatives illimitées sur tous les quiz, avec des résultats conservés hors du classement public.</p><div class="row"><button class="btn ghost" data-signout>Déconnexion</button><a class="btn ghost" href="/">Aller au quiz</a></div>' +
           '<div id="dash"><p class="note">Chargement du tableau de bord…</p></div>'
-        : '<h2 class="h2">Connexion administrateur</h2><p>Réservé aux comptes autorisés (connexion Google). Les participants n\'ont pas besoin de se connecter.</p><div class="row"><button class="btn" data-admin>Se connecter avec Google</button></div>') +
+        : '<h2 class="h2">Connexion administrateur</h2><p>Réservé aux comptes autorisés (connexion Google). Les participants n\'ont pas besoin de se connecter.</p><div class="row"><button class="btn" data-admin>Se connecter avec Google</button><a class="btn ghost" href="/">Aller au quiz</a></div>') +
       '</div>';
   }
   function pick(id) {
