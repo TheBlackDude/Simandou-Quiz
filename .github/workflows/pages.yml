@@ -1,8 +1,9 @@
-name: Déployer le quiz sur GitHub Pages
+name: GitHub Pages → redirection vers quiz.guineen68.com
+# Depuis la bascule, GitHub Pages ne sert plus que la page de redirection (dossier redirect/).
 on:
   push:
     branches: [main]
-    paths: ["docs/**"]
+    paths: ["redirect/**"]
   workflow_dispatch:
 permissions:
   contents: read
@@ -22,6 +23,6 @@ jobs:
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: docs
+          path: redirect
       - id: deployment
         uses: actions/deploy-pages@v4

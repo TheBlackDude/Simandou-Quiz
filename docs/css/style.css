@@ -229,3 +229,7 @@ table.board .medal{display:inline-block;vertical-align:middle;width:16px;height:
 .pick .go{margin-top:12px;font-size:14px;font-weight:600;letter-spacing:.04em;padding:9px 16px;border-radius:4px;background:var(--btn-bg);color:var(--btn-fg)}
 .cert .bottom .logo img.drapeau{height:9mm;border:.3mm solid #E4E8ED}
 @media (max-width:520px){.quizbar .link{margin-left:0}}
+
+/* liaison serveur */
+.sync{margin:8px 0 0}.sync.warn{color:#B45309}.sync[hidden]{display:none}
+.adminline{text-align:center;font-size:12px;color:var(--muted);margin:14px 0 0}

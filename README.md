@@ -72,6 +72,15 @@ pour voir apparaître le bouton « Continuer : section suivante ». La progressi
 (`localStorage`), séparément pour chaque module ; un lien « Réinitialiser le parcours » la remet à zéro.
 Le quiz complet reste toujours accessible. Le seuil se règle dans `docs/js/app.js` (constante `PASS`).
 
+## Version en ligne : quiz.guineen68.com (Firebase)
+
+Depuis le 14 septembre 2026, le site est prévu pour Firebase Hosting avec correction côté serveur, limite de
+2 tentatives par appareil et par quiz, classement agrégé et comptes administrateurs exemptés.
+Fichiers : `firebase.json`, `firestore.rules`, `functions/` (Cloud Functions), `docs/js/backend.js` (liaison
+navigateur), `tools/` (import de l'ancien classement, administrateurs, export CSV), `redirect/` (page de
+redirection GitHub Pages après bascule). Mode d'emploi complet : **[DEPLOIEMENT.md](DEPLOIEMENT.md)**.
+Sans configuration Firebase (`apiKey` vide dans `docs/js/config.js`), l'application fonctionne comme avant.
+
 ## Classement (leaderboard)
 
 Chaque quiz complet terminé et chaque parcours par sections terminé est enregistré au classement du module

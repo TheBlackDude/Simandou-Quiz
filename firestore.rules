@@ -1,0 +1,11 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Classement agrégé (top 100 par quiz) : lecture publique, écriture uniquement par les Cloud Functions.
+    match /leaderboard/{quiz} { allow read: if true; allow write: if false; }
+    // Chaque appareil peut lire son propre profil et sa progression ; tout le reste passe par les Cloud Functions.
+    match /users/{uid} { allow read: if request.auth != null && request.auth.uid == uid; allow write: if false; }
+    match /progress/{id} { allow read: if request.auth != null && id.matches('^' + request.auth.uid + '_.*'); allow write: if false; }
+    match /{document=**} { allow read, write: if false; }
+  }
+}

@@ -6,6 +6,8 @@
   const QUIZZES = window.QUIZZES || [];
   const TAGLINE = window.QUIZ_TAGLINE || [];
   const CFG = window.QUIZ_CONFIG || {};
+  const VERSION = window.QUIZ_VERSION || '';
+  const SERVER = !!(CFG.firebase && CFG.firebase.apiKey); // liaison Firebase configurée (js/backend.js crée window.QCM)
   const ASSETS = window.QUIZ_ASSETS || { armoiries: 'assets/armoiries.png', simandou2040: 'assets/simandou2040.png', drapeau: 'assets/drapeau.png' };
   const PASS = 0.80;            // seuil pour débloquer la section suivante
   const SHOW_FEEDBACK = true;   // false : ne pas révéler la bonne réponse après chaque question
@@ -17,6 +19,89 @@
   let Q = null, DATA = [], ALL = [], LEVELS = [];
   let queue = [], idx = 0, answers = {}, scope = 'all', player = '';
   let pendingCert = null; // { ok, tot }
+  let chosen = {};        // réponse choisie par question (index 0-3), envoyée au serveur pour correction
+  let remote = null;      // état serveur du quiz courant : { attemptsUsed, limit, admin, email, progress }
+
+  /* ---------- Liaison serveur (Firebase) ---------- */
+  const errCode = e => String((e && e.code) || '').replace(/^functions\//, '');
+  const Backend = {
+    _p: null,
+    wait() { if (!this._p) this._p = new Promise(res => { const done = () => res(window.QCM || null); if (window.QCM) return done(); window.addEventListener('qcm-ready', done, { once: true }); setTimeout(done, 15000); }); return this._p; },
+    async get() { if (!SERVER) return null; const b = await this.wait(); if (!b) return null; try { await b.ready; } catch (e) {} return b.enabled ? b : null; }
+  };
+  function applyRemote(r) {
+    if (!r) return;
+    remote = Object.assign({}, remote || {}, { attemptsUsed: r.attemptsUsed, limit: r.limit, admin: !!r.admin, email: r.email || (remote && remote.email) || '' });
+    if (r.progress) { remote.progress = r.progress; saveProgress({ unlocked: r.progress.unlocked || 0, best: r.progress.best || {} }); }
+  }
+  const exhausted = () => !!(remote && !remote.admin && remote.attemptsUsed >= remote.limit);
+  // Résultats en attente d'envoi (connexion instable) : renvoyés dans l'ordre dès que possible
+  const Pending = {
+    key: 'quizPending',
+    list() { try { return JSON.parse(store.get(this.key) || '[]'); } catch (e) { return []; } },
+    save(l) { store.set(this.key, JSON.stringify(l.slice(-20))); },
+    push(item) { const l = this.list(); l.push(item); this.save(l); },
+    busy: false,
+    async flush() {
+      if (this.busy) return 0; this.busy = true; let sent = 0;
+      try {
+        const b = await Backend.get(); if (!b) return 0;
+        let l = this.list();
+        while (l.length) {
+          const item = l[0];
+          try { const r = await b.submit(item); l.shift(); this.save(l); sent++; if (Q && item.quiz === Q.id) applyRemote(r); }
+          catch (e) { const c = errCode(e); if (c === 'failed-precondition' || c === 'invalid-argument' || c === 'permission-denied') { l.shift(); this.save(l); } else break; }
+        }
+      } finally { this.busy = false; }
+      if (sent && document.getElementById('attemptsNote')) home(); // des résultats en attente viennent d'être enregistrés
+      return sent;
+    }
+  };
+  window.addEventListener('online', () => Pending.flush());
+  async function syncState() {
+    const b = await Backend.get(); if (!b || !Q) return;
+    const id = Q.id;
+    try {
+      const r = await b.state(id); if (!Q || Q.id !== id) return;
+      remote = { attemptsUsed: r.attemptsUsed, limit: r.limit, admin: !!r.admin, email: r.email || '', progress: r.progress };
+      saveProgress({ unlocked: r.progress.unlocked || 0, best: r.progress.best || {} });
+      if (r.version && VERSION && r.version !== VERSION) return staleVersion();
+      if (document.getElementById('attemptsNote')) home(); // accueil du quiz affiché : on le rafraîchit avec l'état serveur
+    } catch (e) { console.warn('État serveur indisponible', e); const el = document.getElementById('attemptsNote'); if (el && !remote) el.innerHTML = 'Serveur momentanément indisponible : vous pouvez jouer, vos résultats seront envoyés dès que possible.'; }
+    Pending.flush();
+  }
+  function setSync(text, warn) { const el = document.getElementById('syncNote'); if (!el) return; el.textContent = text || ''; el.classList.toggle('warn', !!warn); el.hidden = !text; }
+  function staleVersion() {
+    rail.hidden = true;
+    app.innerHTML = '<div class="card"><div class="eyebrow">Mise à jour</div><h2 class="h2">Le contenu du quiz a été mis à jour</h2><p>Rechargez la page pour continuer avec la dernière version des questions.</p><div class="row"><button class="btn" data-reload>Recharger la page</button></div></div>';
+  }
+  function attemptsText() {
+    if (!SERVER) return '';
+    if (!remote) return 'Vérification de vos tentatives…';
+    if (remote.admin) return 'Mode administrateur (' + esc(remote.email || '') + ') : tentatives illimitées, résultats hors classement.';
+    const left = Math.max(0, remote.limit - remote.attemptsUsed);
+    return 'Résultats enregistrés au classement sur cet appareil : <b>' + remote.attemptsUsed + ' sur ' + remote.limit + '</b> pour ce quiz (quiz complet ou parcours terminé). ' +
+      (left ? 'Il vous reste ' + left + ' tentative' + (left > 1 ? 's' : '') + '.' : 'Vous avez utilisé vos ' + remote.limit + ' tentatives : vous pouvez rejouer les sections, mais aucun nouveau résultat ne sera enregistré.');
+  }
+  async function submitResult(mode, section) {
+    const b = await Backend.get(); if (!b) return; // mode local : rien à envoyer
+    const payload = { quiz: Q.id, mode: mode, section: section, name: player, v: VERSION, answers: queue.map(q => chosen[q.n] === undefined ? null : chosen[q.n]) };
+    setSync('Enregistrement de votre résultat…');
+    try {
+      const r = await b.submit(payload); applyRemote(r);
+      if (mode === 'full') setSync(r.recorded ? (r.admin ? 'Résultat enregistré (administrateur : hors classement, tentatives illimitées).' : 'Résultat enregistré au classement · tentative ' + r.attemptsUsed + ' sur ' + r.limit + '.') : 'Résultat non enregistré : les ' + r.limit + ' tentatives de cet appareil sont déjà utilisées sur ce quiz.', !r.recorded);
+      else if (r.parcours) setSync(r.recorded ? 'Parcours enregistré' + (r.admin ? ' (administrateur : hors classement)' : ' au classement') + ' : ' + r.parcours.ok + ' / ' + r.parcours.tot + '.' : 'Parcours terminé mais non enregistré : les ' + r.limit + ' tentatives de cet appareil sont déjà utilisées sur ce quiz.', !r.recorded);
+      else setSync(r.passed ? 'Section validée : progression enregistrée.' : 'Progression enregistrée.');
+      const steps = document.getElementById('steps'); if (steps && r.progress) steps.innerHTML = stepsHtml(r.progress, section);
+    } catch (e) {
+      const c = errCode(e);
+      if (c === 'failed-precondition' && /version/.test(String(e.message))) return staleVersion();
+      if (c === 'failed-precondition') return setSync('Section non disponible sur le serveur : reprenez le parcours depuis l\'accueil du quiz.', true);
+      if (c === 'invalid-argument') return setSync('Résultat refusé par le serveur : ' + (e.message || ''), true);
+      if (c === 'resource-exhausted') return setSync('Trop de soumissions rapprochées : patientez quelques secondes puis recommencez.', true);
+      Pending.push(payload); setSync('Résultat non encore enregistré (connexion instable) : il sera envoyé automatiquement dès que la connexion revient.', true);
+    }
+  }
 
   const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
   const pad = n => String(n).padStart(2, '0');
@@ -41,7 +126,7 @@
   }
   function setBar(show) {
     quizbar.hidden = !show;
-    if (show) { document.getElementById('quizName').textContent = Q.title; document.getElementById('whoIs').textContent = player ? '· ' + player : ''; }
+    if (show) { document.getElementById('quizName').textContent = Q.title; document.getElementById('whoIs').textContent = (player ? '· ' + player : '') + (remote && remote.admin ? ' · administrateur' : ''); }
   }
 
   /* ---------- Classement (commun à tous les modules, filtré par quiz) ---------- */
@@ -63,7 +148,11 @@
     },
     async list() {
       let list = this.local(), shared = false;
-      if (CFG.leaderboardUrl) {
+      const b = await Backend.get();
+      if (b) {
+        try { const top = await b.top(Q.id); return { rows: this.rank(top.map(e => Object.assign({}, e, { quiz: Q.id }))), shared: true }; } catch (e) { console.warn('Classement indisponible', e); }
+      }
+      if (CFG.leaderboardUrl && !SERVER) {
         try { const r = await fetch(CFG.leaderboardUrl + (CFG.leaderboardUrl.indexOf('?') > -1 ? '&' : '?') + 't=' + Date.now(), { cache: 'no-store' }); const remote = await r.json(); if (Array.isArray(remote)) { list = remote; shared = true; } } catch (e) {}
       }
       return { rows: this.rank(list.filter(e => e && quizOf(e) === Q.id)), shared: shared };
@@ -79,6 +168,7 @@
     }
   };
   function record(mode, ok, tot) {
+    if (SERVER) return; // avec Firebase, seul le serveur enregistre (après correction)
     Board.add({ name: player || 'Anonyme', ok: ok, tot: tot, mode: modeName(mode), quiz: Q.id, date: new Date().toISOString() });
   }
   function boardTable(rows, shared) {
@@ -117,7 +207,8 @@
         const n = q.sections.reduce((s, x) => s + x.questions.length, 0);
         return '<button class="pick" data-quiz="' + esc(q.id) + '"><span class="num">' + pad(i + 1) + '</span><span class="pt">' + esc(q.title) + '</span><span class="ps">' + esc(q.short) + '</span><span class="pm">' + n + ' questions · ' + q.sections.length + ' sections · certificat</span><span class="go">Commencer</span></button>';
       }).join('') + '</div>' +
-      '<p class="rules">Une seule bonne réponse par question · 1 point par bonne réponse · Parcours par sections : réussissez une section à <b>80 %</b> pour débloquer la suivante.</p>' +
+      '<p class="rules">Une seule bonne réponse par question · 1 point par bonne réponse · Parcours par sections : réussissez une section à <b>80 %</b> pour débloquer la suivante.' + (SERVER ? ' Chaque appareil dispose de <b>2 tentatives</b> enregistrées au classement par quiz.' : '') + '</p>' +
+      (SERVER ? '<p class="adminline">' + (window.QCM && window.QCM.enabled && !window.QCM.isAnonymous() ? 'Connecté : ' + esc(window.QCM.email()) + ' · <button class="link" data-signout>Déconnexion</button>' : '<button class="link" data-admin>Administration</button>') + '</p>' : '') +
       '</div>';
     window.scrollTo({ top: 0 });
     const input = document.getElementById('playerName'); if (input && !player) input.focus();
@@ -136,7 +227,8 @@
     DATA = Q.sections; ALL = [];
     DATA.forEach((s, si) => s.questions.forEach(q => ALL.push(Object.assign({}, q, { sec: si, n: ALL.length + 1 }))));
     LEVELS = LEVEL_MIN.map(l => Object.assign({ title: Q.levels[l.key] }, l));
-    pendingCert = null;
+    pendingCert = null; remote = null;
+    syncState();
   }
 
   /* ---------- Accueil d'un quiz ---------- */
@@ -165,7 +257,8 @@
           '<span class="l">' + (locked ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>' : s.letter) + '</span>' +
           '<span class="t">' + esc(s.title) + '</span><span class="n">' + state + '</span></button>';
       }).join('') + '</div>' +
-      '<div class="row"><button class="btn" data-start="all">Lancer le quiz complet</button><button class="btn ghost" data-board>Voir le classement</button></div>' +
+      '<div class="row"><button class="btn" data-start="all"' + (exhausted() ? ' disabled aria-disabled="true"' : '') + '>Lancer le quiz complet</button><button class="btn ghost" data-board>Voir le classement</button></div>' +
+      (SERVER ? '<p class="rules" id="attemptsNote">' + attemptsText() + '</p>' : '') +
       '<p class="rules">Une seule bonne réponse par question · 1 point par bonne réponse · La barre de progression avance de ' + esc(Q.rail.from) + ' vers ' + esc(Q.rail.to) + ' au fil des questions.<br>Parcours par sections : réussissez une section à <b>80 %</b> (8 bonnes réponses sur 10) pour débloquer la suivante.' + (prog.unlocked > 0 || Object.keys(prog.best).length ? ' <button class="link" data-reset>Réinitialiser le parcours</button>' : '') + '</p>' +
       (function () { const ps = parcoursScore(prog); return ps ? certBox(ps.ok, ps.tot, 'Parcours des quatre sections terminé : ' + ps.ok + ' bonnes réponses sur ' + ps.tot + ' (' + Math.round(ps.ok / ps.tot * 100) + ' %).') : ''; })() +
       '<div class="levels">' + LEVELS.slice().reverse().map(l => '<div class="lv"><span class="medal ' + l.key + '"></span><span><b>Certificat ' + l.label + '</b> · à partir de ' + Math.round(l.min * 100) + ' % de bonnes réponses sur ' + ALL.length + '</span></div>').join('') + '</div>' +
@@ -179,8 +272,9 @@
   function start(sc) {
     if (!Q) return landing();
     if (!player) return landing();
+    if (sc === 'all' && exhausted()) return home();
     scope = sc; queue = sc === 'all' ? ALL.slice() : ALL.filter(q => q.sec === sc);
-    idx = 0; answers = {}; renderQ(); window.scrollTo({ top: 0 });
+    idx = 0; answers = {}; chosen = {}; renderQ(); window.scrollTo({ top: 0 });
   }
   function renderQ() {
     const q = queue[idx], s = DATA[q.sec]; setRail(); setBar(true);
@@ -196,7 +290,7 @@
   }
   function answer(i) {
     const q = queue[idx]; if (answers[q.n] !== undefined) return;
-    const ok = i === q.a; answers[q.n] = ok;
+    const ok = i === q.a; answers[q.n] = ok; chosen[q.n] = i;
     if (SHOW_FEEDBACK) {
       app.querySelectorAll('.opt').forEach((b, k) => { b.disabled = true; b.classList.add(k === q.a ? 'good' : k === i ? 'bad' : 'dim'); });
       document.getElementById('fb').innerHTML = '<div class="fb ' + (ok ? 'ok' : 'ko') + '"><strong>' + (ok ? 'Bonne réponse.' : 'Réponse : ' + 'ABCD'[q.a] + '. ' + esc(q.opts[q.a])) + '</strong>' + esc(q.e) + '</div>';
@@ -229,8 +323,7 @@
         if (si + 1 > prog.unlocked) prog.unlocked = si + 1;
         saveProgress(prog);
       }
-      const steps = DATA.map((s, i) => '<span class="step' + (prog.best[i] !== undefined ? ' ok' : i <= prog.unlocked ? ' open' : '') + (i === si ? ' cur' : '') + '">' + s.letter + '</span>').join('<i></i>');
-      certHtml = '<div class="progress"><div class="steps">' + steps + '</div>' +
+      certHtml = '<div class="progress"><div class="steps" id="steps">' + stepsHtml(prog, si) + '</div>' +
         (passed
           ? (nextSec
               ? '<h3>Section ' + DATA[si].letter + ' validée</h3><p>Vous avez atteint ' + Math.round(ratio * 100) + ' % : la section ' + nextSec.letter + ' est débloquée.</p><button class="btn gold" data-start="' + (si + 1) + '">Continuer : section ' + nextSec.letter + ' · ' + esc(nextSec.title) + '</button>'
@@ -246,12 +339,17 @@
     app.innerHTML = '<div class="card">' +
       '<div class="eyebrow">Résultat · ' + (scope === 'all' ? 'Quiz complet' : 'Section ' + DATA[scope].letter) + ' · ' + esc(player) + '</div>' +
       '<div class="big"><span class="n">' + ok + '</span><span class="d">/ ' + tot + '</span></div>' +
+      '<p class="note sync" id="syncNote" hidden></p>' +
       '<div class="mention">' + esc(m[0]) + '<small>' + esc(m[1]) + '</small></div>' +
       certHtml +
       '<table><thead><tr><th>Section</th><th style="text-align:right">Score</th></tr></thead><tbody>' + rows + '</tbody></table>' +
       '<div class="row"><button class="btn" data-start="' + scope + '">Recommencer</button><span style="display:flex;gap:8px"><button class="btn ghost" data-home>Accueil</button><button class="btn ghost" data-board>Classement</button></span></div>' +
       '</div>';
     window.scrollTo({ top: 0 });
+    submitResult(scope === 'all' ? 'full' : 'section', scope === 'all' ? null : scope);
+  }
+  function stepsHtml(prog, si) {
+    return DATA.map((s, i) => '<span class="step' + (prog.best[i] !== undefined ? ' ok' : i <= prog.unlocked ? ' open' : '') + (i === si ? ' cur' : '') + '">' + s.letter + '</span>').join('<i></i>');
   }
 
   /* ---------- Certificat ---------- */
@@ -328,7 +426,10 @@
     else if (t.dataset.cert !== undefined) openCert();
     else if (t.dataset.print !== undefined) printCert();
     else if (t.dataset.close !== undefined) closeCert();
-    else if (t.dataset.reset !== undefined) { saveProgress({ unlocked: 0, best: {} }); home(); }
+    else if (t.dataset.reset !== undefined) { saveProgress({ unlocked: 0, best: {} }); Backend.get().then(b => { if (b && Q) b.reset(Q.id).then(() => syncState()).catch(e => console.warn(e)); }); home(); }
+    else if (t.dataset.reload !== undefined) location.reload();
+    else if (t.dataset.admin !== undefined) Backend.get().then(b => b && b.adminSignIn()).then(() => landing()).catch(e => console.warn('Connexion administrateur', e));
+    else if (t.dataset.signout !== undefined) Backend.get().then(b => b && b.signOut()).then(() => landing()).catch(e => console.warn(e));
   });
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape' && certRoot.firstChild) closeCert();

@@ -1,0 +1,27 @@
+[
+ {
+  "id": "simandou",
+  "tag": "",
+  "title": "Quiz Simandou"
+ },
+ {
+  "id": "histoire",
+  "tag": "Histoire",
+  "title": "Quiz Histoire de la Guinée"
+ },
+ {
+  "id": "armee",
+  "tag": "Armée",
+  "title": "Quiz Armée et Gendarmerie"
+ },
+ {
+  "id": "cnrd",
+  "tag": "CNRD",
+  "title": "Quiz Bilan du CNRD 2021-2026"
+ },
+ {
+  "id": "sgg",
+  "tag": "SGG",
+  "title": "Quiz Secrétariat général du Gouvernement"
+ }
+]

@@ -5,3 +5,9 @@ build/optionC/
 build/__pycache__/
 .DS_Store
 Screenshot*.png
+node_modules/
+.firebase/
+firebase-debug.log
+*.log
+functions/*.local
+tools/service-account*.json

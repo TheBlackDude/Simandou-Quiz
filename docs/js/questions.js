@@ -1,4 +1,5 @@
 /* Généré par build/build_site.py — modifier build/questions*.py ou build/quizzes.py puis relancer. */
+window.QUIZ_VERSION = "6b09c41a106b";
 window.QUIZ_TAGLINE = ["L'Indépendance en héritage", "La jeunesse en marche", "Simandou 2040 en ligne de mire"];
 window.QUIZZES = [
  {

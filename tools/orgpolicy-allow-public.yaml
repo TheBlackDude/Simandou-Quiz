@@ -1,0 +1,10 @@
+# Dérogation, pour ce seul projet, à la politique d'organisation « iam.allowedPolicyMemberDomains ».
+# Nécessaire pour autoriser « allUsers » à appeler les Cloud Functions (submit, state, reset) depuis les navigateurs.
+# Application (par le propriétaire du projet) :
+#   gcloud org-policies set-policy tools/orgpolicy-allow-public.yaml
+#   gcloud run services add-iam-policy-binding submit --region europe-west1 --project gouvernement-qcm --member=allUsers --role=roles/run.invoker
+#   (idem pour state et reset)
+name: projects/gouvernement-qcm/policies/iam.allowedPolicyMemberDomains
+spec:
+  rules:
+  - allowAll: true

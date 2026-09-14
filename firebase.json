@@ -1,0 +1,15 @@
+{
+  "hosting": {
+    "public": "docs",
+    "ignore": ["**/.*", "**/node_modules/**"],
+    "cleanUrls": true,
+    "headers": [
+      { "source": "**/*.@(js|css)", "headers": [ { "key": "Cache-Control", "value": "public, max-age=300" } ] },
+      { "source": "assets/**", "headers": [ { "key": "Cache-Control", "value": "public, max-age=86400" } ] },
+      { "source": "**", "headers": [ { "key": "X-Content-Type-Options", "value": "nosniff" }, { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" } ] }
+    ]
+  },
+  "functions": [ { "source": "functions", "codebase": "default", "runtime": "nodejs22", "ignore": ["node_modules", ".git", "*.test.js", "*.local"] } ],
+  "firestore": { "rules": "firestore.rules", "indexes": "firestore.indexes.json" },
+  "emulators": { "auth": { "port": 9099 }, "functions": { "port": 5001 }, "firestore": { "port": 8080 }, "hosting": { "port": 5050 }, "ui": { "enabled": true, "port": 4000 }, "singleProjectMode": true }
+}

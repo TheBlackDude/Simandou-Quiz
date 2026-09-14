@@ -1,0 +1,14 @@
+{
+  "name": "gouvernement-qcm",
+  "private": true,
+  "description": "Gouvernement QCM — site statique + Firebase (Hosting, Firestore, Cloud Functions).",
+  "scripts": {
+    "build": "python3 build/build_site.py",
+    "deploy": "npx firebase deploy",
+    "deploy:hosting": "npx firebase deploy --only hosting",
+    "deploy:functions": "npx firebase deploy --only functions",
+    "deploy:rules": "npx firebase deploy --only firestore:rules,firestore:indexes",
+    "import": "node tools/import_sheet.js"
+  },
+  "devDependencies": { "firebase-tools": "^14.0.0" }
+}

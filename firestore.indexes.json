@@ -1,0 +1,7 @@
+{
+  "indexes": [
+    { "collectionGroup": "attempts", "queryScope": "COLLECTION", "fields": [ { "fieldPath": "quiz", "order": "ASCENDING" }, { "fieldPath": "createdAt", "order": "DESCENDING" } ] },
+    { "collectionGroup": "attempts", "queryScope": "COLLECTION", "fields": [ { "fieldPath": "quiz", "order": "ASCENDING" }, { "fieldPath": "ok", "order": "DESCENDING" } ] }
+  ],
+  "fieldOverrides": []
+}
