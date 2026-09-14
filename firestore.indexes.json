@@ -81,6 +81,28 @@
      "order": "ASCENDING"
     }
    ]
+  },
+  {
+   "collectionGroup": "attempts",
+   "queryScope": "COLLECTION",
+   "fields": [
+    {
+     "fieldPath": "admin",
+     "order": "ASCENDING"
+    },
+    {
+     "fieldPath": "quiz",
+     "order": "ASCENDING"
+    },
+    {
+     "fieldPath": "ok",
+     "order": "ASCENDING"
+    },
+    {
+     "fieldPath": "tot",
+     "order": "ASCENDING"
+    }
+   ]
   }
  ],
  "fieldOverrides": []
