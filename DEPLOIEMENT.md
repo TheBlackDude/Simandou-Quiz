@@ -139,3 +139,62 @@ dans `functions/rank.js`.
 
 Coût estimé pour la semaine (500 000 participants) : inférieur à 100 USD (fonctions ≈ 1,5 M d'appels,
 Firestore ≈ 3 M lectures / 1 M écritures, Hosting ≈ 100 Go).
+
+## 6. Concours en direct (mode « événement », 28 septembre 2026)
+
+Épreuves successives devant jury, **données entièrement séparées** du quiz public (collection Firestore `events`,
+jamais `attempts`/`leaderboard`) : le quiz public continue de fonctionner normalement pendant le concours.
+
+### Pages
+
+| Page | Qui | Rôle |
+|---|---|---|
+| `https://quiz.guineen68.com/concours` | participants | inscription (code d'accès + nom), attente du signal, épreuve chronométrée, score, rang, qualification |
+| `https://quiz.guineen68.com/admin` | administrateur | régie : créer / activer un concours, **Démarrer 10 · 7 · 5 min** (ou durée libre), **Bloquer / Débloquer**, **Clôturer l'étape et qualifier**, **Étape suivante**, repêchage par numéro, réinitialiser |
+| `https://quiz.guineen68.com/direct` | administrateur (vidéoprojecteur) | classement en temps réel, compte à rebours géant, compteurs (inscrits, en lice, en cours, ont terminé) ; à la fin de la finale, **podium + certificats des lauréats** avec bouton *Enregistrer / Imprimer (PDF)* ; bouton *Plein écran* |
+
+### Règles appliquées par le serveur (Cloud Function `concours`)
+
+- **Une seule tentative par appareil et par étape.** L'identité de l'appareil est le compte anonyme Firebase conservé
+  par le navigateur : chaque participant doit garder **le même appareil et le même navigateur** (pas de navigation privée)
+  du début à la fin. Les adresses IP ne servent à rien dans une salle (tout le monde sort avec la même IP publique) et les
+  adresses MAC ne sont pas lisibles par un navigateur.
+- **Qualification** : à la clôture d'une étape, le serveur classe les envois (**score décroissant, puis temps croissant**,
+  temps mesuré côté serveur entre *Commencer* et l'envoi) et inscrit les *N* premiers comme seuls autorisés à démarrer
+  l'étape suivante. Les autres voient leur rang et un message de fin de parcours.
+- **Compte à rebours** : commun à toute la salle, fixé par l'administrateur ; envoi refusé dès qu'il est à zéro
+  (tolérance réseau de 8 s pour les envois automatiques) ; refusé aussi quand l'épreuve est **bloquée** ou pas encore démarrée.
+  À zéro, le téléphone de chaque participant **envoie automatiquement les réponses déjà données** (les questions sans réponse
+  comptent zéro) ; 12 s plus tard la régie **clôture et qualifie automatiquement** ; en finale, les certificats apparaissent
+  aussitôt sur l'écran de projection (moins de 15 s après zéro).
+- Chaque participant reçoit les 40 questions **dans un ordre qui lui est propre, options mélangées** (le voisin ne peut pas
+  copier « B, C, A… ») ; la correction se fait côté serveur, aucun corrigé n'est envoyé au navigateur.
+- Code d'accès à 4 chiffres (affiché dans la salle) pour empêcher les inscriptions extérieures ; numéro de participant
+  (N° 001, 002…) affiché à l'écran pour distinguer les homonymes ; téléphone facultatif pour joindre les lauréats.
+- Repêchage : si un appareil tombe en panne, le participant se réinscrit sur un autre (nouveau numéro) et l'administrateur
+  le repêche pour l'étape en cours avec son nouveau numéro.
+
+### Déroulé le jour J (et pour le test à 5–15 personnes)
+
+1. `/admin` → **Nouveau concours** : nom, code d'accès, étapes (par défaut Histoire → 100, CNRD → 20, Armée → 10,
+   Simandou → 5 lauréats ; pour un test : 6, 3 puis 2 par exemple) → **Créer** → **Activer**. Un seul concours est actif à la fois.
+2. Ouvrir `/direct` sur l'ordinateur relié au vidéoprojecteur (connexion Google administrateur), *Plein écran*.
+3. Les participants ouvrent `quiz.guineen68.com/concours`, saisissent le code et leur nom → « En attente du signal ».
+4. **Démarrer · 10 min** (ou 7, 5). Les téléphones affichent le compte à rebours et *Commencer*.
+5. À zéro (ou après **Clôturer l'étape et qualifier**) : les N premiers sont qualifiés → **Étape suivante** → recommencer au 4.
+6. Après la finale : podium et certificats sur `/direct` ; **Enregistrer / Imprimer** ouvre la boîte d'impression
+   (choisir « Enregistrer au format PDF », A4 paysage).
+7. Pour rejouer un test : **Réinitialiser le concours** (efface inscrits et résultats de ce concours seulement), ou créer
+   un nouveau concours pour le 28 et l'activer. Les étapes non encore jouées peuvent être modifiées (**Modifier**).
+
+### Mise en production et tests
+
+- Déploiement (règles + fonctions + site) : `npm run deploy`. La fonction `concours` est nouvelle : si le déploiement
+  signale « Unable to set the invoker for the IAM policy », lancer une fois `sh tools/grant_invoker_concours.sh`.
+- Tests automatiques : `cd functions && npm test` (unitaires) et
+  `npx firebase emulators:exec --only functions,firestore --project demo-gouvernement-qcm "node tools/test_concours_e2e.js"`
+  (10 participants simulés, 23 vérifications : inscription, code, démarrage, envoi, blocage, clôture, qualification,
+  repêchage, égalité départagée au temps, expiration, finale, retour, réinitialisation).
+- Test manuel dans l'émulateur : `emulators: true` dans `docs/js/config.js` (à retirer ensuite),
+  `npx firebase emulators:start --only functions,firestore,auth,hosting --project gouvernement-qcm`,
+  `GCLOUD_PROJECT=gouvernement-qcm node tools/seed_emulator_admin.js ousmane@mudupay.com`, puis http://127.0.0.1:5050/admin.

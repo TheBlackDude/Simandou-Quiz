@@ -1,11 +1,27 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
+    // Administrateur : connexion Google (e-mail vérifié) et présence dans admins/{email} avec exempt = true.
+    function isAdmin() {
+      return request.auth != null && request.auth.token.email_verified == true
+        && get(/databases/$(database)/documents/admins/$(request.auth.token.email.lower())).data.exempt == true;
+    }
     // Classement agrégé (top 100 par quiz) : lecture publique, écriture uniquement par les Cloud Functions.
     match /leaderboard/{quiz} { allow read: if true; allow write: if false; }
     // Chaque appareil peut lire son propre profil et sa progression ; tout le reste passe par les Cloud Functions.
     match /users/{uid} { allow read: if request.auth != null && request.auth.uid == uid; allow write: if false; }
     match /progress/{id} { allow read: if request.auth != null && id.matches('^' + request.auth.uid + '_.*'); allow write: if false; }
+    // Concours en direct : l'état de l'épreuve est lu en temps réel par les participants ; les tentatives par leur auteur
+    // et par les administrateurs (écran de projection) ; le code d'accès n'est jamais lisible. Écritures : Cloud Functions.
+    match /events/{ev} {
+      allow get: if request.auth != null;
+      allow list: if isAdmin();
+      allow write: if false;
+      match /participants/{uid} { allow read: if request.auth != null && (request.auth.uid == uid || isAdmin()); allow write: if false; }
+      match /attempts/{id} { allow read: if request.auth != null && (id.matches('^' + request.auth.uid + '_.*') || isAdmin()); allow write: if false; }
+      match /meta/{doc} { allow read: if isAdmin(); allow write: if false; }
+      match /private/{doc} { allow read, write: if false; }
+    }
     match /{document=**} { allow read, write: if false; }
   }
 }

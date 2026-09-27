@@ -12,7 +12,10 @@ for q in data:
 # Version du contenu : le serveur (functions/questions.json) et le client doivent porter la même ; toute modification
 # des questions change la version, et les Cloud Functions rejettent alors les réponses d'un client non rechargé.
 VERSION = hashlib.sha256(json.dumps(data, ensure_ascii=False, sort_keys=True).encode("utf-8")).hexdigest()[:12]
-bank = {"version": VERSION, "quizzes": {q["id"]: {"title": q["title"], "sections": [[x["a"] for x in s["questions"]] for s in q["sections"]]} for q in data}}
+# items : énoncés et options (sans réponse) pour le concours en direct, où le serveur envoie à chaque participant
+# les questions dans un ordre qui lui est propre (la version ne dépend que de data, donc ne change pas).
+bank = {"version": VERSION, "quizzes": {q["id"]: {"title": q["title"], "sections": [[x["a"] for x in s["questions"]] for s in q["sections"]],
+                                                   "items": [[{"q": x["q"], "opts": x["opts"]} for x in s["questions"]] for s in q["sections"]]} for q in data}}
 os.makedirs(os.path.join(ROOT, "functions"), exist_ok=True)
 open(os.path.join(ROOT, "functions", "questions.json"), "w", encoding="utf-8").write(json.dumps(bank, ensure_ascii=False, indent=1) + "\n")
 os.makedirs(os.path.join(ROOT, "tools"), exist_ok=True)

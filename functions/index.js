@@ -186,3 +186,6 @@ exports.adminExport = onCall(Object.assign({ timeoutSeconds: 60, memory: '512MiB
   const last = snap.docs[snap.docs.length - 1];
   return { rows, cursor: snap.size === limit && last ? { t: last.get('createdAt').toMillis(), id: last.id } : null };
 });
+
+/* ---------- Concours en direct (épreuves successives, données séparées : collection events) ---------- */
+exports.concours = require('./concours')({ onCall, HttpsError, db, BANK, FieldValue, isAdmin, requireAuth, cleanName, callOpts });

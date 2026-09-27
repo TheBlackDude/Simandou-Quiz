@@ -8,7 +8,10 @@
     "deploy:hosting": "npx firebase deploy --only hosting",
     "deploy:functions": "npx firebase deploy --only functions",
     "deploy:rules": "npx firebase deploy --only firestore:rules,firestore:indexes",
-    "import": "node tools/import_sheet.js"
+    "import": "node tools/import_sheet.js",
+    "test:concours": "npx firebase emulators:exec --only functions,firestore --project demo-gouvernement-qcm \"node tools/test_concours_e2e.js\""
   },
-  "devDependencies": { "firebase-tools": "^14.0.0" }
+  "devDependencies": {
+    "firebase-tools": "^14.0.0"
+  }
 }

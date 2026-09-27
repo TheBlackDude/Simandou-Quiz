@@ -220,7 +220,7 @@
     return '<div class="card admincard"><div class="eyebrow">Administration · Gouvernement QCM</div>' +
       (connected
         ? '<h2 class="h2">Connecté : ' + esc(b.email()) + '</h2><p>Si ce compte figure dans la liste des administrateurs, le tableau de bord s\'affiche ci-dessous ; vous disposez aussi de tentatives illimitées sur tous les quiz, avec des résultats conservés hors du classement public.</p><div class="row"><button class="btn ghost" data-signout>Déconnexion</button><a class="btn ghost" href="/">Aller au quiz</a></div>' +
-          '<div id="dash"><p class="note">Chargement du tableau de bord…</p></div>'
+          '<div id="regie"></div><div id="dash"><p class="note">Chargement du tableau de bord…</p></div>'
         : '<h2 class="h2">Connexion administrateur</h2><p>Réservé aux comptes autorisés (connexion Google). Les participants n\'ont pas besoin de se connecter.</p><div class="row"><button class="btn" data-admin>Se connecter avec Google</button><a class="btn ghost" href="/">Aller au quiz</a></div>') +
       '</div>';
   }
@@ -448,7 +448,10 @@
     if (e.key === 'Enter' && e.target.id === 'playerName') { const p = document.querySelector('.pick'); if (p) { document.getElementById('nameErr').hidden = !!e.target.value.trim(); if (e.target.value.trim()) p.focus(); } }
   });
   document.addEventListener('input', e => { if (e.target.id === 'playerName') { const err = document.getElementById('nameErr'); if (err) err.hidden = true; } });
-  function mountDash() { const el = document.getElementById('dash'); if (el && window.QCM_ADMIN) window.QCM_ADMIN.mount(el, window.QCM, QUIZZES); }
+  function mountDash() {
+    const el = document.getElementById('dash'); if (el && window.QCM_ADMIN) window.QCM_ADMIN.mount(el, window.QCM, QUIZZES);
+    const rg = document.getElementById('regie'); if (rg && window.QCM_REGIE) window.QCM_REGIE.mountAdmin(rg, window.QCM); // régie du concours en direct
+  }
   const _landing = landing; landing = function () { _landing(); mountDash(); };
   _landing(); 
   if (ADMIN_PAGE && SERVER) Backend.get().then(() => { if (!Q) landing(); }); // rafraîchit le panneau une fois l'état de connexion connu

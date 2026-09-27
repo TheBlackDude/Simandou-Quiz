@@ -52,6 +52,376 @@
      3,
      3
     ]
+   ],
+   "items": [
+    [
+     {
+      "q": "Dans quelle partie de la Guinée se situe le massif du Simandou ?",
+      "opts": [
+       "Au sud-est, entre Haute-Guinée et Guinée forestière",
+       "Au nord-ouest, près de la frontière sénégalaise",
+       "Au centre, dans le Fouta-Djalon",
+       "Sur le littoral atlantique"
+      ]
+     },
+     {
+      "q": "Quel minerai est exploité à Simandou ?",
+      "opts": [
+       "La bauxite",
+       "L'or",
+       "Le minerai de fer",
+       "Le diamant"
+      ]
+     },
+     {
+      "q": "Sur environ quelle longueur s'étend la chaîne de montagnes du Simandou ?",
+      "opts": [
+       "Environ 10 km",
+       "Environ 110 km",
+       "Environ 400 km",
+       "Environ 1 000 km"
+      ]
+     },
+     {
+      "q": "Quelle est la teneur moyenne en fer du minerai de Simandou ?",
+      "opts": [
+       "Environ 35 %",
+       "Environ 45 %",
+       "Environ 55 %",
+       "Environ 65 %"
+      ]
+     },
+     {
+      "q": "Pourquoi le minerai de Simandou est-il qualifié de « premium » ?",
+      "opts": [
+       "Parce qu'il se trouve près de la mer",
+       "Parce qu'il est vendu uniquement en Europe",
+       "Parce qu'il est extrait en souterrain",
+       "Parce que sa haute teneur permet de produire un acier moins émetteur de CO₂"
+      ]
+     },
+     {
+      "q": "Comment le gisement de Simandou est-il souvent décrit ?",
+      "opts": [
+       "Le plus grand gisement de bauxite au monde",
+       "L'un des plus grands gisements de fer à haute teneur non exploités au monde",
+       "Une petite mine artisanale",
+       "Un gisement déjà épuisé"
+      ]
+     },
+     {
+      "q": "En combien de blocs le gisement de Simandou est-il divisé ?",
+      "opts": [
+       "2 blocs",
+       "3 blocs",
+       "4 blocs",
+       "6 blocs"
+      ]
+     },
+     {
+      "q": "En quelle année Rio Tinto a-t-il obtenu ses premiers droits d'exploration sur Simandou ?",
+      "opts": [
+       "1958",
+       "1984",
+       "1997",
+       "2010"
+      ]
+     },
+     {
+      "q": "Quel qualificatif la presse internationale attribue-t-elle au projet Simandou ?",
+      "opts": [
+       "Le plus grand projet minier et d'infrastructures d'Afrique",
+       "Le plus petit projet minier de la CEDEAO",
+       "Le premier projet pétrolier de Guinée",
+       "Un projet uniquement touristique"
+      ]
+     },
+     {
+      "q": "Quel Président de la République a inauguré l'entrée en production de Simandou ?",
+      "opts": [
+       "Le Président Ahmed Sékou Touré",
+       "Le Président Lansana Conté",
+       "Le Président Alpha Condé",
+       "Le Général Mamadi Doumbouya"
+      ]
+     }
+    ],
+    [
+     {
+      "q": "Qui développe les blocs 1 et 2 (Simandou Nord) ?",
+      "opts": [
+       "Winning Consortium Simandou (WCS), avec le sidérurgiste chinois Baowu",
+       "Simfer",
+       "La Compagnie des Bauxites de Guinée",
+       "ArcelorMittal"
+      ]
+     },
+     {
+      "q": "Qui développe les blocs 3 et 4 (Simandou Sud) ?",
+      "opts": [
+       "WCS",
+       "La Société Minière de Boké",
+       "Glencore",
+       "Simfer, coentreprise de Rio Tinto et de Chalco Iron Ore Holdings (Chinalco)"
+      ]
+     },
+     {
+      "q": "Quelle participation minimale l'État guinéen détient-il dans les sociétés minières du projet ?",
+      "opts": [
+       "5 %",
+       "10 %",
+       "15 %",
+       "33 %"
+      ]
+     },
+     {
+      "q": "Comment s'appelle la société créée pour codévelopper le chemin de fer et le port ?",
+      "opts": [
+       "La Compagnie du TransGuinéen (CTG)",
+       "La Société Nationale des Chemins de fer",
+       "Guinée Rail SA",
+       "Le Port Autonome de Conakry"
+      ]
+     },
+     {
+      "q": "Quelle est la répartition du capital de la Compagnie du TransGuinéen ?",
+      "opts": [
+       "50 % Simfer – 50 % WCS",
+       "Simfer 42,5 % – WCS 42,5 % – État guinéen 15 %",
+       "État guinéen 51 % – partenaires 49 %",
+       "Rio Tinto 100 %"
+      ]
+     },
+     {
+      "q": "Quelle est la longueur approximative du chemin de fer principal reliant la mine au port ?",
+      "opts": [
+       "Environ 100 km",
+       "Environ 300 km",
+       "Plus de 600 km",
+       "Environ 1 500 km"
+      ]
+     },
+     {
+      "q": "Où se situe le port minéralier du projet ?",
+      "opts": [
+       "À Kamsar (Boké)",
+       "Au Port Autonome de Conakry",
+       "À Morebaya, préfecture de Forécariah",
+       "À Benty"
+      ]
+     },
+     {
+      "q": "Quelle est la particularité du chemin de fer transguinéen ?",
+      "opts": [
+       "Il est réservé au seul minerai",
+       "Il fonctionne uniquement de nuit",
+       "Il est à voie étroite",
+       "Il est multi-usage : minerai, marchandises et passagers"
+      ]
+     },
+     {
+      "q": "À combien est estimé l'investissement global du projet Simandou ?",
+      "opts": [
+       "Environ 2 milliards USD",
+       "Environ 5 milliards USD",
+       "Environ 20 milliards USD",
+       "Environ 100 milliards USD"
+      ]
+     },
+     {
+      "q": "De quel pays est originaire le groupe Rio Tinto ?",
+      "opts": [
+       "Du Brésil",
+       "De l'Australie et du Royaume-Uni",
+       "Du Canada",
+       "De l'Afrique du Sud"
+      ]
+     }
+    ],
+    [
+     {
+      "q": "Quelle production annuelle totale est visée à pleine capacité ?",
+      "opts": [
+       "12 millions de tonnes",
+       "60 millions de tonnes",
+       "120 millions de tonnes",
+       "250 millions de tonnes"
+      ]
+     },
+     {
+      "q": "À quelle date le premier train de minerai est-il arrivé au port de Morebaya, lors de l'inauguration ?",
+      "opts": [
+       "Le 2 octobre 2024",
+       "Le 11 novembre 2025",
+       "Le 1er janvier 2026",
+       "Le 5 septembre 2021"
+      ]
+     },
+     {
+      "q": "Qui a conduit le train inaugural de Simandou ?",
+      "opts": [
+       "Une conductrice guinéenne formée sur place",
+       "Un ingénieur étranger",
+       "Le ministre des Mines",
+       "Un système automatisé"
+      ]
+     },
+     {
+      "q": "Quels chefs d'État étaient aux côtés du Président Doumbouya lors de l'inauguration ?",
+      "opts": [
+       "Les Présidents du Sénégal et du Mali",
+       "Les Présidents du Maroc et de l'Égypte",
+       "Les Présidents du Nigeria et du Ghana",
+       "Les Présidents du Gabon et du Rwanda"
+      ]
+     },
+     {
+      "q": "Comment s'appelait le navire qui a quitté Morebaya avec le premier chargement, en décembre 2025 ?",
+      "opts": [
+       "Winning Youth",
+       "Simandou Star",
+       "Guinée Espoir",
+       "Conakry Express"
+      ]
+     },
+     {
+      "q": "Vers quel pays a été expédié le premier chargement de minerai de Simandou ?",
+      "opts": [
+       "L'Inde",
+       "La Chine",
+       "L'Allemagne",
+       "Le Japon"
+      ]
+     },
+     {
+      "q": "Sur combien de temps la montée en puissance vers la pleine capacité est-elle prévue ?",
+      "opts": [
+       "Environ 6 mois",
+       "Environ 30 mois",
+       "Environ 10 ans",
+       "Elle est immédiate"
+      ]
+     },
+     {
+      "q": "Quelle durée minimale d'exploitation est prévue pour la mine ?",
+      "opts": [
+       "5 ans",
+       "10 ans",
+       "Au moins 25 ans",
+       "Plus de 100 ans"
+      ]
+     },
+     {
+      "q": "Qui préside le Comité stratégique Simandou ?",
+      "opts": [
+       "Le Ministre Directeur de cabinet de la Présidence, Djiba Diakité",
+       "Le ministre des Mines",
+       "Le Gouverneur de la Banque centrale",
+       "Le Directeur général de Rio Tinto"
+      ]
+     },
+     {
+      "q": "Quelle part de son chemin de fer le projet a-t-il mis en service au premier trimestre 2026 ?",
+      "opts": [
+       "Un tronçon d'essai de 20 km",
+       "Aucun tronçon",
+       "Seulement la gare de Morebaya",
+       "La totalité de la ligne mine-port"
+      ]
+     }
+    ],
+    [
+     {
+      "q": "Qu'est-ce que le Programme Simandou 2040 ?",
+      "opts": [
+       "Le programme national de transformation économique et sociale de la Guinée à l'horizon 2040",
+       "Un simple plan d'extension de la mine",
+       "Un programme des Nations unies",
+       "Le plan d'affaires de Rio Tinto"
+      ]
+     },
+     {
+      "q": "Sur combien de piliers repose le Programme Simandou 2040 ?",
+      "opts": [
+       "3 piliers",
+       "5 piliers",
+       "7 piliers",
+       "10 piliers"
+      ]
+     },
+     {
+      "q": "Lequel de ces domaines n'est PAS un pilier de Simandou 2040 ?",
+      "opts": [
+       "Agriculture, industrie alimentaire et commerce",
+       "Éducation et culture",
+       "Santé et bien-être",
+       "Exploration spatiale"
+      ]
+     },
+     {
+      "q": "Combien de réformes majeures le programme prévoit-il ?",
+      "opts": [
+       "12 réformes",
+       "24 réformes",
+       "36 réformes",
+       "60 réformes"
+      ]
+     },
+     {
+      "q": "À combien est estimée l'ambition d'investissement du programme sur 15 ans ?",
+      "opts": [
+       "Environ 20 milliards USD",
+       "Environ 50 milliards USD",
+       "Environ 200 milliards USD",
+       "Environ 1 000 milliards USD"
+      ]
+     },
+     {
+      "q": "Quelle est la première phase du programme, dite « phase d'accélération » ?",
+      "opts": [
+       "2025 – 2030",
+       "2030 – 2035",
+       "2035 – 2040",
+       "2040 – 2050"
+      ]
+     },
+     {
+      "q": "Quel objectif routier et ferroviaire le programme affiche-t-il ?",
+      "opts": [
+       "290 km de routes et 250 km de rail",
+       "2 900 km de routes et 2 500 km de voies ferrées",
+       "29 000 km de routes",
+       "Aucun objectif chiffré"
+      ]
+     },
+     {
+      "q": "Au-delà de l'exportation du minerai brut, quel projet incarne l'ambition de transformation locale ?",
+      "opts": [
+       "Une aciérie / usine de transformation du fer en Guinée",
+       "Une raffinerie de pétrole",
+       "Une usine automobile",
+       "Un port de plaisance"
+      ]
+     },
+     {
+      "q": "Sous quelle autorité est placée l'unité d'exécution du Programme Simandou 2040 ?",
+      "opts": [
+       "La Banque mondiale",
+       "Les collectivités locales",
+       "Les sociétés minières",
+       "Le Chef de l'État"
+      ]
+     },
+     {
+      "q": "Pendant la Semaine de la Fête Nationale An 68, à quelle occasion Simandou 2040 est-il présenté aux jeunes ?",
+      "opts": [
+       "Au défilé militaire du 2 octobre",
+       "Au lancement du 25 septembre",
+       "À la Marche de l'Unité",
+       "Au Forum Jeunesse & Avenir du 30 septembre"
+      ]
+     }
+    ]
    ]
   },
   "histoire": {
@@ -104,6 +474,376 @@
      1,
      0,
      2
+    ]
+   ],
+   "items": [
+    [
+     {
+      "q": "À quelle date la République de Guinée a-t-elle proclamé son indépendance ?",
+      "opts": [
+       "Le 28 septembre 1958",
+       "Le 2 octobre 1958",
+       "Le 1er novembre 1958",
+       "Le 12 décembre 1958"
+      ]
+     },
+     {
+      "q": "Sur quoi portait le référendum du 28 septembre 1958 ?",
+      "opts": [
+       "Le choix du drapeau national",
+       "L'adhésion de la Guinée à l'ONU",
+       "La Constitution de la Ve République et la Communauté franco-africaine proposées par le général de Gaulle",
+       "L'élection du premier président"
+      ]
+     },
+     {
+      "q": "Le 25 août 1958, à Conakry, quelle phrase Sékou Touré lance-t-il devant le général de Gaulle ?",
+      "opts": [
+       "« La Guinée restera française pour toujours »",
+       "« Nous acceptons la Communauté sans condition »",
+       "« Le Fouta-Djalon est notre seule patrie »",
+       "« Nous préférons la pauvreté dans la liberté à la richesse dans l'esclavage »"
+      ]
+     },
+     {
+      "q": "Qui fut le premier Président de la République de Guinée ?",
+      "opts": [
+       "Ahmed Sékou Touré",
+       "Saïfoulaye Diallo",
+       "Diallo Telli",
+       "Lansana Conté"
+      ]
+     },
+     {
+      "q": "Quel parti a conduit la Guinée à l'indépendance ?",
+      "opts": [
+       "Le Bloc africain de Guinée (BAG)",
+       "Le Parti démocratique de Guinée (PDG), section du Rassemblement démocratique africain",
+       "L'Union des populations de Guinée (UPG)",
+       "Le Parti de l'unité et du progrès (PUP)"
+      ]
+     },
+     {
+      "q": "Quelle place la Guinée occupe-t-elle parmi les colonies françaises d'Afrique subsaharienne ?",
+      "opts": [
+       "La dernière à devenir indépendante",
+       "La seule à rester dans la Communauté française",
+       "La première à devenir indépendante, dès 1958",
+       "La première à adopter le franc CFA"
+      ]
+     },
+     {
+      "q": "Quelles sont, dans l'ordre, les couleurs du drapeau guinéen ?",
+      "opts": [
+       "Vert, jaune, rouge en bandes horizontales",
+       "Rouge, jaune, vert en bandes verticales",
+       "Rouge, blanc, vert en bandes verticales",
+       "Jaune, rouge, vert en bandes horizontales"
+      ]
+     },
+     {
+      "q": "Quel est le titre de l'hymne national de la Guinée ?",
+      "opts": [
+       "« Liberté »",
+       "« Guinée, ma patrie »",
+       "« Le Syli »",
+       "« Aux armes, Guinéens »"
+      ]
+     },
+     {
+      "q": "Quelle est la devise de la République de Guinée ?",
+      "opts": [
+       "Unité · Travail · Progrès",
+       "Liberté · Égalité · Fraternité",
+       "Paix · Justice · Travail",
+       "Travail · Justice · Solidarité"
+      ]
+     },
+     {
+      "q": "À quelle date la Guinée a-t-elle été admise à l'Organisation des Nations unies ?",
+      "opts": [
+       "Le 2 octobre 1958",
+       "Le 12 décembre 1958",
+       "Le 1er mars 1960",
+       "Le 25 mai 1963"
+      ]
+     }
+    ],
+    [
+     {
+      "q": "Quel compagnon de Sékou Touré, considéré comme le numéro deux du PDG, fut le premier président de l'Assemblée nationale (1958-1963) ?",
+      "opts": [
+       "Diarra Traoré",
+       "Ismaël Touré",
+       "Saïfoulaye Diallo",
+       "Louis Lansana Béavogui"
+      ]
+     },
+     {
+      "q": "Au lendemain de l'indépendance, le 3 octobre 1958, qui est nommé secrétaire d'État à la Défense nationale avec pour mission de créer l'armée guinéenne ?",
+      "opts": [
+       "Le capitaine Noumandian Keïta",
+       "Le colonel Lansana Diané",
+       "Fodéba Keïta",
+       "Le lieutenant Lansana Conté"
+      ]
+     },
+     {
+      "q": "Fondateur des Ballets Africains, ministre de l'Intérieur en 1958 puis de la Défense nationale et de la Sécurité à partir de mars 1960 : de qui s'agit-il ?",
+      "opts": [
+       "Sory Kandia Kouyaté",
+       "Fodéba Keïta",
+       "Djibril Tamsir Niane",
+       "Camara Laye"
+      ]
+     },
+     {
+      "q": "Quel diplomate guinéen fut le premier Secrétaire général de l'Organisation de l'unité africaine (OUA), de 1964 à 1972 ?",
+      "opts": [
+       "Nabi Youla",
+       "Abdoulaye Diallo",
+       "Louis Lansana Béavogui",
+       "Diallo Telli"
+      ]
+     },
+     {
+      "q": "Qui devient, le 26 avril 1972, le premier Premier ministre de la République de Guinée ?",
+      "opts": [
+       "Louis Lansana Béavogui",
+       "Diarra Traoré",
+       "Ismaël Touré",
+       "Saïfoulaye Diallo"
+      ]
+     },
+     {
+      "q": "Quel écrivain guinéen a publié en 1953 « L'Enfant noir », un classique de la littérature africaine ?",
+      "opts": [
+       "Williams Sassine",
+       "Camara Laye",
+       "Tierno Monénembo",
+       "Djibril Tamsir Niane"
+      ]
+     },
+     {
+      "q": "Quel historien guinéen a fait connaître au monde entier l'épopée mandingue avec « Soundjata ou l'épopée mandingue » (1960) ?",
+      "opts": [
+       "Ibrahima Baba Kaké",
+       "Camara Laye",
+       "Djibril Tamsir Niane",
+       "Sékou Touré"
+      ]
+     },
+     {
+      "q": "Quelle militante du PDG, blessée à Tondon en février 1955 et morte de ses blessures, est devenue une martyre de la lutte pour l'indépendance ?",
+      "opts": [
+       "Hadja Mafory Bangoura",
+       "Jeanne Martin Cissé",
+       "Loffo Camara",
+       "M'Balia Camara"
+      ]
+     },
+     {
+      "q": "Quelle Guinéenne fut, en 1972, la première femme à présider le Conseil de sécurité des Nations unies ?",
+      "opts": [
+       "Jeanne Martin Cissé",
+       "Hadja Mafory Bangoura",
+       "M'Balia Camara",
+       "Hadja Aïcha Bah"
+      ]
+     },
+     {
+      "q": "Quel orchestre national, fondé en 1961 à Beyla, incarne l'âge d'or de la musique guinéenne avec des titres comme « Regard sur le passé » ?",
+      "opts": [
+       "Les Amazones de Guinée",
+       "Le Bembeya Jazz National",
+       "Balla et ses Balladins",
+       "Le Syli Orchestre"
+      ]
+     }
+    ],
+    [
+     {
+      "q": "Le 1er mars 1960, quelle décision marque la souveraineté économique de la Guinée ?",
+      "opts": [
+       "La nationalisation des banques étrangères",
+       "La création du franc guinéen et la sortie de la zone franc",
+       "L'adhésion à la CEDEAO",
+       "La signature de l'accord de la CBG"
+      ]
+     },
+     {
+      "q": "Quel pays s'est uni à la Guinée dès le 23 novembre 1958 et lui a accordé un prêt de 10 millions de livres ?",
+      "opts": [
+       "Le Libéria de William Tubman",
+       "Le Mali de Modibo Keïta",
+       "Le Ghana de Kwame Nkrumah",
+       "L'Égypte de Gamal Abdel Nasser"
+      ]
+     },
+     {
+      "q": "Quel établissement, ouvert en octobre 1962 grâce à la coopération soviétique, est devenu l'Université Gamal Abdel Nasser de Conakry ?",
+      "opts": [
+       "L'Institut polytechnique de Conakry",
+       "L'École normale de Kindia",
+       "L'Université Julius Nyerere de Kankan",
+       "L'Institut supérieur de Mamou"
+      ]
+     },
+     {
+      "q": "Quelle est la première centrale hydroélectrique achevée en Guinée après l'indépendance, remise au pays le 9 juin 1966 ?",
+      "opts": [
+       "Garafiri",
+       "Kaléta",
+       "Souapiti",
+       "Kinkon, à Pita"
+      ]
+     },
+     {
+      "q": "Quel édifice, construit en 1967 grâce à la coopération sino-guinéenne, abrite l'Assemblée nationale et les grandes cérémonies de la République ?",
+      "opts": [
+       "Le Palais Sékhoutouréya",
+       "Le Palais du Peuple",
+       "Le Palais Mohammed V",
+       "Le Stade du 28 Septembre"
+      ]
+     },
+     {
+      "q": "Créée en 1963, quelle société exporte la bauxite de Sangarédi depuis le port de Kamsar, avec un premier chargement le 2 août 1973 ?",
+      "opts": [
+       "Friguia",
+       "La Société minière de Boké (SMB)",
+       "La Compagnie des Bauxites de Guinée (CBG)",
+       "Rusal"
+      ]
+     },
+     {
+      "q": "En 1975, la Guinée figure parmi les fondateurs de quelle organisation régionale, créée par le traité de Lagos ?",
+      "opts": [
+       "L'Union africaine",
+       "La CEDEAO",
+       "L'UEMOA",
+       "L'OMVS"
+      ]
+     },
+     {
+      "q": "Que s'est-il passé le 22 novembre 1970 à Conakry ?",
+      "opts": [
+       "Un débarquement de troupes portugaises et d'opposants, repoussé par l'armée et les milices",
+       "L'inauguration du Palais du Peuple",
+       "Le premier chargement de bauxite à Kamsar",
+       "La création du syli"
+      ]
+     },
+     {
+      "q": "En 1972, quelle monnaie remplace le franc guinéen ?",
+      "opts": [
+       "Le dalasi",
+       "Le dinar guinéen",
+       "Le syli",
+       "L'écu guinéen"
+      ]
+     },
+     {
+      "q": "Où et quand meurt le président Ahmed Sékou Touré ?",
+      "opts": [
+       "À Conakry, le 3 avril 1984",
+       "À Cleveland (États-Unis), le 26 mars 1984",
+       "À Paris, le 2 octobre 1983",
+       "À Dakar, le 28 septembre 1984"
+      ]
+     }
+    ],
+    [
+     {
+      "q": "Quelle date la Guinée célèbre-t-elle chaque année comme la Fête des Forces armées ?",
+      "opts": [
+       "Le 2 octobre",
+       "Le 28 septembre",
+       "Le 1er novembre",
+       "Le 3 avril"
+      ]
+     },
+     {
+      "q": "Dès 1960, l'armée guinéenne participe à sa première mission de maintien de la paix des Nations unies. Dans quel pays ?",
+      "opts": [
+       "Au Congo (ONUC)",
+       "Au Liban",
+       "En Somalie",
+       "Au Rwanda"
+      ]
+     },
+     {
+      "q": "Le 3 avril 1984, une semaine après la mort de Sékou Touré, qui prend le pouvoir à la tête du Comité militaire de redressement national (CMRN) ?",
+      "opts": [
+       "Le colonel Diarra Traoré",
+       "Le capitaine Moussa Dadis Camara",
+       "Le général Sékouba Konaté",
+       "Le colonel Lansana Conté"
+      ]
+     },
+     {
+      "q": "Quel texte, adopté par référendum le 23 décembre 1990, ouvre la Deuxième République et la voie au multipartisme ?",
+      "opts": [
+       "La Charte de la transition",
+       "La Loi fondamentale",
+       "Le Code électoral",
+       "La Constitution de 1958"
+      ]
+     },
+     {
+      "q": "Inauguré le 22 juillet 1999 sur le fleuve Konkouré, quel barrage de 75 MW est la grande réalisation énergétique de la Deuxième République ?",
+      "opts": [
+       "Kaléta",
+       "Garafiri",
+       "Souapiti",
+       "Kinkon"
+      ]
+     },
+     {
+      "q": "En 1985-1986, quelle réforme majeure engage le gouvernement du président Lansana Conté ?",
+      "opts": [
+       "La nationalisation des mines",
+       "L'adhésion à la zone franc CFA",
+       "Le retour au franc guinéen et la libéralisation de l'économie (PREF)",
+       "La création du syli"
+      ]
+     },
+     {
+      "q": "Après la mort du président Conté, le 22 décembre 2008, quel organe militaire prend le pouvoir sous la direction du capitaine Moussa Dadis Camara ?",
+      "opts": [
+       "Le CMRN",
+       "Le CNRD",
+       "Le CTRN",
+       "Le CNDD"
+      ]
+     },
+     {
+      "q": "Quel opposant historique est investi président le 21 décembre 2010, à l'issue de la première élection reconnue comme démocratique depuis 1958 ?",
+      "opts": [
+       "Cellou Dalein Diallo",
+       "Alpha Condé",
+       "Sidya Touré",
+       "Lansana Kouyaté"
+      ]
+     },
+     {
+      "q": "Le 5 septembre 2021, quel organe prend le pouvoir sous la conduite du colonel Mamadi Doumbouya ?",
+      "opts": [
+       "Le Comité national du rassemblement pour le développement (CNRD)",
+       "Le CNDD",
+       "Le CMRN",
+       "Le CNT"
+      ]
+     },
+     {
+      "q": "Le 2 octobre 2026, la Guinée célèbre quel anniversaire de son indépendance ?",
+      "opts": [
+       "Le 58e",
+       "Le 66e",
+       "Le 68e",
+       "Le 70e"
+      ]
+     }
     ]
    ]
   },
@@ -158,6 +898,376 @@
      3,
      1
     ]
+   ],
+   "items": [
+    [
+     {
+      "q": "Quel chef de guerre, fondateur de l'empire du Wassoulou, a résisté seize ans à la conquête française avant d'être capturé à Guélémou le 29 septembre 1898 ?",
+      "opts": [
+       "Bokar Biro",
+       "Samory Touré",
+       "Alpha Yaya Diallo",
+       "Dinah Salifou"
+      ]
+     },
+     {
+      "q": "Le camp militaire de Kindia porte le nom de Kèmè Bourama. Qui était-il ?",
+      "opts": [
+       "Le premier roi de Kindia",
+       "Un almami du Fouta-Djalon",
+       "Le frère cadet de Samory Touré et le commandant en chef de ses armées",
+       "Un tirailleur mort à Verdun"
+      ]
+     },
+     {
+      "q": "Lors de quelle bataille, en novembre 1896, Bokar Biro, dernier almami du Fouta-Djalon, est-il vaincu et tué par les troupes coloniales ?",
+      "opts": [
+       "La bataille de Porédaka",
+       "La bataille de Kankan",
+       "La bataille de Boké",
+       "La bataille de Timbo"
+      ]
+     },
+     {
+      "q": "Quel roi de Labé, déporté par les Français au Dahomey en 1905 puis mort en exil à Port-Étienne en 1912, donne son nom au principal camp militaire de Conakry ?",
+      "opts": [
+       "El Hadj Oumar Tall",
+       "Alpha Yaya Diallo",
+       "Soundiata Keïta",
+       "Kissi Kaba Keïta"
+      ]
+     },
+     {
+      "q": "Dinah Salifou, souverain déporté à Saint-Louis du Sénégal en 1890 où il meurt en 1897, était le roi de quel peuple de la côte guinéenne ?",
+      "opts": [
+       "Des Sosso",
+       "Des Baga",
+       "Des Nalous",
+       "Des Landouma"
+      ]
+     },
+     {
+      "q": "Dans quelle ville les premières unités de l'armée nationale ont-elles été formées le 1er novembre 1958 ?",
+      "opts": [
+       "À Conakry",
+       "À Kankan",
+       "À Labé",
+       "À Kindia"
+      ]
+     },
+     {
+      "q": "Quel acte juridique, signé par le président Sékou Touré, a officiellement créé l'Armée nationale guinéenne ?",
+      "opts": [
+       "La Constitution du 10 novembre 1958",
+       "L'ordonnance n° 23/PRG du 16 décembre 1958",
+       "La loi du 2 octobre 1958",
+       "Le décret du 1er mai 1959"
+      ]
+     },
+     {
+      "q": "D'où revient le sergent Lansana Conté lorsqu'il rejoint la jeune armée guinéenne avec le contingent des ex-tirailleurs du 31 décembre 1958 ?",
+      "opts": [
+       "De l'Indochine",
+       "Du Sénégal",
+       "De l'Algérie, où il servait dans l'armée française",
+       "De Madagascar"
+      ]
+     },
+     {
+      "q": "Le 7 avril 1959, les camps hérités de la colonisation reçoivent des noms de héros africains. Quel nom reçoit le camp de Kankan ?",
+      "opts": [
+       "Camp El Hadj Oumar Tall",
+       "Camp Béhanzin",
+       "Camp Soundiata Keïta",
+       "Camp Kémé Bourama"
+      ]
+     },
+     {
+      "q": "Quel nom porte la première promotion d'officiers formée à l'École militaire interarmes, créée en 1961 ?",
+      "opts": [
+       "Promotion Patrice Lumumba",
+       "Promotion Samory Touré",
+       "Promotion 28 Septembre",
+       "Promotion Kwame Nkrumah"
+      ]
+     }
+    ],
+    [
+     {
+      "q": "Qui est considéré comme le père fondateur de l'armée guinéenne et devient son premier chef d'état-major général, poste créé le 1er novembre 1960 ?",
+      "opts": [
+       "Le général Lansana Diané",
+       "Le général Noumandian Keïta",
+       "Le général Toya Condé",
+       "Le colonel Kerfalla Camara"
+      ]
+     },
+     {
+      "q": "Quel officier a commandé le contingent guinéen envoyé au Congo en 1960 avant de devenir, en 1965, ministre de l'Armée populaire ?",
+      "opts": [
+       "Lansana Diané",
+       "Diarra Traoré",
+       "Namory Keïta",
+       "Toya Condé"
+      ]
+     },
+     {
+      "q": "En quelle année le président Lansana Conté a-t-il été élevé au rang de général ?",
+      "opts": [
+       "En 1984",
+       "En 1990",
+       "En 1993",
+       "En 2001"
+      ]
+     },
+     {
+      "q": "Quel chef d'état-major général des armées a trouvé la mort le 11 février 2013 dans un accident d'avion au Liberia ?",
+      "opts": [
+       "Le général Kerfalla Camara",
+       "Le général Nouhou Thiam",
+       "Le général Souleymane Kélèfa Diallo",
+       "Le général Namory Traoré"
+      ]
+     },
+     {
+      "q": "Qui est la première femme élevée au grade de général dans l'armée guinéenne ?",
+      "opts": [
+       "Aminata Diallo",
+       "Binta Pilote",
+       "Loffo Camara",
+       "M'Mahawa Sylla"
+      ]
+     },
+     {
+      "q": "À quelle date la Gendarmerie nationale guinéenne a-t-elle été créée, par le décret n° 77/PC ?",
+      "opts": [
+       "Le 2 octobre 1958",
+       "Le 13 novembre 1958",
+       "Le 1er janvier 1959",
+       "Le 28 septembre 1960"
+      ]
+     },
+     {
+      "q": "Depuis le 28 novembre 2011, quel est le nom de l'organe qui dirige la Gendarmerie nationale ?",
+      "opts": [
+       "La Direction générale de la Gendarmerie",
+       "Le Commandement supérieur de la Gendarmerie",
+       "Le Haut Commandement de la Gendarmerie nationale et Direction de la Justice militaire",
+       "L'Inspection générale de la Gendarmerie"
+      ]
+     },
+     {
+      "q": "Quelle composante de la Gendarmerie nationale, organisée en escadrons, est spécialisée dans le maintien et le rétablissement de l'ordre ?",
+      "opts": [
+       "La gendarmerie territoriale",
+       "La gendarmerie mobile",
+       "La gendarmerie routière",
+       "Le commandement des écoles"
+      ]
+     },
+     {
+      "q": "Quelle est la principale différence entre la Gendarmerie nationale et la Police nationale ?",
+      "opts": [
+       "La gendarmerie ne fait pas de police judiciaire",
+       "La gendarmerie est une force militaire relevant de la Défense, surtout présente en zone rurale ; la police est civile, sous le ministère de la Sécurité, surtout en ville",
+       "La police est réservée à Conakry",
+       "Il n'y a aucune différence"
+      ]
+     },
+     {
+      "q": "Qui est le Haut commandant de la Gendarmerie nationale depuis octobre 2021 ?",
+      "opts": [
+       "Le général Ibrahima Baldé",
+       "Le général Mouctar Kaba",
+       "Le général Balla Samoura",
+       "Le général Ibrahima Sory Bangoura"
+      ]
+     }
+    ],
+    [
+     {
+      "q": "Quelles sont les quatre composantes des Forces armées guinéennes ?",
+      "opts": [
+       "Armée de terre, Armée de l'air, Marine nationale, Gendarmerie nationale",
+       "Armée de terre, Police nationale, Douanes, Marine",
+       "Armée de terre, Armée de l'air, Garde présidentielle, Police",
+       "Infanterie, Artillerie, Blindés, Génie"
+      ]
+     },
+     {
+      "q": "En combien de régions militaires le territoire guinéen est-il divisé, en plus de la zone spéciale de Conakry ?",
+      "opts": [
+       "Deux",
+       "Trois",
+       "Quatre",
+       "Huit"
+      ]
+     },
+     {
+      "q": "Quel camp de Kaloum, à Conakry, abrite le ministère de la Défense, l'État-major général des armées et le Musée des forces armées ?",
+      "opts": [
+       "Le Camp Alpha Yaya Diallo",
+       "Le Camp Samory Touré",
+       "Le Camp Kémé Bourama",
+       "Le Camp Boiro"
+      ]
+     },
+     {
+      "q": "Où est basé le Groupement des forces spéciales (GFS), créé en 2018 ?",
+      "opts": [
+       "À Kindia",
+       "À Kankan",
+       "À Forécariah",
+       "À Dubréka"
+      ]
+     },
+     {
+      "q": "Que désigne le sigle BATA dans l'armée guinéenne ?",
+      "opts": [
+       "Le Bataillon d'artillerie",
+       "Le Bataillon autonome des troupes aéroportées",
+       "La Brigade antiterroriste",
+       "Le Bataillon des transmissions de l'armée"
+      ]
+     },
+     {
+      "q": "Créé par décret le 21 décembre 2021 et placé sous les ordres directs du chef d'état-major général, quelle est la vocation du Groupement des forces d'intervention rapide (GFIR) ?",
+      "opts": [
+       "La protection civile",
+       "La lutte antiterroriste et l'intervention rapide sur tout le territoire",
+       "La police militaire",
+       "La surveillance des frontières maritimes"
+      ]
+     },
+     {
+      "q": "Créé le 22 avril 2026, quel commandement interarmées regroupe le GFS, le BATA, le GFIR, le GIGN, les fusiliers commandos de l'air et les fusiliers marins commandos ?",
+      "opts": [
+       "Le Commandement des opérations spéciales (COS)",
+       "La Brigade d'élite",
+       "Le Commandement des forces d'intervention",
+       "La Garde nationale"
+      ]
+     },
+     {
+      "q": "Quelle unité nouvelle l'Armée de l'air a-t-elle créée par décret le 21 juillet 2025 ?",
+      "opts": [
+       "Une escadrille de chasse",
+       "Un escadron de drones",
+       "Une école de pilotage",
+       "Une unité de parachutistes"
+      ]
+     },
+     {
+      "q": "Sur quelle île a été créée, en juillet 2026, l'École navale de la Marine nationale ?",
+      "opts": [
+       "L'île de Roume",
+       "L'île Tamara",
+       "L'île de Kassa",
+       "L'île Alcatraz"
+      ]
+     },
+     {
+      "q": "Qu'est-ce que le Prytanée militaire de Guinée, inauguré le 9 janvier 2023 au Camp Alpha Yaya Diallo ?",
+      "opts": [
+       "Une école de formation des officiers",
+       "Un hôpital militaire",
+       "Une école des enfants de troupe accueillant des élèves de 10 à 13 ans",
+       "Un centre d'entraînement commando"
+      ]
+     }
+    ],
+    [
+     {
+      "q": "Que s'est-il passé dans la nuit du 21 au 22 novembre 1970 à Conakry ?",
+      "opts": [
+       "Une mutinerie de la garnison",
+       "Un débarquement de troupes portugaises et de dissidents guinéens, repoussé par l'armée et la population",
+       "Un tremblement de terre",
+       "La visite du général de Gaulle"
+      ]
+     },
+     {
+      "q": "Dans quel pays voisin la Guinée engage-t-elle trois bataillons au sein de l'ECOMOG à partir de mai 1997 pour rétablir le gouvernement légitime ?",
+      "opts": [
+       "Au Liberia",
+       "En Côte d'Ivoire",
+       "En Sierra Leone",
+       "Au Mali"
+      ]
+     },
+     {
+      "q": "En juin 1998, aux côtés du Sénégal, la Guinée envoie environ 500 soldats soutenir un gouvernement voisin menacé par une rébellion militaire. Lequel ?",
+      "opts": [
+       "La Gambie",
+       "La Guinée-Bissau",
+       "Le Mali",
+       "La Sierra Leone"
+      ]
+     },
+     {
+      "q": "Le 1er septembre 2000, où a lieu la première des attaques rebelles lancées contre la Guinée depuis le Liberia et la Sierra Leone ?",
+      "opts": [
+       "À Pamelap (Forécariah)",
+       "À Guéckédou",
+       "À Massadou (Macenta)",
+       "À Madina Woula (Kindia)"
+      ]
+     },
+     {
+      "q": "Dans quelle ville du nord du Mali le bataillon guinéen « Gangan » de la MINUSMA était-il déployé de 2013 à 2023 ?",
+      "opts": [
+       "À Tombouctou",
+       "À Gao",
+       "À Kidal",
+       "À Bamako"
+      ]
+     },
+     {
+      "q": "D'après le bilan établi par l'armée, à combien d'opérations extérieures et de missions de paix la Guinée a-t-elle pris part depuis 1958 ?",
+      "opts": [
+       "Trois",
+       "Sept",
+       "Près d'une vingtaine",
+       "Plus de cinquante"
+      ]
+     },
+     {
+      "q": "Quelles sont les trois missions assignées aux forces armées par la Loi de programmation militaire 2021-2026, adoptée à l'unanimité le 19 décembre 2020 ?",
+      "opts": [
+       "Protéger le territoire, contribuer au développement, participer aux missions de paix",
+       "Défendre, punir, administrer",
+       "Surveiller les frontières, collecter les impôts, gérer les mines",
+       "Former, équiper, recruter"
+      ]
+     },
+     {
+      "q": "Depuis 2024, quelle mission nouvelle est confiée au Génie militaire dans le cadre de l'« Armée-Nation » ?",
+      "opts": [
+       "La gestion des douanes",
+       "La construction de routes, de ponts et de bâtiments publics",
+       "La formation des enseignants",
+       "La distribution de l'électricité"
+      ]
+     },
+     {
+      "q": "Selon la Constitution promulguée le 26 septembre 2025, qui est le chef suprême des armées ?",
+      "opts": [
+       "Le ministre de la Défense",
+       "Le chef d'état-major général des armées",
+       "Le président de l'Assemblée nationale",
+       "Le Président de la République"
+      ]
+     },
+     {
+      "q": "Quel général, ancien commandant du premier bataillon guinéen de la MINUSMA, est chef d'état-major général des armées depuis le 9 mai 2023 ?",
+      "opts": [
+       "Le général Sadiba Koulibaly",
+       "Le général Ibrahima Sory Bangoura",
+       "Le général Balla Samoura",
+       "Le général Mouctar Kaba"
+      ]
+     }
+    ]
    ]
   },
   "cnrd": {
@@ -211,6 +1321,376 @@
      1,
      1
     ]
+   ],
+   "items": [
+    [
+     {
+      "q": "Que signifie le sigle CNRD, nom du comité qui a pris la direction du pays le 5 septembre 2021 ?",
+      "opts": [
+       "Conseil national de la réconciliation et de la démocratie",
+       "Comité national du rassemblement pour le développement",
+       "Commission nationale de refondation et de développement",
+       "Comité national de la révolution démocratique"
+      ]
+     },
+     {
+      "q": "Quel texte, proclamé le 27 septembre 2021 à l'issue de concertations nationales au Palais du Peuple, a fixé les organes et les règles de la transition ?",
+      "opts": [
+       "La Loi fondamentale de 1990",
+       "La Charte de la transition",
+       "L'ordonnance de refondation",
+       "Le Pacte national"
+      ]
+     },
+     {
+      "q": "Combien de membres comptait le Conseil national de la transition (CNT), l'organe législatif de la transition présidé par le Dr Dansa Kourouma ?",
+      "opts": [
+       "51",
+       "81",
+       "114",
+       "147"
+      ]
+     },
+     {
+      "q": "Le 21 septembre 2023, à la tribune de la 78e Assemblée générale des Nations unies, le président Mamadi Doumbouya a marqué les esprits par quelle formule ?",
+      "opts": [
+       "« La Guinée est de retour »",
+       "« Le Non de 1958 est éternel »",
+       "« L'Afrique de papa, c'est terminé »",
+       "« Simandou pour tous »"
+      ]
+     },
+     {
+      "q": "Le procès du massacre du 28 septembre 2009, attendu depuis treize ans, s'est ouvert le 28 septembre 2022 à Conakry. À quelle date le verdict a-t-il été rendu ?",
+      "opts": [
+       "Le 28 septembre 2023",
+       "Le 31 juillet 2024",
+       "Le 21 septembre 2025",
+       "Le 17 janvier 2026"
+      ]
+     },
+     {
+      "q": "À quelle date les Guinéens ont-ils adopté par référendum la nouvelle Constitution ?",
+      "opts": [
+       "Le 5 septembre 2024",
+       "Le 2 octobre 2024",
+       "Le 21 septembre 2025",
+       "Le 28 décembre 2025"
+      ]
+     },
+     {
+      "q": "Quelle institution la Constitution de 2025 crée-t-elle pour la première fois dans l'histoire de la Guinée ?",
+      "opts": [
+       "Une Cour suprême",
+       "Un Sénat, deuxième chambre du Parlement",
+       "Un Conseil économique et social",
+       "Une Cour constitutionnelle"
+      ]
+     },
+     {
+      "q": "Élu le 28 décembre 2025 avec 86,72 % des voix, où le président Mamadi Doumbouya a-t-il prêté serment le 17 janvier 2026 comme premier président de la Cinquième République ?",
+      "opts": [
+       "Au Palais du Peuple",
+       "Au Palais Mohammed V",
+       "Au stade Général Lansana Conté de Nongo",
+       "À la Place des Martyrs"
+      ]
+     },
+     {
+      "q": "Combien de députés siègent à l'Assemblée nationale élue le 31 mai 2026 et installée au Palais du Peuple le 17 juillet 2026 ?",
+      "opts": [
+       "81",
+       "114",
+       "147",
+       "200"
+      ]
+     },
+     {
+      "q": "En janvier 2026, quelles organisations ont levé la suspension qui frappait la Guinée depuis 2021, consacrant son retour à l'ordre constitutionnel ?",
+      "opts": [
+       "L'ONU et l'OMS",
+       "L'Union africaine et la CEDEAO",
+       "L'OMVS et l'OMVG",
+       "La Banque mondiale et le FMI"
+      ]
+     }
+    ],
+    [
+     {
+      "q": "Selon le FMI, quel taux de croissance l'économie guinéenne a-t-elle enregistré en 2025, avant une croissance à deux chiffres attendue dès 2026 grâce au fer de Simandou ?",
+      "opts": [
+       "Environ 2 %",
+       "Environ 4 %",
+       "Environ 7 %",
+       "Environ 15 %"
+      ]
+     },
+     {
+      "q": "Le 19 septembre 2025, la Guinée a obtenu pour la première fois de son histoire une notation souveraine. Quelle note l'agence Standard & Poor's lui a-t-elle attribuée ?",
+      "opts": [
+       "AAA",
+       "BBB",
+       "B+",
+       "CCC"
+      ]
+     },
+     {
+      "q": "Quel accord, signé le 25 mars 2022 entre l'État, Rio Tinto Simfer et Winning Consortium Simandou, a permis de relancer le projet Simandou après vingt-cinq ans de blocages ?",
+      "opts": [
+       "La convention de base de 2004",
+       "L'accord-cadre de Simandou",
+       "Le protocole de Morebaya",
+       "Le pacte minier de Beyla"
+      ]
+     },
+     {
+      "q": "Quel rang la Guinée occupe-t-elle parmi les exportateurs mondiaux de bauxite depuis 2023 ?",
+      "opts": [
+       "Le premier",
+       "Le deuxième, derrière l'Australie",
+       "Le cinquième",
+       "Le dixième"
+      ]
+     },
+     {
+      "q": "Depuis mars 2025, combien de raffineries d'alumine, les premières depuis l'indépendance, ont vu leurs travaux lancés en Guinée ?",
+      "opts": [
+       "Une",
+       "Deux",
+       "Trois",
+       "Six"
+      ]
+     },
+     {
+      "q": "Quelle société minière, détenue à 100 % par l'État guinéen, a démarré ses opérations le 4 novembre 2025 sur l'ancienne concession de bauxite de GAC ?",
+      "opts": [
+       "La Société minière de Boké",
+       "Nimba Mining Company",
+       "La Compagnie des bauxites de Guinée",
+       "Guinée Alumina Corporation"
+      ]
+     },
+     {
+      "q": "À combien s'élèvent les dépenses de la loi de finances 2026, adoptée à l'unanimité par le CNT, contre environ 30 000 milliards GNF en 2022 ?",
+      "opts": [
+       "Environ 35 000 milliards GNF",
+       "Environ 45 000 milliards GNF",
+       "Environ 64 000 milliards GNF",
+       "Environ 100 000 milliards GNF"
+      ]
+     },
+     {
+      "q": "Qu'a lancé la Banque centrale de la République de Guinée le 15 janvier 2025 pour connecter banques, microfinance, mobile money et fintechs ?",
+      "opts": [
+       "Une nouvelle monnaie",
+       "Le Switch national monétique et digital",
+       "Une bourse des valeurs",
+       "Un fonds de garantie"
+      ]
+     },
+     {
+      "q": "Quel instrument de financement public a mobilisé 37 milliards GNF en 2025 pour 42 projets agropastoraux, dont 60 % portés par des jeunes et des femmes ?",
+      "opts": [
+       "Le FONIJ",
+       "L'ANIES",
+       "Le Fonds de développement agricole (FODA)",
+       "La BCRG"
+      ]
+     },
+     {
+      "q": "Remis au chef de l'État le 28 octobre 2025, le Programme Simandou 2040 a été traduit en lois par le CNT le 5 mars 2026. Quelle est la durée de la Loi-Plan qui l'encadre ?",
+      "opts": [
+       "Cinq ans (2026-2030)",
+       "Dix ans (2026-2035)",
+       "Quinze ans (2026-2040)",
+       "Vingt-cinq ans (2026-2050)"
+      ]
+     }
+    ],
+    [
+     {
+      "q": "Inauguré le 18 avril 2023, le premier échangeur achevé sous le CNRD, à l'entrée de Conakry, porte le nom d'un chef d'État étranger. Lequel ?",
+      "opts": [
+       "Paul Kagame",
+       "Nana Akufo-Addo",
+       "Macky Sall",
+       "Alassane Ouattara"
+      ]
+     },
+     {
+      "q": "Quel échangeur à trois niveaux, financé par le Fonds koweïtien pour 339,6 milliards GNF, le président Doumbouya a-t-il inauguré le 15 novembre 2025 ?",
+      "opts": [
+       "L'échangeur de Hamdallaye",
+       "L'échangeur de Bambéto",
+       "L'échangeur d'Enco 5",
+       "L'échangeur de Cosa"
+      ]
+     },
+     {
+      "q": "Inauguré le 27 avril 2025 sur la route nationale 3, quel pont sur le fleuve Konkouré est le premier ouvrage du pays doté d'un poste de péage-pesage ?",
+      "opts": [
+       "Le pont de Kakimbo",
+       "Le pont de Mandiana",
+       "Le pont de Tanènè",
+       "Le pont de la Soumba"
+      ]
+     },
+     {
+      "q": "Le 29 avril 2026, le Premier ministre a inauguré cinq ponts du Grand Conakry (Kakimbo, Demoudoula, Kiroty, Kissosso et Kassonyah). Quel pays partenaire a financé ce projet ?",
+      "opts": [
+       "La Chine",
+       "Le Royaume des Pays-Bas",
+       "La Turquie",
+       "Le Japon"
+      ]
+     },
+     {
+      "q": "Lancée le 20 juillet 2024, la route Boké–Québo (107 km, dont 86 en Guinée) doit compléter quel grand corridor transafricain ?",
+      "opts": [
+       "Le corridor Dakar–Lagos",
+       "Le corridor Le Caire–Le Cap",
+       "Le corridor Alger–Lagos",
+       "Le corridor Abidjan–Ouagadougou"
+      ]
+     },
+     {
+      "q": "Déclaré projet d'intérêt national en avril 2026, quel barrage hydroélectrique de 300 MW est en construction à Dubréka, sur le Konkouré, avec une première turbine attendue en 2027 ?",
+      "opts": [
+       "Le barrage de Kaléta",
+       "Le barrage de Souapiti",
+       "Le barrage d'Amaria",
+       "Le barrage de Koukoutamba"
+      ]
+     },
+     {
+      "q": "Où le Premier ministre a-t-il lancé, le 18 avril 2026, les travaux de la première centrale solaire du pays, d'une puissance de 50 MW ?",
+      "opts": [
+       "À Kankan",
+       "À Linsan, dans la préfecture de Kindia",
+       "À Labé",
+       "À N'Zérékoré"
+      ]
+     },
+     {
+      "q": "Qu'a inauguré la Guinée le 4 septembre 2025 à Koloma, à Conakry, pour héberger ses données sur son propre sol ?",
+      "opts": [
+       "Un câble sous-marin",
+       "Son premier centre de données national de niveau Tier III",
+       "Une usine de téléphones",
+       "Un satellite"
+      ]
+     },
+     {
+      "q": "Quelle capacité annuelle l'aéroport international Ahmed Sékou Touré doit-il atteindre à l'issue du projet présidentiel d'extension confié au groupe Albayrak ?",
+      "opts": [
+       "500 000 passagers",
+       "1 million de passagers",
+       "3 millions de passagers",
+       "10 millions de passagers"
+      ]
+     },
+     {
+      "q": "Combien de centres hospitaliers régionaux modernes, sur un modèle identique, sont en construction depuis 2024 à Kindia, Labé, Kankan et N'Zérékoré ?",
+      "opts": [
+       "Un",
+       "Deux",
+       "Quatre",
+       "Huit"
+      ]
+     }
+    ],
+    [
+     {
+      "q": "Le 22 mars 2022, le chef de l'État a lancé les Assises nationales, ou « Journées de vérité et de pardon ». Qui coprésidait le comité chargé de les conduire ?",
+      "opts": [
+       "Le Premier ministre et le président du CNT",
+       "Le Grand Imam de Conakry et l'Archevêque de Conakry",
+       "Le ministre de la Justice et le Médiateur",
+       "Les gouverneurs des huit régions"
+      ]
+     },
+     {
+      "q": "Fermé depuis 2017, le Centre hospitalo-universitaire de Donka a été inauguré après rénovation le 17 août 2022. Quelle est sa capacité d'accueil ?",
+      "opts": [
+       "Environ 150 lits",
+       "Environ 300 lits",
+       "Environ 630 lits",
+       "Environ 1 500 lits"
+      ]
+     },
+     {
+      "q": "Saluée par Gavi en mai 2025, la couverture vaccinale des enfants guinéens est passée en un an de 47 % à quel niveau ?",
+      "opts": [
+       "50 %",
+       "63 %",
+       "80 %",
+       "95 %"
+      ]
+     },
+     {
+      "q": "Par décret du 1er juin 2022, à quel montant le salaire minimum interprofessionnel garanti (SMIG) a-t-il été porté, contre 440 000 GNF auparavant ?",
+      "opts": [
+       "500 000 GNF",
+       "550 000 GNF",
+       "750 000 GNF",
+       "1 000 000 GNF"
+      ]
+     },
+     {
+      "q": "Quelle innovation a marqué le concours de recrutement à la fonction publique de 2024, qui a réuni près de 140 000 candidats pour 10 000 postes ?",
+      "opts": [
+       "Les épreuves se sont déroulées sur tablettes numériques",
+       "Le concours s'est tenu à l'étranger",
+       "Il était réservé aux femmes",
+       "Les candidats ont été tirés au sort"
+      ]
+     },
+     {
+      "q": "Qu'est-ce que le FUGAS, lancé officiellement le 27 novembre 2025 après l'enrôlement biométrique des agents de l'État ?",
+      "opts": [
+       "Un fonds de garantie agricole",
+       "Le Fichier unique de gestion administrative et de la solde",
+       "Une fédération sportive",
+       "Un programme de logements"
+      ]
+     },
+     {
+      "q": "Quelle juridiction spéciale, créée en décembre 2021 et installée le 21 janvier 2022, juge les détournements de fonds publics d'au moins un milliard GNF ?",
+      "opts": [
+       "La Cour suprême",
+       "La Haute Cour de justice",
+       "La CRIEF, Cour de répression des infractions économiques et financières",
+       "Le Tribunal de commerce"
+      ]
+     },
+     {
+      "q": "Quelle population la Guinée compte-t-elle selon les résultats préliminaires du 4e Recensement général de la population, réalisé en juillet 2025 avec des tablettes numériques ?",
+      "opts": [
+       "Environ 10 millions d'habitants",
+       "Environ 12,5 millions d'habitants",
+       "Environ 17,5 millions d'habitants",
+       "Environ 25 millions d'habitants"
+      ]
+     },
+     {
+      "q": "Depuis le décret du 2 février 2025, quel document d'identité est délivré gratuitement à tout citoyen qui en fait la première demande ?",
+      "opts": [
+       "Le passeport",
+       "La carte nationale d'identité biométrique",
+       "Le permis de conduire",
+       "La carte d'électeur"
+      ]
+     },
+     {
+      "q": "Inaugurées le 5 juillet 2025 dans le cadre de Simandou Academy, où se trouvent les premières classes préparatoires aux grandes écoles de Guinée ?",
+      "opts": [
+       "À Kindia",
+       "À Dalaba",
+       "À Kankan",
+       "À Labé"
+      ]
+     }
+    ]
    ]
   },
   "sgg": {
@@ -263,6 +1743,376 @@
      1,
      1,
      0
+    ]
+   ],
+   "items": [
+    [
+     {
+      "q": "Selon sa mission officielle, qui le Secrétaire général du Gouvernement assiste-t-il dans « l'impulsion, la coordination et le contrôle de l'action gouvernementale » ?",
+      "opts": [
+       "Le président de l'Assemblée nationale",
+       "Le Premier ministre, chef du Gouvernement",
+       "Le gouverneur de Conakry",
+       "Le président de la Cour suprême"
+      ]
+     },
+     {
+      "q": "Quelle instance le SGG prépare-t-il, avec les cabinets du Premier ministre et du Président, et dont il assure le secrétariat et le suivi des décisions ?",
+      "opts": [
+       "Le Conseil des ministres",
+       "Le Conseil constitutionnel",
+       "Le Conseil économique et social",
+       "Le Conseil supérieur de la magistrature"
+      ]
+     },
+     {
+      "q": "Pourquoi la publication d'une loi ou d'un décret au Journal officiel de la République de Guinée est-elle indispensable ?",
+      "opts": [
+       "Pour en informer uniquement les ministres",
+       "Parce que la loi publiée est réputée connue de tous et devient exécutoire sur tout le territoire",
+       "Pour permettre sa traduction",
+       "Pour fixer son prix de vente"
+      ]
+     },
+     {
+      "q": "Que signifie le suffixe « SGG » dans la référence d'un décret présidentiel, par exemple D/2026/224/PRG/SGG ?",
+      "opts": [
+       "Le texte a été rédigé par le Sénat",
+       "Le texte a été enregistré et publié par le Secrétariat général du Gouvernement",
+       "Le texte est soumis à la signature du gouverneur",
+       "Le texte est secret"
+      ]
+     },
+     {
+      "q": "Quelle est la différence entre le Ministre Secrétaire général du Gouvernement et le Ministre Secrétaire général de la Présidence de la République ?",
+      "opts": [
+       "Il n'y en a aucune, c'est la même personne",
+       "Le premier coordonne le travail gouvernemental auprès du Premier ministre ; le second organise les services de la Présidence auprès du chef de l'État",
+       "Le premier est militaire, le second civil",
+       "Le premier siège à Kindia, le second à Conakry"
+      ]
+     },
+     {
+      "q": "Dans quelle commune de Conakry se trouve le siège du Secrétariat général du Gouvernement ?",
+      "opts": [
+       "Ratoma",
+       "Matam",
+       "Kaloum",
+       "Dixinn"
+      ]
+     },
+     {
+      "q": "Laquelle de ces structures n'est PAS une direction nationale du Secrétariat général du Gouvernement ?",
+      "opts": [
+       "La Direction nationale du Journal officiel",
+       "La Direction nationale de l'Activité normative et de la Conformité",
+       "La Direction nationale des Impôts",
+       "La Direction nationale de la Gestion des hauts cadres de l'État"
+      ]
+     },
+     {
+      "q": "Quels deux organismes publics autonomes sont placés sous la tutelle du SGG ?",
+      "opts": [
+       "La BCRG et l'INS",
+       "Le Centre de documentation administrative et l'Imprimerie du Gouvernement",
+       "L'Agence de presse et la RTG",
+       "La Cour des comptes et l'Inspection générale d'État"
+      ]
+     },
+     {
+      "q": "À quelle date le Président de la République a-t-il redéfini par décret les attributions et l'organisation du SGG, en modifiant le décret de février 2022 ?",
+      "opts": [
+       "Le 5 septembre 2021",
+       "Le 13 mars 2024",
+       "Le 12 juillet 2025",
+       "Le 17 janvier 2026"
+      ]
+     },
+     {
+      "q": "Lorsqu'un nouveau ministre prend ses fonctions, quelle institution organise et préside la cérémonie de passation de service ?",
+      "opts": [
+       "Le Secrétariat général du Gouvernement",
+       "La Cour suprême",
+       "La Police nationale",
+       "L'Assemblée nationale"
+      ]
+     }
+    ],
+    [
+     {
+      "q": "Lors de la réorganisation du cabinet de la Première République, le 1er juin 1979, qui occupait le poste de Secrétaire général du Gouvernement ?",
+      "opts": [
+       "Sékou Kaba",
+       "Mamadou Salifou Touré",
+       "Lansana Béavogui",
+       "Ismaël Touré"
+      ]
+     },
+     {
+      "q": "Qui était Secrétaire général du Gouvernement en juillet 1996, dans le gouvernement du tout premier Premier ministre de la Guinée, Sidya Touré ?",
+      "opts": [
+       "Elhadj Almamy Fodé Sylla",
+       "Oury Bailo Bah",
+       "Sékou Kissi Camara",
+       "Lansana Komara"
+      ]
+     },
+     {
+      "q": "Quel Secrétaire général du Gouvernement a exercé la fonction de 2010 à 2018, sous les Premiers ministres Jean-Marie Doré, Mohamed Saïd Fofana et Mamady Youla ?",
+      "opts": [
+       "Sékou Kourouma",
+       "Sékou Kissi Camara",
+       "Kiridi Bangoura",
+       "Amadou Oury Diallo"
+      ]
+     },
+     {
+      "q": "Quel Ministre Secrétaire général du Gouvernement, installé le 19 juin 2018, est décédé en fonction le 18 avril 2020 ?",
+      "opts": [
+       "Lansana Komara",
+       "Sékou Kourouma",
+       "Abdourahmane Sikhé Camara",
+       "Tamba Benoît Kamano"
+      ]
+     },
+     {
+      "q": "Qui a été le premier Secrétaire général du Gouvernement de la transition, nommé « avec rang de ministre » par décret du 21 octobre 2021 ?",
+      "opts": [
+       "Mohamed Béavogui",
+       "Bernard Goumou",
+       "Abdourahmane Sikhé Camara",
+       "Amara Camara"
+      ]
+     },
+     {
+      "q": "À quelle date Tamba Benoît Kamano a-t-il été nommé Ministre Secrétaire général du Gouvernement ?",
+      "opts": [
+       "Le 1er décembre 2021",
+       "Le 13 mars 2024",
+       "Le 21 septembre 2025",
+       "Le 2 février 2026"
+      ]
+     },
+     {
+      "q": "Quel est le parcours professionnel du ministre Tamba Benoît Kamano avant son entrée au Gouvernement ?",
+      "opts": [
+       "Officier de l'armée de l'air",
+       "Juriste de formation, ancien cadre de la banque-assurance en France, revenu en Guinée en 2017",
+       "Médecin hospitalier",
+       "Ingénieur des mines"
+      ]
+     },
+     {
+      "q": "Selon le ministre Kamano, lors de sa reprise de fonctions le 4 février 2026, quel doit être le rôle du Secrétaire général du Gouvernement ?",
+      "opts": [
+       "Le porte-parole du Gouvernement",
+       "Le point d'équilibre entre la vision politique et l'exécution administrative",
+       "Le gestionnaire du budget de l'État",
+       "L'arbitre des conflits entre ministres"
+      ]
+     },
+     {
+      "q": "Qui occupe, depuis le décret du 12 février 2026, le poste de Secrétaire générale adjointe du Gouvernement ?",
+      "opts": [
+       "Mme Sérègbè Keïta",
+       "Mme Diaka Sidibé",
+       "Mme Aminata Kaba",
+       "Mme M'Mahawa Sylla"
+      ]
+     },
+     {
+      "q": "Comment le conseiller principal du ministre a-t-il défini le SGG lors de la présentation des vœux du 13 janvier 2026 ?",
+      "opts": [
+       "Le bras financier de l'État",
+       "La colonne vertébrale de l'action gouvernementale, garant de la cohérence, de la légalité et de la continuité de l'action de l'État",
+       "Le service de presse du Gouvernement",
+       "Le gardien des frontières"
+      ]
+     }
+    ],
+    [
+     {
+      "q": "Qu'a lancé le Secrétariat général du Gouvernement le 7 juin 2023 pour informer sur le travail gouvernemental ?",
+      "opts": [
+       "Une chaîne de télévision",
+       "Le site Internet sgg.gov.gn",
+       "Une radio",
+       "Un journal papier"
+      ]
+     },
+     {
+      "q": "Quelle innovation majeure le SGG a-t-il inaugurée le 27 juin 2025 ?",
+      "opts": [
+       "Le Journal officiel numérique, accessible gratuitement en ligne",
+       "Un nouveau format papier du Journal officiel",
+       "La fin de la publication des décrets",
+       "Un abonnement payant obligatoire"
+      ]
+     },
+     {
+      "q": "Quelle certification internationale de management de la qualité le SGG a-t-il obtenue le 31 juillet 2025, une première pour une institution publique guinéenne ?",
+      "opts": [
+       "ISO 14001",
+       "ISO 27001",
+       "ISO 9001 version 2015",
+       "HACCP"
+      ]
+     },
+     {
+      "q": "Quelle plateforme numérique le SGG a-t-il lancée le 9 août 2025 pour rendre le projet de nouvelle Constitution accessible à tous ?",
+      "opts": [
+       "constitution.gov.gn",
+       "maconstitution.info",
+       "referendum2025.gn",
+       "loi-fondamentale.org"
+      ]
+     },
+     {
+      "q": "Quelle structure nouvelle, présentée comme « une première institutionnelle », le SGG a-t-il créée en 2025 pour piloter sa performance ?",
+      "opts": [
+       "Une direction des sports",
+       "Le Bureau de stratégie et de développement",
+       "Une brigade de contrôle",
+       "Une école du SGG"
+      ]
+     },
+     {
+      "q": "Quelles trois lois organiques le ministre Kamano a-t-il défendues devant le CNT le 21 novembre 2025, pour mettre en place les institutions de la nouvelle Constitution ?",
+      "opts": [
+       "Sur la Cour suprême, la Cour constitutionnelle et les partis politiques",
+       "Sur la police, l'armée et la douane",
+       "Sur le budget, les impôts et les mines",
+       "Sur l'école, la santé et l'agriculture"
+      ]
+     },
+     {
+      "q": "Du 28 au 30 avril 2026, le SGG a réuni plus de soixante juristes des ministères. Qu'en est-il ressorti ?",
+      "opts": [
+       "Un réseau permanent des juristes de l'État et un mécanisme partagé de veille juridique",
+       "Une grève des juristes",
+       "La création d'un nouveau ministère",
+       "Un nouveau code pénal"
+      ]
+     },
+     {
+      "q": "Quel rôle le SGG joue-t-il dans la mise en œuvre du Programme Simandou 2040 ?",
+      "opts": [
+       "Il finance les projets",
+       "Il sécurise juridiquement les projets en préparant les cadres juridiques nécessaires",
+       "Il construit les routes",
+       "Il recrute les ouvriers"
+      ]
+     },
+     {
+      "q": "Que désigne la plateforme GEDA, présentée par le SGG en août 2026 ?",
+      "opts": [
+       "Un guichet électronique des douanes",
+       "La Gestion électronique des actes administratifs",
+       "Un programme d'aide agricole",
+       "Un registre des entreprises"
+      ]
+     },
+     {
+      "q": "Du 2 au 4 juillet 2026, le SGG a réuni en séminaire les secrétaires généraux de tous les ministères, avec une clôture à Forécariah. Quel cap le ministre leur a-t-il fixé ?",
+      "opts": [
+       "« Moins de routine, plus de méthode ; moins de cloisonnement, plus de coordination ; moins d'intentions, plus de résultats mesurables »",
+       "« Plus de réunions, moins de décisions »",
+       "« Chacun pour soi »",
+       "« Attendre les instructions »"
+      ]
+     }
+    ],
+    [
+     {
+      "q": "Quel événement international inédit le SGG a-t-il accueilli à Conakry du 9 au 11 avril 2025 ?",
+      "opts": [
+       "Le premier Forum international des Secrétaires généraux des Gouvernements",
+       "Un sommet de la CEDEAO",
+       "Les Jeux de la Francophonie",
+       "Le Salon du livre"
+      ]
+     },
+     {
+      "q": "Quel était le thème du premier Forum international des Secrétaires généraux des Gouvernements ?",
+      "opts": [
+       "Le rôle des SGG dans la continuité de l'action de l'État",
+       "Les archives coloniales",
+       "La fiscalité minière",
+       "La sécurité routière"
+      ]
+     },
+     {
+      "q": "Quel résultat durable est sorti du Forum international des SGG d'avril 2025 ?",
+      "opts": [
+       "La création d'une monnaie commune",
+       "La création d'un Réseau des SGG présidé par la Guinée pour deux ans, avec un secrétariat permanent à Conakry",
+       "La suppression des journaux officiels",
+       "Un traité de défense"
+      ]
+     },
+     {
+      "q": "Que signifie le sigle SeNAG, événement organisé pour la première fois en 2026 à l'initiative du SGG ?",
+      "opts": [
+       "Salon national de l'administration guinéenne",
+       "Semaine nationale des archives de la Guinée",
+       "Séminaire national des agents du Gouvernement",
+       "Service national des actes gouvernementaux"
+      ]
+     },
+     {
+      "q": "Où et quand s'est tenue la première édition de la Semaine nationale des archives de la Guinée ?",
+      "opts": [
+       "Au Palais du Peuple, en janvier 2026",
+       "À la Plage Camayenne, à Conakry, du 25 au 30 juin 2026",
+       "À Kindia, en septembre 2025",
+       "À Kankan, en mars 2026"
+      ]
+     },
+     {
+      "q": "Quel était le thème de la SeNAG 2026 ?",
+      "opts": [
+       "« Archives de l'État et gouvernance publique : préserver la mémoire nationale »",
+       "« Le numérique pour tous »",
+       "« Simandou, fer de lance »",
+       "« L'école de demain »"
+      ]
+     },
+     {
+      "q": "Sous le haut parrainage de qui la SeNAG 2026 a-t-elle été placée ?",
+      "opts": [
+       "Du président de l'Assemblée nationale",
+       "Du Président de la République, le général Mamadi Doumbouya",
+       "Du gouverneur de Conakry",
+       "De l'UNESCO"
+      ]
+     },
+     {
+      "q": "Quel pays africain, invité à l'ouverture de la SeNAG le 25 juin 2026, a présenté la modernisation de ses archives comme « un impératif économique, pas seulement un projet culturel » ?",
+      "opts": [
+       "Le Sénégal",
+       "Le Rwanda",
+       "Le Ghana",
+       "Le Maroc"
+      ]
+     },
+     {
+      "q": "Quel message le ministre Kamano a-t-il adressé à l'ouverture de la SeNAG sur l'importance des archives pour un État ?",
+      "opts": [
+       "« Les archives coûtent trop cher »",
+       "« Quand un État perd ses archives, il perd plus que des papiers : il perd des preuves, des repères et une partie de sa capacité à rendre compte »",
+       "« Les archives doivent rester secrètes »",
+       "« Le papier est dépassé »"
+      ]
+     },
+     {
+      "q": "Quelle priorité de l'année 2026, fixée par le SGG dès janvier, la Semaine nationale des archives vient-elle concrétiser ?",
+      "opts": [
+       "La numérisation des archives de l'État",
+       "L'augmentation du prix du Journal officiel",
+       "La fermeture du Centre de documentation administrative",
+       "Le recrutement de journalistes"
+      ]
+     }
     ]
    ]
   }
